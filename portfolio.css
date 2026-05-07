@@ -1,0 +1,167 @@
+/* ============================================================
+   Portfolio Page — Dark Bento Grid (astra-motion style)
+   ============================================================ */
+
+/* Page base */
+body.dark-page {
+  background: #ffffff;
+  color: #1e1b4b;
+}
+
+/* ── Navbar overrides ───────────────────────────────────── */
+.navbar--dark {
+  background: rgba(255,255,255,0.92);
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.nav-link--light { color: #374151; }
+.nav-link--light:hover, .nav-link--light.active { color: #7c3aed; }
+.nav-toggle--light span { background: #374151; }
+.mobile-nav-overlay--dark { background: #ffffff; }
+
+/* ── Hero ────────────────────────────────────────────────── */
+.pf-hero {
+  padding: 160px 0 64px;
+  text-align: center;
+}
+
+.pf-hero__title {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800;
+  color: #1e1b4b;
+  line-height: 1.08;
+  margin-bottom: 20px;
+}
+
+.pf-hero__sub {
+  font-size: 18px;
+  font-style: italic;
+  color: #7c3aed;
+  font-weight: 500;
+  margin: 0 auto;
+  letter-spacing: 0.01em;
+}
+
+/* ── Card Grid ───────────────────────────────────────────── */
+.pf-grid-section {
+  padding-bottom: 96px;
+}
+
+.pf-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 24px;
+}
+
+/* ── Portfolio Card ──────────────────────────────────────── */
+.pf-card {
+  cursor: pointer;
+}
+
+.pf-card__thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #e5e7eb;
+  margin-bottom: 14px;
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.35s ease;
+}
+
+.pf-card:hover .pf-card__thumb {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(124, 58, 237, 0.15);
+}
+
+.pf-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e1b4b;
+  line-height: 1.4;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.pf-card:hover .pf-card__title {
+  color: #7c3aed;
+}
+
+/* ── CTA ─────────────────────────────────────────────────── */
+.pf-cta {
+  text-align: center;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #f5f3ff 100%);
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.pf-cta h2 {
+  font-size: clamp(28px, 4vw, 48px);
+  color: #1e1b4b;
+  margin-bottom: 16px;
+}
+
+.pf-cta p {
+  max-width: 480px;
+  margin: 0 auto 36px;
+  color: #6b7280;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ── Footer light overrides ──────────────────────────────── */
+.footer--dark {
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-heading--light { color: #374151; }
+
+.footer-links--dark a {
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.2s ease;
+}
+
+.footer-links--dark a:hover { color: #7c3aed; }
+
+.footer-bottom--dark {
+  border-top: 1px solid #e5e7eb;
+  color: #9ca3af;
+}
+
+.social-link--dark {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+}
+
+.social-link--dark:hover {
+  background: #f5f3ff;
+  border-color: #7c3aed;
+  color: #7c3aed;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .pf-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+  }
+  .pf-hero { padding: 120px 0 48px; }
+}
+
+@media (max-width: 480px) {
+  .pf-grid {
+    grid-template-columns: 1fr;
+  }
+}

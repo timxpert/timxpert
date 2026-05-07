@@ -1,0 +1,335 @@
+/* ============================================================
+   About Page — Premium Layout
+   ============================================================ */
+
+/* ── Hero ────────────────────────────────────────────────── */
+.ab-hero {
+  padding: 140px 0 80px;
+  background: var(--bg-primary);
+}
+
+.ab-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .ab-hero__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.ab-overline {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-purple);
+  margin-bottom: 20px;
+}
+
+.ab-hero__left h1 {
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.ab-lead {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.ab-body {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+.ab-cta-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Photo frame */
+.ab-photo-frame {
+  position: relative;
+  border-radius: 24px;
+  overflow: visible;
+}
+
+.ab-photo-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background: linear-gradient(135deg, #f3f0ff, #ede9fe);
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 2px dashed rgba(124, 58, 237, 0.2);
+  color: var(--accent-purple);
+}
+
+.ab-photo-placeholder svg {
+  width: 64px;
+  height: 64px;
+  opacity: 0.4;
+}
+
+.ab-photo-placeholder span {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* Floating chips */
+.ab-chip {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 100px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+  white-space: nowrap;
+  animation: floatY 3.5s ease-in-out infinite;
+}
+
+.ab-chip--top {
+  top: -20px;
+  right: -20px;
+  animation-delay: 0s;
+}
+
+.ab-chip--bottom {
+  bottom: -20px;
+  left: -20px;
+  animation-delay: 1s;
+}
+
+.ab-chip__num {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--accent-purple);
+  font-family: var(--font-heading);
+}
+
+.ab-chip__icon {
+  font-size: 20px;
+}
+
+.ab-chip__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* ── Story Section ───────────────────────────────────────── */
+.ab-story {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+}
+
+.ab-story__grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .ab-story__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Stats */
+.ab-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .ab-stats {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+
+.ab-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ab-stat__num {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+  font-family: var(--font-heading);
+}
+
+.ab-stat__plus {
+  font-size: 28px;
+  color: var(--accent-purple);
+  font-weight: 700;
+}
+
+.ab-stat__label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Story text */
+.ab-story__text h2 {
+  font-size: clamp(28px, 3.5vw, 44px);
+  margin-bottom: 28px;
+  color: var(--text-primary);
+}
+
+.ab-story__text p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+
+.ab-story__text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Pull quote */
+.ab-quote {
+  margin-top: 36px;
+  padding: 28px 32px;
+  background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+  border-left: 4px solid var(--accent-purple);
+  border-radius: 0 16px 16px 0;
+}
+
+.ab-quote blockquote {
+  font-size: 17px;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ── Values ──────────────────────────────────────────────── */
+.ab-values {
+  padding: 100px 0;
+  background: var(--bg-primary);
+}
+
+.ab-values__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 56px;
+}
+
+@media (max-width: 768px) {
+  .ab-values__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ab-value-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--border-radius-lg);
+  padding: 36px 32px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ab-value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(124, 58, 237, 0.1);
+}
+
+.ab-value-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #ede9fe, #f3f0ff);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-purple);
+  margin-bottom: 20px;
+}
+
+.ab-value-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.ab-value-card h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.ab-value-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ── Process ─────────────────────────────────────────────── */
+.ab-process {
+  background: var(--bg-secondary);
+}
+
+.ab-step-num {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--accent-glow);
+  font-family: var(--font-heading);
+  line-height: 1;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+/* ── CTA ─────────────────────────────────────────────────── */
+.ab-cta {
+  text-align: center;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1e1b4b 0%, #2e1065 50%, #1e1b4b 100%);
+}
+
+.ab-cta h2 {
+  font-size: clamp(28px, 4vw, 48px);
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.ab-cta p {
+  font-size: 17px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 36px;
+}
