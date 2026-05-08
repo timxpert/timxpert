@@ -128,6 +128,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ── Video Preview Autoplay (Intersection Observer) ────────────────────────
+  const videoIframes = document.querySelectorAll('.marquee-item iframe');
+  
+  if (videoIframes.length > 0) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const iframe = entry.target;
+        if (entry.isIntersecting) {
+          // Send play command to YouTube iframe
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'playVideo' }), '*');
+        } else {
+          // Send pause command to YouTube iframe
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo' }), '*');
+        }
+      });
+    }, { threshold: 0.1 }); // Trigger when 10% visible
+    
+    videoIframes.forEach(iframe => {
+      videoObserver.observe(iframe);
+    });
+  }
 });
 
 // Portfolio Modal Logic
