@@ -85,6 +85,49 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ── Back to Top Button ─────────────────────────────────────
+  const backToTopBtn = document.getElementById('backToTopBtn');
+  if (backToTopBtn) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTopBtn.style.display = 'flex';
+        // Wait a tick to apply transition
+        setTimeout(() => {
+          backToTopBtn.style.opacity = '1';
+          backToTopBtn.style.transform = 'translateY(0)';
+        }, 10);
+      } else {
+        backToTopBtn.style.opacity = '0';
+        backToTopBtn.style.transform = 'translateY(20px)';
+        // Wait for transition before hiding
+        setTimeout(() => {
+          if (window.scrollY <= 500) backToTopBtn.style.display = 'none';
+        }, 300);
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // ── Footer Image Pan Effect ────────────────────────────────
+  const footerMeImg = document.querySelector('.footer-me-img');
+  if (footerMeImg) {
+    window.addEventListener('scroll', () => {
+      const rect = footerMeImg.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        // Calculate scroll percentage through viewport
+        let percent = 1 - (rect.top / window.innerHeight);
+        // Map to scale (zooms out from 1.5 to 1.0 as you scroll down)
+        // Zooming in on scroll up (pan inward), zooming out on scroll down (pan outward)
+        let scale = 1.0 + ((1 - percent) * 0.8);
+        scale = Math.max(1, Math.min(scale, 1.8));
+        footerMeImg.style.transform = `scale(${scale})`;
+      }
+    });
+  }
 });
 
 // Portfolio Modal Logic
@@ -131,3 +174,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+// Video Modal Logic
+function openVideoModal(url) {
+  const modal = document.getElementById('heroVideoModal');
+  const iframe = document.getElementById('heroVideoIframe');
+  if (!modal || !iframe) return;
+  iframe.src = url;
+  modal.classList.add('active');
+}
+
+function closeVideoModal() {
+  const modal = document.getElementById('heroVideoModal');
+  const iframe = document.getElementById('heroVideoIframe');
+  if (!modal || !iframe) return;
+  modal.classList.remove('active');
+  setTimeout(() => { iframe.src = ''; }, 300);
+}
