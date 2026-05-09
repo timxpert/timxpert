@@ -14,6 +14,8 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <!-- Vimeo Player SDK -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 
 <body>
@@ -84,102 +86,90 @@
   <!-- ======================== PORTFOLIO MARQUEE ======================== -->
   <section class="portfolio-marquee-section" style="padding: 20px 0 60px 0; overflow: hidden; position: relative;">
 
-    <!-- Row 1: Left -->
+    <!-- Row 1: Left — SERLZO · LANGEASE AI · APPLAI -->
     <div style="width: 100%; overflow: hidden;">
       <div class="marquee-wrapper marquee-left">
         <!-- Set 1 -->
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/5RyJR8RDLyc?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/5RyJR8RDLyc?loop=1&playlist=5RyJR8RDLyc&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190702972', 'SERLZO', 'Motion Design · Brand Video', 'A sleek brand film for SERLZO — combining sharp motion design with strategic storytelling to communicate their value proposition instantly.')"></div>
+          <iframe id="vimeo-1190702972-a" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190702972?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/LdMB7TeUuRM?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/LdMB7TeUuRM?loop=1&playlist=LdMB7TeUuRM&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190721386', 'LANGEASE AI', 'AI · SaaS Explainer', 'An engaging SaaS explainer for LANGEASE AI that breaks down their language AI platform into a clear, compelling 90-second story.')"></div>
+          <iframe id="vimeo-1190721386-a" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190721386?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/5fUlfj5h9xg?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/5fUlfj5h9xg?loop=1&playlist=5fUlfj5h9xg&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190694647', 'APPLAI', 'AI · Product Demo', 'A polished product demo for APPLAI showcasing their AI-powered platform with smooth UI animations and punchy motion graphics.')"></div>
+          <iframe id="vimeo-1190694647-a" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190694647?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
-        <!-- Set 2 -->
+        <!-- Set 2 (duplicate for seamless loop) -->
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/5RyJR8RDLyc?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/5RyJR8RDLyc?loop=1&playlist=5RyJR8RDLyc&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190702972', 'SERLZO', 'Motion Design · Brand Video', 'A sleek brand film for SERLZO — combining sharp motion design with strategic storytelling to communicate their value proposition instantly.')"></div>
+          <iframe id="vimeo-1190702972-b" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190702972?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/LdMB7TeUuRM?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/LdMB7TeUuRM?loop=1&playlist=LdMB7TeUuRM&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190721386', 'LANGEASE AI', 'AI · SaaS Explainer', 'An engaging SaaS explainer for LANGEASE AI that breaks down their language AI platform into a clear, compelling 90-second story.')"></div>
+          <iframe id="vimeo-1190721386-b" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190721386?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/5fUlfj5h9xg?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/5fUlfj5h9xg?loop=1&playlist=5fUlfj5h9xg&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190694647', 'APPLAI', 'AI · Product Demo', 'A polished product demo for APPLAI showcasing their AI-powered platform with smooth UI animations and punchy motion graphics.')"></div>
+          <iframe id="vimeo-1190694647-b" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190694647?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
       </div>
     </div>
 
-    <!-- Row 2: Right -->
+    <!-- Row 2: Right — ATTROVE · PRODUCT POINTERS · DWM 1.0 -->
     <div style="width: 100%; overflow: hidden;">
       <div class="marquee-wrapper marquee-right">
         <!-- Set 1 -->
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/7Dn-H_wr0uY?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/7Dn-H_wr0uY?loop=1&playlist=7Dn-H_wr0uY&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190693529', 'ATTROVE', 'SaaS · Motion Design', 'A high-energy motion video for ATTROVE that captures their platform\'s power to attract, convert, and retain customers.')"></div>
+          <iframe id="vimeo-1190693529-a" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190693529?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/vllk5LCC1f8?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/vllk5LCC1f8?loop=1&playlist=vllk5LCC1f8&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190717759', 'PRODUCT POINTERS', 'Course · Promo Video', 'A compelling promo video for Product Pointers designed to drive course enrollments through dynamic visuals and a persuasive narrative.')"></div>
+          <iframe id="vimeo-1190717759-a" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190717759?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/Oy3SMR7UZsg?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/Oy3SMR7UZsg?loop=1&playlist=Oy3SMR7UZsg&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190704732', 'DWM 1.0', 'Product Launch · Motion', 'The official DWM 1.0 launch video — a cinematic, high-impact production built to create buzz and drive immediate sign-ups.')"></div>
+          <iframe id="vimeo-1190704732-a" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190704732?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
-        <!-- Set 2 -->
+        <!-- Set 2 (duplicate for seamless loop) -->
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/7Dn-H_wr0uY?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/7Dn-H_wr0uY?loop=1&playlist=7Dn-H_wr0uY&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190693529', 'ATTROVE', 'SaaS · Motion Design', 'A high-energy motion video for ATTROVE that captures their platform\'s power to attract, convert, and retain customers.')"></div>
+          <iframe id="vimeo-1190693529-b" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190693529?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/vllk5LCC1f8?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/vllk5LCC1f8?loop=1&playlist=vllk5LCC1f8&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190717759', 'PRODUCT POINTERS', 'Course · Promo Video', 'A compelling promo video for Product Pointers designed to drive course enrollments through dynamic visuals and a persuasive narrative.')"></div>
+          <iframe id="vimeo-1190717759-b" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190717759?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="marquee-item">
-          <div class="marquee-iframe-overlay"
-            onclick="openVideoModal('https://www.youtube.com/embed/Oy3SMR7UZsg?autoplay=1&controls=1&modestbranding=1&rel=0')">
-          </div><iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-            src="https://www.youtube.com/embed/Oy3SMR7UZsg?loop=1&playlist=Oy3SMR7UZsg&controls=0&disablekb=1&modestbranding=1&rel=0&playsinline=1"
-            loading="lazy"></iframe>
+          <div class="marquee-iframe-overlay" onclick="openVimeoModal('1190704732', 'DWM 1.0', 'Product Launch · Motion', 'The official DWM 1.0 launch video — a cinematic, high-impact production built to create buzz and drive immediate sign-ups.')"></div>
+          <iframe id="vimeo-1190704732-b" class="vimeo-marquee" style="width:100%;height:100%;border:none;pointer-events:none;"
+            src="https://player.vimeo.com/video/1190704732?autoplay=1&muted=1&loop=0&controls=0&background=1&playsinline=1"
+            allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -953,6 +943,58 @@
       </div>
     </div>
   </footer>
+
+  <!-- Vimeo 30-second loop initializer -->
+  <script>
+    (function () {
+      const LOOP_END = 30; // seconds
+
+      function initVimeoMarquee() {
+        document.querySelectorAll('.vimeo-marquee').forEach(function (iframe) {
+          var player = new Vimeo.Player(iframe);
+
+          // Autoplay muted
+          player.setVolume(0);
+          player.play().catch(function () {});
+
+          // 30-second loop via timeupdate
+          player.on('timeupdate', function (data) {
+            if (data.seconds >= LOOP_END) {
+              player.setCurrentTime(0).then(function () {
+                player.play().catch(function () {});
+              });
+            }
+          });
+        });
+      }
+
+      // Run after DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVimeoMarquee);
+      } else {
+        initVimeoMarquee();
+      }
+    })();
+
+    // Open Vimeo video in the existing video modal
+    function openVimeoModal(videoId, title, category, summary) {
+      var modal = document.getElementById('heroVideoModal');
+      var iframe = document.getElementById('heroVideoIframe');
+      var titleEl = document.getElementById('videoModalTitle');
+      var summaryEl = document.getElementById('videoModalSummary');
+
+      if (titleEl) titleEl.textContent = title;
+      if (summaryEl) summaryEl.textContent = summary;
+
+      // Vimeo embed with autoplay + controls enabled
+      iframe.src = 'https://player.vimeo.com/video/' + videoId + '?autoplay=1&controls=1&title=0&byline=0&portrait=0';
+
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  </script>
 
   <script src="script.js"></script>
 
