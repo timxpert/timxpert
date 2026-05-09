@@ -1000,6 +1000,10 @@ h1, h2, h3, h4, h5, h6 {
 .portfolio-item:hover .portfolio-img-wrapper .bg-placeholder {
   transform: scale(1.05);
 }
+.portfolio-img-wrapper iframe {
+  transform: scale(1.35);
+  transform-origin: center;
+}
 
 .portfolio-overlay {
   position: absolute;
@@ -1642,6 +1646,10 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   min-width: 300px;
   background: #111;
+}
+.marquee-item iframe {
+  transform: scale(1.35);
+  transform-origin: center;
 }
 .marquee-iframe-overlay {
   position: absolute;

@@ -90,7 +90,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const backToTopBtn = document.getElementById('backToTopBtn');
   if (backToTopBtn) {
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
+      let isNearFooter = false;
+      const footer = document.querySelector('footer');
+      if (footer) {
+        const rect = footer.getBoundingClientRect();
+        if (rect.top <= window.innerHeight) {
+          isNearFooter = true;
+        }
+      }
+
+      if (window.scrollY > 500 && !isNearFooter) {
         backToTopBtn.style.display = 'flex';
         // Wait a tick to apply transition
         setTimeout(() => {
@@ -102,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         backToTopBtn.style.transform = 'translateY(20px)';
         // Wait for transition before hiding
         setTimeout(() => {
-          if (window.scrollY <= 500) backToTopBtn.style.display = 'none';
+          if (window.scrollY <= 500 || isNearFooter) backToTopBtn.style.display = 'none';
         }, 300);
       }
     });
