@@ -1992,7 +1992,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 2;
   margin-top: 24px;
   flex-shrink: 0;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.4s ease;
 }
 
 .process-step:hover .step-dot,
@@ -2009,14 +2009,14 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   left: 7px;
   width: 2px;
-  background: linear-gradient(to bottom, rgba(146, 84, 255, 0.5), rgba(0, 0, 0, 0.05));
+  background-color: rgba(146, 84, 255, 0.15);
   z-index: 1;
-  transition: height 0.5s ease;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .process-step:hover .step-line,
 .process-step.active .step-line {
-  background: linear-gradient(to bottom, var(--accent-purple), rgba(146, 84, 255, 0.5));
+  background-color: var(--accent-purple);
   box-shadow: 0 0 10px var(--accent-purple);
 }
 

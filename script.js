@@ -61,20 +61,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Use rootMargin to shrink the "trigger zone" to the centre of the viewport.
     // A step becomes active when it enters this zone, and inactive when it leaves.
     const processObserver = new IntersectionObserver((entries) => {
+      // Find all currently intersecting entries from this batch
+      let isAnyIntersecting = false;
+      let targetToActivate = null;
+      
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Deactivate ALL steps first, then activate only the intersecting one
-          processSteps.forEach(s => s.classList.remove('active'));
-          entry.target.classList.add('active');
+          isAnyIntersecting = true;
+          targetToActivate = entry.target;
         } else {
-          // Remove active from this step when it exits the trigger zone
           entry.target.classList.remove('active');
         }
       });
+
+      if (isAnyIntersecting && targetToActivate) {
+        processSteps.forEach(s => s.classList.remove('active'));
+        targetToActivate.classList.add('active');
+      }
     }, {
       root: null,
-      // Only trigger when step is inside the middle ~50% of the viewport height
-      rootMargin: '-25% 0px -25% 0px',
+      rootMargin: '-30% 0px -30% 0px',
       threshold: 0
     });
 
