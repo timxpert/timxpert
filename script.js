@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Close mobile nav when clicking a link
-    const mobileLinks = mobileNavOverlay.querySelectorAll('.nav-link');
+    const mobileLinks = mobileNavOverlay.querySelectorAll('.mobile-nav-link, .mobile-nav-btn');
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         navToggle.classList.remove('open');
