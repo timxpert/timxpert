@@ -2084,6 +2084,23 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 0.3s ease;
 }
 
+.footer-bottom-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  gap: 24px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (min-width: 768px) {
+  .footer-bottom-bar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 .process-step:hover .step-content h3,
 .process-step.active .step-content h3 {
   color: var(--accent-purple);
