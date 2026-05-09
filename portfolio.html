@@ -494,15 +494,55 @@
       });
     })();
 
+    var _vmPlayer = null;
+
+    function loadVimeoSDK() {
+      return new Promise(function (resolve) {
+        if (window.Vimeo) { resolve(); return; }
+        var s = document.createElement('script');
+        s.src = 'https://player.vimeo.com/api/player.js';
+        s.onload = resolve;
+        document.head.appendChild(s);
+      });
+    }
+
     function openVimeoModal(videoId, title, category, summary) {
-      var modal    = document.getElementById('heroVideoModal');
-      var iframe   = document.getElementById('heroVideoIframe');
-      var titleEl  = document.getElementById('videoModalTitle');
-      var sumEl    = document.getElementById('videoModalSummary');
+      var modal     = document.getElementById('heroVideoModal');
+      var iframe    = document.getElementById('heroVideoIframe');
+      var titleEl   = document.getElementById('videoModalTitle');
+      var sumEl     = document.getElementById('videoModalSummary');
+      var overlay   = document.getElementById('vmPlayOverlay');
       if (titleEl) titleEl.textContent = title;
       if (sumEl)   sumEl.textContent   = summary;
-      iframe.src = 'https://player.vimeo.com/video/' + videoId + '?autoplay=1&controls=1&title=0&byline=0&portrait=0';
+      iframe.src = 'https://player.vimeo.com/video/' + videoId
+        + '?autoplay=0&controls=1&title=0&byline=0&portrait=0';
+      if (overlay) { overlay.style.opacity = '1'; overlay.style.pointerEvents = 'auto'; }
+      _vmPlayer = null;
       if (modal) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    }
+
+    function vmPlayVideo() {
+      var overlay = document.getElementById('vmPlayOverlay');
+      var iframe  = document.getElementById('heroVideoIframe');
+      if (overlay) { overlay.style.opacity = '0'; overlay.style.pointerEvents = 'none'; }
+      loadVimeoSDK().then(function () {
+        if (!_vmPlayer) { _vmPlayer = new Vimeo.Player(iframe); }
+        _vmPlayer.play().catch(function (err) {
+          if (overlay) { overlay.style.opacity = '1'; overlay.style.pointerEvents = 'auto'; }
+          console.warn('Vimeo play failed:', err);
+        });
+      });
+    }
+
+    function closeVideoModal() {
+      var modal   = document.getElementById('heroVideoModal');
+      var iframe  = document.getElementById('heroVideoIframe');
+      var overlay = document.getElementById('vmPlayOverlay');
+      if (modal) modal.classList.remove('active');
+      document.body.style.overflow = '';
+      iframe.src = '';
+      _vmPlayer = null;
+      if (overlay) { overlay.style.opacity = '1'; overlay.style.pointerEvents = 'auto'; }
     }
   </script>
 
@@ -513,7 +553,13 @@
       <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
       
       <div class="video-modal-player">
-        <iframe id="heroVideoIframe" style="width: 100%; height: 100%; border: none;" src=""
+        <!-- Custom circular play button overlay -->
+        <div class="vm-play-overlay" id="vmPlayOverlay" onclick="vmPlayVideo()">
+          <div class="vm-play-btn">
+            <svg viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <iframe id="heroVideoIframe" style="width:100%;height:100%;border:none;" src=""
           allow="autoplay; encrypted-media" allowfullscreen></iframe>
       </div>
       
