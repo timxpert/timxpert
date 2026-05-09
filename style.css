@@ -1687,20 +1687,111 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(5px);
 }
-.video-modal-content {
+.video-modal-wrapper {
   position: relative;
-  width: 90%;
-  max-width: 900px;
-  aspect-ratio: 16/9;
+  width: 95%;
+  max-width: 1200px;
+  max-height: 90vh;
   background: #000;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
   transform: scale(0.95);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: row;
 }
-.video-modal.active .video-modal-content {
+.video-modal.active .video-modal-wrapper {
   transform: scale(1);
+}
+.video-modal-player {
+  flex: 2;
+  background: #000;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.video-modal-details {
+  flex: 1;
+  padding: 40px;
+  color: white;
+  background: #050505;
+  border-left: 1px solid rgba(255,255,255,0.05);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.video-modal-details h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.video-modal-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 0 0 30px 0;
+  width: 50px;
+}
+.video-modal-details h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.video-modal-details p {
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.video-modal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+.video-modal-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+.video-modal-list li svg {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  color: #000;
+  border-radius: 50%;
+  padding: 4px;
+}
+.video-modal-btn {
+  margin-top: auto;
+  width: 100%;
+  text-align: center;
+  padding: 16px 20px;
+  font-size: 18px;
+}
+@media (max-width: 992px) {
+  .video-modal-wrapper {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .video-modal-player {
+    aspect-ratio: 16/9;
+    flex: none;
+    min-height: auto;
+  }
+  .video-modal-details {
+    flex: none;
+    padding: 30px 20px;
+    border-left: none;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
 }
 .video-modal-close {
   position: absolute;
@@ -1757,7 +1848,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.process-step:hover .step-dot {
+.process-step:hover .step-dot,
+.process-step.active .step-dot {
   background: var(--accent-purple);
   border-color: var(--accent-purple);
   box-shadow: 0 0 20px var(--accent-purple);
@@ -1775,7 +1867,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: height 0.5s ease;
 }
 
-.process-step:hover .step-line {
+.process-step:hover .step-line,
+.process-step.active .step-line {
   background: linear-gradient(to bottom, var(--accent-purple), rgba(146, 84, 255, 0.5));
   box-shadow: 0 0 10px var(--accent-purple);
 }
@@ -1791,7 +1884,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s ease;
 }
 
-.process-step:hover .step-content {
+.process-step:hover .step-content,
+.process-step.active .step-content {
   background: rgba(146, 84, 255, 0.05);
   border-color: rgba(146, 84, 255, 0.3);
   transform: translateX(10px);
@@ -1812,7 +1906,8 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
 }
 
-.process-step:hover .step-content::before {
+.process-step:hover .step-content::before,
+.process-step.active .step-content::before {
   opacity: 1;
   transform: scale(1);
 }
@@ -1827,7 +1922,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s ease;
 }
 
-.process-step:hover .step-number {
+.process-step:hover .step-number,
+.process-step.active .step-number {
   color: rgba(146, 84, 255, 0.4);
   transform: translateY(10px) scale(1.1);
 }
@@ -1841,7 +1937,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: color 0.3s ease;
 }
 
-.process-step:hover .step-content h3 {
+.process-step:hover .step-content h3,
+.process-step.active .step-content h3 {
   color: var(--accent-purple);
 }
 
@@ -1858,7 +1955,8 @@ h1, h2, h3, h4, h5, h6 {
   .process-step { gap: 20px; padding-bottom: 30px; }
   .step-content { padding: 24px; }
   .step-number { font-size: 36px; top: 0px; right: 15px; }
-  .process-step:hover .step-content { transform: translateY(-5px); }
+  .process-step:hover .step-content,
+  .process-step.active .step-content { transform: translateY(-5px); }
 }
 
 /* ============================================================

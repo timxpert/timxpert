@@ -55,6 +55,24 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeObserver.observe(element);
   });
 
+  // Process Steps Auto-Animation on Scroll (Responsive)
+  const processSteps = document.querySelectorAll('.process-step');
+  if (processSteps.length > 0) {
+    const processObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    processSteps.forEach(step => {
+      processObserver.observe(step);
+    });
+  }
+
   // ── Auto-cycling Reel ──────────────────────────────────────
   const scenes    = document.querySelectorAll('.reel-scene');
   const dots      = document.querySelectorAll('.reel-dot');
