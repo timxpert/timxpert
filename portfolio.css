@@ -303,10 +303,15 @@ body.dark-page {
   width: 26px;
   height: 26px;
   color: #fff;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5));
+  background: rgba(0,0,0,0.60);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.35);
   opacity: 0;
   transform: scale(0.8);
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, background 0.25s ease;
 }
 
 .pf-card:hover .pf-card__play {
@@ -316,7 +321,8 @@ body.dark-page {
 
 .pf-card:hover .pf-card__play svg {
   opacity: 1;
-  transform: scale(1);
+  transform: scale(1.12);
+  background: rgba(0,0,0,0.85);
 }
 
 /* Card body */

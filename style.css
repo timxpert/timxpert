@@ -1738,7 +1738,7 @@ h1, h2, h3, h4, h5, h6 {
 .marquee-play-btn svg {
   width: 26px;
   height: 26px;
-  background: rgba(255,255,255,0.30);
+  background: rgba(0,0,0,0.60);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-radius: 50%;
@@ -1748,7 +1748,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .marquee-item:hover .marquee-play-btn svg {
-  background: rgba(255,255,255,0.55);
+  background: rgba(0,0,0,0.85);
   transform: scale(1.12);
 }
 /* ============================================================
@@ -1774,7 +1774,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(0, 0, 0, 0.60);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.35);
@@ -1796,7 +1796,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .vm-play-overlay:hover .vm-play-btn {
   transform: scale(1.14);
-  background: rgba(255, 255, 255, 0.42);
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .vm-play-overlay:active .vm-play-btn {
