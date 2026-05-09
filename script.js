@@ -225,10 +225,39 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Video Modal Logic
+const videoData = {
+  'zuNIolgecvU': { title: 'Agency Showreel', summary: 'A compilation of our best motion design and SaaS product videos, demonstrating our ability to craft engaging, high-converting visual stories.' },
+  '5RyJR8RDLyc': { title: 'Attrove', summary: 'A comprehensive demonstration of the Attrove SaaS platform, highlighting its intuitive interface and core capabilities designed to streamline user workflows.' },
+  'LdMB7TeUuRM': { title: 'Fintech Platform Demo', summary: 'A dynamic showcase of modern financial software, featuring high-energy animations and engaging visual metaphors to capture audience attention.' },
+  '5fUlfj5h9xg': { title: 'Analytics Dashboard Overview', summary: 'An in-depth look at a powerful analytics dashboard, emphasizing clear data visualization and actionable insights for enterprise users.' },
+  '3hHTUZKAaBQ': { title: 'Workflow Automation App', summary: 'A fast-paced explainer showing how to automate daily tasks and improve team productivity using a sleek new software tool.' },
+  'ECNs0W3-Y98': { title: 'Cybersecurity Solution', summary: 'A dramatic, tech-focused video highlighting advanced security features and threat prevention mechanisms of a modern cybersecurity platform.' },
+  '7Dn-H_wr0uY': { title: 'Mobile App Prototype', summary: 'A sleek, engaging walk-through of a new mobile application prototype, focusing on seamless user experience and modern design patterns.' },
+  'vllk5LCC1f8': { title: 'Cloud Infrastructure Service', summary: 'A technical yet accessible explainer video for a cloud infrastructure service, simplifying complex concepts through dynamic motion graphics.' },
+  'Oy3SMR7UZsg': { title: 'AI Assistant Walkthrough', summary: 'An immersive demonstration of an AI-powered assistant, showcasing its natural language processing and task automation capabilities.' },
+  'Syaardtlfww': { title: 'E-commerce Platform', summary: 'A visually rich product video demonstrating the ease of setting up and managing an online storefront with next-generation e-commerce tools.' },
+  'XOJM3nkkHaM': { title: 'Data Management System', summary: 'A professional breakdown of a complex data management system, using crisp animations to illustrate data flow and structural organization.' }
+};
+
 function openVideoModal(url) {
   const modal = document.getElementById('heroVideoModal');
   const iframe = document.getElementById('heroVideoIframe');
+  const titleEl = document.getElementById('videoModalTitle');
+  const summaryEl = document.getElementById('videoModalSummary');
+  
   if (!modal || !iframe) return;
+  
+  const match = url.match(/embed\/([^?]+)/);
+  const videoId = match ? match[1] : null;
+  
+  const data = (videoId && videoData[videoId]) ? videoData[videoId] : {
+    title: 'Product Video Showcase',
+    summary: 'We produced high-quality product videos showcasing versatile uses of our software. Upbeat and current, all done in-studio to highlight premium features and drive conversions.'
+  };
+  
+  if (titleEl) titleEl.textContent = data.title;
+  if (summaryEl) summaryEl.textContent = data.summary;
+  
   iframe.src = url;
   modal.classList.add('active');
 }
