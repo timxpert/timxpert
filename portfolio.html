@@ -10,6 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="portfolio.css">
+  <!-- Vimeo Player SDK -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
 </head>
 <body class="dark-page">
 
@@ -52,295 +54,220 @@
     </div>
   </section>
 
+  <!-- Filter Bar -->
+  <section class="pf-filter-section">
+    <div class="container">
+      <div class="pf-filter-bar">
+        <div class="pf-filter-group">
+          <label class="pf-filter-label" for="industryFilter">Industry</label>
+          <select class="pf-filter-select" id="industryFilter">
+            <option value="">All Industries</option>
+            <option value="SaaS">SaaS</option>
+            <option value="Education">Education</option>
+            <option value="Web3">Web3</option>
+            <option value="Telecommunications">Telecommunications</option>
+            <option value="Stationery">Stationery</option>
+          </select>
+        </div>
+        <div class="pf-filter-group">
+          <label class="pf-filter-label" for="typeFilter">Video Type</label>
+          <select class="pf-filter-select" id="typeFilter">
+            <option value="">All Types</option>
+            <option value="Explainer">Explainer</option>
+            <option value="App Promo">App Promo</option>
+            <option value="Course Promo">Course Promo</option>
+            <option value="Product Demo">Product Demo</option>
+            <option value="How-to Video">How-to Video</option>
+            <option value="Brand Identity">Brand Identity</option>
+          </select>
+        </div>
+        <button class="pf-clear-btn" id="clearFilters">Clear Filters</button>
+      </div>
+    </div>
+  </section>
+
   <!-- Portfolio Grid -->
   <section class="pf-grid-section">
     <div class="container">
       <div class="portfolio-grid" id="pfGrid">
 
-        <!-- Item 1 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/5RyJR8RDLyc?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/5RyJR8RDLyc?loop=1&playlist=5RyJR8RDLyc&rel=0&modestbranding=1&playsinline=1"
-                title="APPLAI" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
+        <!-- 1. SERLZO -->
+        <div class="pf-card" data-industry="SaaS" data-type="Explainer">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190702972','SERLZO','SaaS · Explainer','A sleek explainer for SERLZO — sharp motion design communicating their value proposition in seconds.')">
+            <img src="https://vumbnail.com/1190702972.jpg" alt="SERLZO" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">APPLAI</h3>
-              <span class="portfolio-category">SaaS Promo</span>
-            </div>
-            <p class="portfolio-desc">Elevating the Applai experience with seamless motion.</p>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">SERLZO</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span class="pf-tag pf-tag--type">Explainer</span></div>
+          </div>
+        </div>
+        <!-- 2. LANGEASE AI -->
+        <div class="pf-card" data-industry="SaaS" data-type="Product Demo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190721386','LANGEASE AI','SaaS · Product Demo','An engaging product demo for LANGEASE AI breaking down their language AI platform.')">
+            <img src="https://vumbnail.com/1190721386.jpg" alt="LANGEASE AI" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">LANGEASE AI</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span class="pf-tag pf-tag--type">Product Demo</span></div>
+          </div>
+        </div>
+        <!-- 3. APPLAI -->
+        <div class="pf-card" data-industry="SaaS" data-type="Explainer">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190694647','APPLAI','SaaS · Explainer','A polished explainer for APPLAI showcasing their AI-powered platform with smooth UI animations.')">
+            <img src="https://vumbnail.com/1190694647.jpg" alt="APPLAI" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">APPLAI</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span class="pf-tag pf-tag--type">Explainer</span></div>
+          </div>
+        </div>
+        <!-- 4. ATTROVE -->
+        <div class="pf-card" data-industry="SaaS" data-type="Product Demo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190693529','ATTROVE','SaaS · Product Demo','A high-energy product demo for ATTROVE capturing their platform\'s power to attract and retain customers.')">
+            <img src="https://vumbnail.com/1190693529.jpg" alt="ATTROVE" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">ATTROVE</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span class="pf-tag pf-tag--type">Product Demo</span></div>
+          </div>
+        </div>
+        <!-- 5. PRODUCT POINTERS -->
+        <div class="pf-card" data-industry="Education" data-type="Course Promo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190717759','PRODUCT POINTERS','Education · Course Promo','A compelling course promo for Product Pointers built to drive enrollments through dynamic visuals.')">
+            <img src="https://vumbnail.com/1190717759.jpg" alt="PRODUCT POINTERS" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">PRODUCT POINTERS</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span class="pf-tag pf-tag--type">Course Promo</span></div>
+          </div>
+        </div>
+        <!-- 6. DWM 1.0 -->
+        <div class="pf-card" data-industry="Education" data-type="Course Promo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190704732','DWM 1.0','Education · Course Promo','The official DWM 1.0 launch — cinematic and high-impact, built to create buzz and drive sign-ups.')">
+            <img src="https://vumbnail.com/1190704732.jpg" alt="DWM 1.0" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">DWM 1.0</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span class="pf-tag pf-tag--type">Course Promo</span></div>
+          </div>
+        </div>
+        <!-- 7. MASTERING PORTFOLIO & RESUME -->
+        <div class="pf-card" data-industry="Education" data-type="Course Promo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190695627','Mastering Portfolio & Resume','Education · Course Promo','A course promo built to inspire professionals to build standout portfolios and land their dream roles.')">
+            <img src="https://vumbnail.com/1190695627.jpg" alt="Mastering Portfolio & Resume" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">MASTERING PORTFOLIO &amp; RESUME</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span class="pf-tag pf-tag--type">Course Promo</span></div>
+          </div>
+        </div>
+        <!-- 8. DSG 2.0 -->
+        <div class="pf-card" data-industry="Education" data-type="Course Promo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190696822','DSG 2.0','Education · Course Promo','A high-energy promo for DSG 2.0 — designed to excite, inspire, and convert prospects into students.')">
+            <img src="https://vumbnail.com/1190696822.jpg" alt="DSG 2.0" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">DSG 2.0</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span class="pf-tag pf-tag--type">Course Promo</span></div>
+          </div>
+        </div>
+        <!-- 9. ZIBACOIN -->
+        <div class="pf-card" data-industry="Web3" data-type="How-to Video">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190697796','ZIBACOIN','Web3 · How-to Video','A clear, step-by-step how-to video guiding users through the ZIBACOIN ecosystem.')">
+            <img src="https://vumbnail.com/1190697796.jpg" alt="ZIBACOIN" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">ZIBACOIN</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Web3</span><span class="pf-tag pf-tag--type">How-to Video</span></div>
+          </div>
+        </div>
+        <!-- 10. POLI -->
+        <div class="pf-card" data-industry="Stationery" data-type="Brand Identity">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190703584','POLI','Stationery · Brand Identity','A sleek brand identity film for POLI — elegant motion that brings their stationery brand to life.')">
+            <img src="https://vumbnail.com/1190703584.jpg" alt="POLI" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">POLI</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Stationery</span><span class="pf-tag pf-tag--type">Brand Identity</span></div>
+          </div>
+        </div>
+        <!-- 11. NEW FROGGYTALK APP -->
+        <div class="pf-card" data-industry="" data-type="App Promo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190710199','NEW FROGGYTALK APP','App Promo','An exciting app promo for FroggyTalk\'s new features — fun, energetic, and built to drive downloads.')">
+            <img src="https://vumbnail.com/1190710199.jpg" alt="NEW FROGGYTALK APP" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">NEW FROGGYTALK APP</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--type">App Promo</span></div>
+          </div>
+        </div>
+        <!-- 12. SERLZO NEW FEATURE -->
+        <div class="pf-card" data-industry="SaaS" data-type="How-to Video">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190710396','SERLZO NEW FEATURE','SaaS · How-to Video','A crisp how-to video walking users through SERLZO\'s latest feature update.')">
+            <img src="https://vumbnail.com/1190710396.jpg" alt="SERLZO NEW FEATURE" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">SERLZO NEW FEATURE</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span class="pf-tag pf-tag--type">How-to Video</span></div>
+          </div>
+        </div>
+        <!-- 13. KRUNCH IT -->
+        <div class="pf-card" data-industry="" data-type="App Promo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190717948','KRUNCH IT','App Promo','A punchy app promo for Krunch It — fast-paced visuals built to drive installs and spark curiosity.')">
+            <img src="https://vumbnail.com/1190717948.jpg" alt="KRUNCH IT" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">KRUNCH IT</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--type">App Promo</span></div>
+          </div>
+        </div>
+        <!-- 14. FUN AFLAMES -->
+        <div class="pf-card" data-industry="Education" data-type="Course Promo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190717995','FUN AFLAMES','Education · Course Promo','A vibrant course promo for Fun Aflames — high energy visuals that inspire and convert.')">
+            <img src="https://vumbnail.com/1190717995.jpg" alt="FUN AFLAMES" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">FUN AFLAMES</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span class="pf-tag pf-tag--type">Course Promo</span></div>
+          </div>
+        </div>
+        <!-- 15. DWM 2.0 -->
+        <div class="pf-card" data-industry="Education" data-type="Course Promo">
+          <div class="pf-card__thumb" onclick="openVimeoModal('1190721260','DWM 2.0','Education · Course Promo','The DWM 2.0 follow-up — bigger, bolder, and built to re-engage and expand the student community.')">
+            <img src="https://vumbnail.com/1190721260.jpg" alt="DWM 2.0" loading="lazy">
+            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="pf-card__body">
+            <h3 class="pf-card__title">DWM 2.0</h3>
+            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span class="pf-tag pf-tag--type">Course Promo</span></div>
           </div>
         </div>
 
-        <!-- Item 2 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/5fUlfj5h9xg?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/5fUlfj5h9xg?loop=1&playlist=5fUlfj5h9xg&rel=0&modestbranding=1&playsinline=1"
-                title="Serlzo" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Serlzo</h3>
-              <span class="portfolio-category">Explainer Video</span>
-            </div>
-            <p class="portfolio-desc">A complete walkthrough of the Serlzo platform.</p>
-          </div>
+        <!-- No Results -->
+        <div class="pf-empty" id="pfEmpty" style="display:none;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <p>No videos match your filters.</p>
+          <button onclick="document.getElementById('clearFilters').click()">Clear Filters</button>
         </div>
-
-        <!-- Item 3 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/LdMB7TeUuRM?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/LdMB7TeUuRM?loop=1&playlist=LdMB7TeUuRM&rel=0&modestbranding=1&playsinline=1"
-                title="Attrove" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Attrove</h3>
-              <span class="portfolio-category">Product Demo</span>
-            </div>
-            <p class="portfolio-desc">Showcasing Attrove's core features in action.</p>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/ECNs0W3-Y98?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/ECNs0W3-Y98?loop=1&playlist=ECNs0W3-Y98&rel=0&modestbranding=1&playsinline=1"
-                title="Langease" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Langease</h3>
-              <span class="portfolio-category">Explainer Video</span>
-            </div>
-            <p class="portfolio-desc">Simplifying language learning with Langease.</p>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/3hHTUZKAaBQ?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/3hHTUZKAaBQ?loop=1&playlist=3hHTUZKAaBQ&rel=0&modestbranding=1&playsinline=1"
-                title="Product Pointers" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Product Pointers</h3>
-              <span class="portfolio-category">Product Demo</span>
-            </div>
-            <p class="portfolio-desc">Highlighting essential product pointers for better usage.</p>
-          </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/7Dn-H_wr0uY?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/7Dn-H_wr0uY?loop=1&playlist=7Dn-H_wr0uY&rel=0&modestbranding=1&playsinline=1"
-                title="Design Workshop Masterclass" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Design Workshop</h3>
-              <span class="portfolio-category">Course Promo</span>
-            </div>
-            <p class="portfolio-desc">Promotional video for the Design Workshop Masterclass.</p>
-          </div>
-        </div>
-
-        <!-- Item 7 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/vllk5LCC1f8?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/vllk5LCC1f8?loop=1&playlist=vllk5LCC1f8&rel=0&modestbranding=1&playsinline=1"
-                title="Fun A Flames" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Fun A Flames</h3>
-              <span class="portfolio-category">Brand Video</span>
-            </div>
-            <p class="portfolio-desc">Capturing the essence and energy of Fun A Flames.</p>
-          </div>
-        </div>
-
-        <!-- Item 8 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/llqTKKe8ISs?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/llqTKKe8ISs?loop=1&playlist=llqTKKe8ISs&rel=0&modestbranding=1&playsinline=1"
-                title="Konna" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Konna</h3>
-              <span class="portfolio-category">Brand Video</span>
-            </div>
-            <p class="portfolio-desc">A dynamic visual introduction to Konna.</p>
-          </div>
-        </div>
-
-        <!-- Item 9 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/Mqa-X7bt1Qo?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/Mqa-X7bt1Qo?loop=1&playlist=Mqa-X7bt1Qo&rel=0&modestbranding=1&playsinline=1"
-                title="Portfolio Masterclass" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Portfolio Masterclass</h3>
-              <span class="portfolio-category">Course Promo</span>
-            </div>
-            <p class="portfolio-desc">Trailer for the ultimate portfolio and resume masterclass.</p>
-          </div>
-        </div>
-
-        <!-- Item 10 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/OxKB4RLrCQc?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/OxKB4RLrCQc?loop=1&playlist=OxKB4RLrCQc&rel=0&modestbranding=1&playsinline=1"
-                title="FroggyTalk" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">FroggyTalk</h3>
-              <span class="portfolio-category">App Promo</span>
-            </div>
-            <p class="portfolio-desc">Introducing FroggyTalk's unique communication features.</p>
-          </div>
-        </div>
-
-        <!-- Item 11 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/LxeNOh6Bb1I?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/LxeNOh6Bb1I?loop=1&playlist=LxeNOh6Bb1I&rel=0&modestbranding=1&playsinline=1"
-                title="Poli" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Poli</h3>
-              <span class="portfolio-category">Brand Video</span>
-            </div>
-            <p class="portfolio-desc">A sleek and engaging visual story for Poli.</p>
-          </div>
-        </div>
-
-        <!-- Item 12 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/WZF8iI3e4KE?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/WZF8iI3e4KE?loop=1&playlist=WZF8iI3e4KE&rel=0&modestbranding=1&playsinline=1"
-                title="Serlzo How-To" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Serlzo How-To</h3>
-              <span class="portfolio-category">Tutorial Video</span>
-            </div>
-            <p class="portfolio-desc">Step-by-step tutorial on mastering Serlzo.</p>
-          </div>
-        </div>
-
-        <!-- Item 13 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/Syaardtlfww?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/Syaardtlfww?loop=1&playlist=Syaardtlfww&rel=0&modestbranding=1&playsinline=1"
-                title="Ziba Coin How-To" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Ziba Coin</h3>
-              <span class="portfolio-category">Tutorial Video</span>
-            </div>
-            <p class="portfolio-desc">An easy guide to navigating Ziba Coin.</p>
-          </div>
-        </div>
-
-        <!-- Item 14 -->
-        <div class="portfolio-item fade-in-up">
-          <div class="portfolio-img-wrapper">
-            <div class="portfolio-yt-wrap" style="width: 100%; height: 100%; position: relative;">
-              <div class="marquee-iframe-overlay" onclick="openVideoModal('https://www.youtube.com/embed/XOJM3nkkHaM?autoplay=1&controls=0&modestbranding=1&rel=0')"></div>
-              <iframe style="width: 100%; height: 100%; border: none; pointer-events: none;"
-                src="https://www.youtube.com/embed/XOJM3nkkHaM?loop=1&playlist=XOJM3nkkHaM&rel=0&modestbranding=1&playsinline=1"
-                title="Krunch It" frameborder="0" allow="encrypted-media" allowfullscreen
-                loading="lazy"></iframe>
-            </div>
-          </div>
-          <div class="portfolio-text-content">
-            <div class="portfolio-info-row">
-              <h3 class="portfolio-title">Krunch It</h3>
-              <span class="portfolio-category">App Promo</span>
-            </div>
-            <p class="portfolio-desc">Discover the crunch with Krunch It's new app.</p>
-          </div>
-        </div>
-      </div>        </div>
 
       </div>
     </div>
   </section>
+
 
   <!-- ======================== FAQ ======================== -->
   <section class="section faq-section" id="faq">
@@ -532,25 +459,51 @@
   </div>
 
   <script>
-    // Filter logic
-    const filters = document.querySelectorAll('.pf-filter');
-    const items   = document.querySelectorAll('.pf-item');
-    const empty   = document.getElementById('pfEmpty');
+    (function () {
+      var industryEl = document.getElementById('industryFilter');
+      var typeEl     = document.getElementById('typeFilter');
+      var clearBtn   = document.getElementById('clearFilters');
+      var cards      = document.querySelectorAll('.pf-card');
+      var emptyEl    = document.getElementById('pfEmpty');
 
-    filters.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filters.forEach(b => b.classList.remove('pf-filter--active'));
-        btn.classList.add('pf-filter--active');
-        const cat = btn.dataset.filter;
-        let visible = 0;
-        items.forEach(item => {
-          const match = cat === 'all' || item.dataset.category === cat;
-          item.style.display = match ? '' : 'none';
-          if (match) visible++;
+      function applyFilters() {
+        var ind  = industryEl.value;
+        var type = typeEl.value;
+        var visible = 0;
+        cards.forEach(function (card) {
+          var matchInd  = !ind  || card.dataset.industry === ind;
+          var matchType = !type || card.dataset.type === type;
+          if (matchInd && matchType) {
+            card.style.opacity = '0';
+            card.style.display = '';
+            requestAnimationFrame(function () { card.style.opacity = '1'; });
+            visible++;
+          } else {
+            card.style.display = 'none';
+          }
         });
-        empty.style.display = visible === 0 ? 'block' : 'none';
+        emptyEl.style.display = visible === 0 ? 'flex' : 'none';
+      }
+
+      industryEl.addEventListener('change', applyFilters);
+      typeEl.addEventListener('change', applyFilters);
+      clearBtn.addEventListener('click', function () {
+        industryEl.value = '';
+        typeEl.value = '';
+        applyFilters();
       });
-    });
+    })();
+
+    function openVimeoModal(videoId, title, category, summary) {
+      var modal    = document.getElementById('heroVideoModal');
+      var iframe   = document.getElementById('heroVideoIframe');
+      var titleEl  = document.getElementById('videoModalTitle');
+      var sumEl    = document.getElementById('videoModalSummary');
+      if (titleEl) titleEl.textContent = title;
+      if (sumEl)   sumEl.textContent   = summary;
+      iframe.src = 'https://player.vimeo.com/video/' + videoId + '?autoplay=1&controls=1&title=0&byline=0&portrait=0';
+      if (modal) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+    }
   </script>
 
   <!-- Video Modal -->
