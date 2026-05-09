@@ -287,13 +287,14 @@ body.dark-page {
   transform: scale(1.04);
 }
 
-/* Play button overlay */
+/* Play button overlay — top-left */
 .pf-card__play {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 12px;
   background: rgba(0,0,0,0);
   transition: background 0.3s ease;
 }
