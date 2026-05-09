@@ -544,6 +544,24 @@
       _vmPlayer = null;
       if (overlay) { overlay.style.opacity = '1'; overlay.style.pointerEvents = 'auto'; }
     }
+
+    // Upgrade thumbnails via Vimeo oEmbed for select videos
+    (function () {
+      var ids = ['1190721386','1190693529','1190694647','1190704732','1190717759'];
+      ids.forEach(function (id) {
+        fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/' + id + '&width=1280')
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            var url = data.thumbnail_url || '';
+            url = url.replace(/_\d+(\.jpg)/, '_1280$1');
+            if (!url) return;
+            document.querySelectorAll('img[src*="vumbnail.com/' + id + '"]').forEach(function (img) {
+              img.src = url;
+            });
+          })
+          .catch(function () {});
+      });
+    })();
   </script>
 
   <!-- Video Modal -->
