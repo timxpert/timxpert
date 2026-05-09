@@ -1682,40 +1682,34 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   min-width: 300px;
   background: #111;
+  cursor: pointer;
 }
-.marquee-item iframe {
-  transform: scale(1.35);
-  transform-origin: center;
-}
-.marquee-iframe-overlay {
+/* Circular play button overlay on marquee items */
+.marquee-play-btn {
   position: absolute;
   inset: 0;
-  z-index: 10;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
+  pointer-events: none;
 }
 
-.marquee-iframe-overlay::after {
-  content: '';
-  width: 56px;
-  height: 56px;
-  background-color: rgba(255, 255, 255, 0.4);
+.marquee-play-btn svg {
+  width: 52px;
+  height: 52px;
+  background: rgba(255,255,255,0.30);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   border-radius: 50%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M8 5v14l11-7z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: calc(50% + 2px) center;
-  background-size: 24px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+  transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.marquee-iframe-overlay:hover::after {
-  background-color: rgba(255, 255, 255, 0.6);
-  transform: scale(1.1);
+.marquee-item:hover .marquee-play-btn svg {
+  background: rgba(255,255,255,0.55);
+  transform: scale(1.12);
 }
 @keyframes scrollLeft {
   0% { transform: translateX(0); }
