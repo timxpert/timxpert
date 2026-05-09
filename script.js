@@ -55,22 +55,30 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeObserver.observe(element);
   });
 
-  // Process Steps Auto-Animation on Scroll (Responsive)
+  // Process Steps — only one active at a time on scroll
   const processSteps = document.querySelectorAll('.process-step');
   if (processSteps.length > 0) {
+    // Use rootMargin to shrink the "trigger zone" to the centre of the viewport.
+    // A step becomes active when it enters this zone, and inactive when it leaves.
     const processObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          // Deactivate ALL steps first, then activate only the intersecting one
+          processSteps.forEach(s => s.classList.remove('active'));
           entry.target.classList.add('active');
         } else {
+          // Remove active from this step when it exits the trigger zone
           entry.target.classList.remove('active');
         }
       });
-    }, { threshold: 0.5 });
-    
-    processSteps.forEach(step => {
-      processObserver.observe(step);
+    }, {
+      root: null,
+      // Only trigger when step is inside the middle ~50% of the viewport height
+      rootMargin: '-25% 0px -25% 0px',
+      threshold: 0
     });
+
+    processSteps.forEach(step => processObserver.observe(step));
   }
 
   // ── Auto-cycling Reel ──────────────────────────────────────
