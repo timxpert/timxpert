@@ -1852,3 +1852,31 @@ h1, h2, h3, h4, h5, h6 {
   .step-number { font-size: 36px; top: 0px; right: 15px; }
   .process-step:hover .step-content { transform: translateY(-5px); }
 }
+
+/* ============================================================
+   RESPONSIVE DASHBOARD ILLUSTRATION
+   ============================================================ */
+@media (max-width: 768px) {
+  .dashboard-body {
+    flex-direction: column !important;
+  }
+  .dashboard-sidebar {
+    width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05) !important;
+  }
+  .dashboard-main {
+    width: 100% !important;
+  }
+  .dashboard-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .dashboard-top-nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .dashboard-top-search {
+    width: 100% !important;
+  }
+}

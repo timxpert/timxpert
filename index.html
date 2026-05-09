@@ -10,7 +10,9 @@
   <link rel="icon" type="image/png" href="assets/logo%20icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -52,7 +54,7 @@
 
   <!-- ======================== HERO ======================== -->
   <section class="hero hero-centered"
-    style="min-height: min(100vh, 480px); display: flex; align-items: center; text-align: center; position: relative; overflow: hidden; padding-top: 80px; padding-bottom: 60px;">
+    style="min-height: min(100vh, 480px); display: flex; align-items: center; text-align: center; position: relative; overflow: hidden; padding-top: 140px; padding-bottom: 20px;">
     <div class="hero-glow-blob"
       style="left: 50%; transform: translateX(-50%); top: -100px; width: 600px; height: 600px; position: absolute; background: radial-gradient(circle, rgba(146,84,255,0.18) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0;">
     </div>
@@ -65,7 +67,7 @@
         <div class="hero-cta" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
           <button
             onclick="openVideoModal('https://www.youtube.com/embed/zuNIolgecvU?autoplay=1&rel=0&modestbranding=1')"
-            class="btn btn-primary">
+            class="btn btn-primary" style="width: 210px;">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
               style="width: 20px; height: 20px;">
               <path d="M8 5v14l11-7z" />
@@ -73,14 +75,14 @@
             Play Showreel
           </button>
           <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-            class="btn btn-outline">Book a Call</a>
+            class="btn btn-outline" style="width: 210px;">Book a Call</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ======================== PORTFOLIO MARQUEE ======================== -->
-  <section class="portfolio-marquee-section" style="padding: 60px 0; overflow: hidden; position: relative;">
+  <section class="portfolio-marquee-section" style="padding: 20px 0 60px 0; overflow: hidden; position: relative;">
 
     <!-- Row 1: Left -->
     <div style="width: 100%; overflow: hidden;">
@@ -197,9 +199,7 @@
           Premium videos that drives revenue.
         </h2>
         <p style="font-size: 18px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 40px;">
-          You built an incredible product, so stop settling for average marketing. Get custom, high-end videos that
-          actually help you close enterprise deals. Hand off the heavy lifting and watch your conversions climb.
-        </p>
+          You built an incredible product, so stop settling for average marketing.</p>
 
         <!-- CSS Dashboard Illustration -->
         <div class="dashboard-illustration fade-in-up"
@@ -216,9 +216,9 @@
               client.timxpert.com</div>
           </div>
 
-          <div style="display: flex; min-height: 320px;">
+          <div class="dashboard-body" style="display: flex; min-height: 320px;">
             <!-- Sidebar (Process / Growth) -->
-            <div
+            <div class="dashboard-sidebar"
               style="width: 25%; border-right: 1px solid rgba(255,255,255,0.05); padding: 24px 16px; display: flex; flex-direction: column; background: rgba(20,20,25,0.5);">
               <div
                 style="font-weight: 600; color: #fff; font-size: 14px; margin-bottom: 24px; display: flex; align-items: center; gap: 8px;">
@@ -305,10 +305,10 @@
             </div>
 
             <!-- Main Content -->
-            <div style="width: 75%; padding: 24px;">
+            <div class="dashboard-main" style="width: 75%; padding: 24px;">
               <!-- Top Nav -->
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
-                <div
+              <div class="dashboard-top-nav" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <div class="dashboard-top-search"
                   style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 8px 16px; width: 50%; display: flex; align-items: center; gap: 8px;">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)"
                     stroke-width="2">
@@ -323,7 +323,7 @@
               </div>
 
               <!-- Grid -->
-              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+              <div class="dashboard-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
                 <!-- Card 1 -->
                 <div
                   style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 16px; transition: transform 0.3s ease;">
@@ -592,7 +592,8 @@
           <div class="step-dot"></div>
           <div class="step-content">
             <h3>Book a Call</h3>
-            <p>We jump on a quick call to discuss your product, target audience, and exactly what you want the video to achieve.</p>
+            <p>We jump on a quick call to discuss your product, target audience, and exactly what you want the video to
+              achieve.</p>
           </div>
         </div>
         <div class="process-step fade-in-up" style="animation-delay: 0.2s;">
@@ -600,7 +601,8 @@
           <div class="step-dot"></div>
           <div class="step-content">
             <h3>Project Brief</h3>
-            <p>After the call, you’ll fill a short brief covering your goals, message, and any references. This keeps everything clear from the start.</p>
+            <p>After the call, you’ll fill a short brief covering your goals, message, and any references. This keeps
+              everything clear from the start.</p>
           </div>
         </div>
         <div class="process-step fade-in-up" style="animation-delay: 0.3s;">
@@ -608,7 +610,8 @@
           <div class="step-dot"></div>
           <div class="step-content">
             <h3>Storyboard / Styleframes</h3>
-            <p>With the script locked in, I design storyboard frames to visualize the direction, pacing, and style of the video for your approval.</p>
+            <p>With the script locked in, I design storyboard frames to visualize the direction, pacing, and style of
+              the video for your approval.</p>
           </div>
         </div>
         <div class="process-step fade-in-up" style="animation-delay: 0.4s;">
@@ -616,7 +619,8 @@
           <div class="step-dot"></div>
           <div class="step-content">
             <h3>Animation</h3>
-            <p>Now, sit back and relax. This is where everything comes to life as I animate the visuals based on the approved storyboard.</p>
+            <p>Now, sit back and relax. This is where everything comes to life as I animate the visuals based on the
+              approved storyboard.</p>
           </div>
         </div>
         <div class="process-step fade-in-up" style="animation-delay: 0.5s;">
@@ -624,7 +628,8 @@
           <div class="step-dot"></div>
           <div class="step-content">
             <h3>Delivery & Feedback</h3>
-            <p>Once the animation is ready, you’ll review the draft. I make the final tweaks and deliver the finished, ready-to-use video.</p>
+            <p>Once the animation is ready, you’ll review the draft. I make the final tweaks and deliver the finished,
+              ready-to-use video.</p>
           </div>
         </div>
       </div>
@@ -838,7 +843,8 @@
   <footer id="contact" style="background-color: #000000; padding-bottom: 50px; text-align: center; position: relative;">
 
     <!-- Big Profile Image (Pan Effect) -->
-    <div class="fade-in-up" style="width: 100%; position: relative; overflow: hidden; margin-bottom: 80px; background-color: #000000;">
+    <div class="fade-in-up"
+      style="width: 100%; position: relative; overflow: hidden; margin-bottom: 80px; background-color: #000000;">
       <img src="assets/footer%20image.jpeg" alt="Timothy" class="footer-me-img" loading="lazy"
         style="width: 100%; height: auto; display: block; transform-origin: center; will-change: transform;">
     </div>
@@ -910,11 +916,12 @@
       <!-- Copyright and Socials and Back to top -->
       <div
         style="display: flex; justify-content: space-between; align-items: center; margin-top: 50px; padding-top: 30px; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-        <p style="color: rgba(255,255,255,0.7); font-size: 14px; margin: 0;">&copy; 2026 Timxpert. All rights reserved.</p>
+        <p style="color: rgba(255,255,255,0.7); font-size: 14px; margin: 0;">&copy; 2026 Timxpert. All rights reserved.
+        </p>
 
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
           style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.3s; margin: 0 auto;"
-          onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.color='#fff';" 
+          onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.color='#fff';"
           onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.color='rgba(255,255,255,0.8)';">
           &uarr; Back to Top
         </button>
