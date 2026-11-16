@@ -512,6 +512,12 @@ dialog::backdrop{background:transparent}
 <script>
 /* ===== Edit content here ===== */
 const SHOWREEL_VIMEO_ID = "1190852100"; // My 2025 showreel
+// Unlisted Vimeo videos only play on other sites with their private key (the "h" in the share link).
+// Add each one here as  "video id": "key"  — find it in Vimeo under Share > Copy link (vimeo.com/ID/KEY).
+const VIMEO_KEYS = {
+  "1190852100": "329607f518",   // Showreel
+  "1190721386": "e29d82646b",   // Langease AI
+};
 const A = "assets/";
 const V = id => "https://vumbnail.com/" + id + ".jpg";
 // Add vimeo:"ID" to any project to make it play.
@@ -610,7 +616,7 @@ function fillFolder(t){
 function setVideo(title, sub, vimeo, img){
   media.hidden=false;
   media.innerHTML = vimeo
-    ? `<iframe src="https://player.vimeo.com/video/${vimeo}?autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="${esc(title)}"></iframe>`
+    ? `<iframe src="https://player.vimeo.com/video/${vimeo}?${VIMEO_KEYS[vimeo]?"h="+VIMEO_KEYS[vimeo]+"&":""}autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="${esc(title)}"></iframe>`
     : (img ? `<img src="${img}" alt="" onerror="this.remove()">` : "");
   mTitle.textContent=title; mSub.textContent=sub;
 }
