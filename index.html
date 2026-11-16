@@ -1,978 +1,770 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Timxpert">
-  <meta name="theme-color" content="#0a0a0a">
-  <meta name="description"
-    content="Timxpert | Motion Design & Video Production. Videos that get you seen, trusted & paid.">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://timxpert.com/">
-  <meta property="og:title" content="Timxpert | Motion Design & Video Production">
-  <meta property="og:description"
-    content="Timxpert | Motion Design & Video Production. Videos that get you seen, trusted & paid.">
-  <meta property="og:image" content="https://timxpert.com/assets/logo.png">
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://timxpert.com/">
-  <meta property="twitter:title" content="Timxpert | Motion Design & Video Production">
-  <meta property="twitter:description"
-    content="Timxpert | Motion Design & Video Production. Videos that get you seen, trusted & paid.">
-  <meta property="twitter:image" content="https://timxpert.com/assets/logo.png">
-  <title>Timxpert | Motion Design & Video Production</title>
-  <link rel="icon" type="image/png" href="https://www.timxpert.com/assets/logo-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://www.timxpert.com/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Timxpert | Motion Design & Video Production</title>
+<meta name="description" content="Timothy Goodness (Timxpert) makes explainer, product demo and launch videos for SaaS founders, tech companies and course creators.">
+<meta property="og:title" content="Timxpert | Motion Design & Video Production">
+<meta property="og:description" content="Videos that get you seen, trusted and paid.">
+<meta property="og:image" content="https://timxpert.com/assets/logo.png">
+<meta property="og:url" content="https://timxpert.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#26074b">
+<link rel="icon" href="assets/logo-icon.png">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/brands.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/fontawesome.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ===== Colors (matched to the Chuloshots reference) ===== */
+:root, :root[data-theme="dark"], :root[data-theme="light"]{
+  /* Timxpert brand: violet palette */
+  --navy:#26074b;      /* deepest purple: dark sections */
+  --navy-2:#2c0b52;    /* dark cards */
+  --navy-3:#3d1170;
+  --line:#4a1e7e;
+  --p-dark:#26074b;    /* panel gradient start (bottom-left) */
+  --p-mid:#572088;
+  --p-bright:#8134be;  /* panel gradient end (top-right) */
+  --violet:#c160ff;    /* vivid edge of the light background */
+  --blue:#fae453;      /* primary accent: yellow (buttons) */
+  --on-accent:#060606; /* text on yellow */
+  --lav:#e7c4fe;       /* soft lilac: italic words, glowing dots */
+  --deep:#8134be;      /* purple accents on light sections */
+  --yellow:#8134be;    /* secondary fill (timeline row 2, badge) */
+  --green:#d99bfe;
+  --lilac:#eddbf5;
+  --periwinkle:#e7c4fe;
+  --paper:#fbfbfb;
+  --ink:#060606;
+  --white:#fbfbfb;
+  --muted:#c9b3e0;
+  --muted-dark:#5a4a6b;
+  --grey:#6f6280;
+  --red:#ff4d6d;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --navy:#26074b; } }
+:root{color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --cond:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Plus Jakarta Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; --mono:"Plus Jakarta Sans",ui-sans-serif,system-ui,sans-serif;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px)}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--navy);color:var(--white);font-family:var(--sans);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--lav);outline-offset:3px;border-radius:8px}
+.wrap{width:min(100% - 2.5rem, 1140px);margin-inline:auto}
+
+/* Dot-grid background */
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+main,footer{position:relative;z-index:1}
+
+/* Type */
+.label{font-family:var(--mono);font-weight:600;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--lav);margin:0 0 .9rem}
+.light .label{color:var(--deep)}
+h1,h2,h3{font-family:var(--cond);font-weight:800;letter-spacing:-.035em;line-height:1;margin:0}
+h2{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-bottom:1rem}
+.it{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:0;font-size:1.08em;color:var(--lav);
+  display:inline-block;padding:0 .28em .02em;margin-left:.06em;border:1.5px solid currentColor;border-radius:50%;line-height:1.02;transform:rotate(-3deg)}
+.light .it{color:var(--deep)}
+.sub{color:var(--muted);max-width:52ch;margin:0 0 2.5rem;font-size:1.05rem}
+.light .sub{color:var(--grey)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.55rem;padding:.85rem 1.35rem;border-radius:999px;font-weight:600;font-size:.98rem;background:var(--blue);color:var(--on-accent);border:0;cursor:pointer;transition:transform .2s,filter .2s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn.dark{background:var(--ink);color:#fff}
+.light .btn:not(.dark){background:#060606;color:#fff}
+.btn.white{background:#fff;color:var(--ink)}
+
+/* Top bar: solid strip so nothing shows through behind the logo and menu */
+.top{position:fixed;top:0;left:0;right:0;z-index:75;background:var(--navy);border-bottom:1px solid var(--line);
+  padding:calc(env(safe-area-inset-top,0px) + 10px) 0 10px}
+.top .wrap{display:flex;align-items:center;justify-content:space-between}
+.badges{display:block}
+.logo-full{display:block;width:104px;height:auto;filter:brightness(0) invert(1)}  /* white logo on the dark bar */
+.top .right{display:flex;align-items:center;gap:.6rem}
+.burger{position:relative;z-index:72;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.12);cursor:pointer;
+  background:#3d1170;
+  transition:transform .35s cubic-bezier(.32,.72,0,1),background .3s;-webkit-tap-highlight-color:transparent}
+.burger:active{transform:scale(.92)}
+.burger span{position:absolute;left:13px;right:13px;height:2px;border-radius:2px;background:#fff;transition:transform .5s cubic-bezier(.32,.72,0,1),top .5s cubic-bezier(.32,.72,0,1)}
+.burger span:nth-child(1){top:16px}
+.burger span:nth-child(2){top:24px}
+.menu-open .burger{background:var(--blue);border-color:var(--blue)}
+.menu-open .burger span{background:var(--on-accent)}
+.menu-open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){top:20px;transform:rotate(-45deg)}
+.menu{position:fixed;inset:0;z-index:70;background:var(--navy);display:flex;flex-direction:column;justify-content:center;
+  padding:calc(env(safe-area-inset-top,0px) + 90px) 1.5rem calc(env(safe-area-inset-bottom,0px) + 2rem);
+  clip-path:circle(0px at var(--mx,90%) var(--my,40px));visibility:hidden;transition:clip-path .7s cubic-bezier(.32,.72,0,1),visibility 0s linear .7s}
+.menu-open .menu{clip-path:circle(150vmax at var(--mx,90%) var(--my,40px));visibility:visible;transition:clip-path .7s cubic-bezier(.32,.72,0,1),visibility 0s}
+.menu .inner{width:min(100%,1140px);margin-inline:auto}
+.menu a.item{display:flex;align-items:baseline;gap:1rem;font-family:var(--cond);font-weight:800;font-size:clamp(2.2rem,8vw,4.2rem);line-height:1.08;letter-spacing:-.035em;color:#fff;
+  opacity:0;transform:translateY(28px);transition:opacity .45s cubic-bezier(.32,.72,0,1),transform .6s cubic-bezier(.32,.72,0,1),color .2s}
+.menu a.item:hover,.menu a.item.on{color:var(--lav)}
+.menu-open .menu a.item{opacity:1;transform:none;transition-delay:calc(.12s + var(--d) * 60ms)}
+.menu .foot{display:flex;flex-wrap:wrap;gap:.8rem 1.4rem;align-items:center;margin-top:2.5rem;opacity:0;transition:opacity .5s .1s}
+.menu-open .menu .foot{opacity:1;transition-delay:.45s}
+.menu .foot a:not(.btn){color:var(--muted);font-size:.95rem}
+.menu .foot a:not(.btn):hover{color:#fff}
+.menu-open{overflow:hidden}
+@media (max-width:700px){.top .right .btn{display:none}}
+
+/* Brand gradients (as on the flyer)
+   1. dark panels: deep purple bottom-left -> bright purple top-right (translucent so the dot grid shows through) */
+.hero,.belief,#toolkit{background:linear-gradient(to top right,rgba(38,7,75,0) 0%,rgba(87,32,136,.55) 55%,rgba(129,52,190,.85) 100%)}
+/* 2. light sections: white glow in the middle, vivid violet at the edges */
+.light{background:radial-gradient(ellipse 85% 75% at 60% 45%,#fefefe 0%,#f6ecfe 32%,#e2b4fe 70%,#c160ff 100%)}
+/* 3. curved dark-purple bottom that overlaps the section above */
+.contact{position:relative;z-index:2;margin-top:-56px;border-radius:56px 56px 0 0;background:linear-gradient(to right,#7d34ba 0%,#4a1a80 45%,#27084e 100%)}
+footer{background:linear-gradient(to right,#7d34ba 0%,#4a1a80 45%,#27084e 100%)}  /* same as the contact section, so they read as one block */
+/* 4. headings on light sections: purple fading into black */
+.light h2{background:linear-gradient(180deg,#8134be 0%,#060606 85%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.light h2 .it{-webkit-text-fill-color:var(--deep)}
+.lead{color:var(--lav)}
+/* Services section: plain brand white */
+#packages.light,.light.plain{background:var(--paper)}
+
+/* Sections */
+section{padding:7rem 0 5rem}
+.light{color:#000}
+.navy{background:#2c0b52}
+
+/* Hero */
+.hero{padding-top:7.5rem}
+.hero-grid{display:grid;grid-template-columns:1fr 1.1fr;grid-template-areas:"text reel";gap:3rem 3.5rem;align-items:center}
+.hero-grid > div:first-child{grid-area:text}
+.hero-grid .reel{grid-area:reel;margin:0}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.4rem);margin-bottom:1.5rem}
+.hero p.intro{color:#c4c8d8;max-width:54ch;margin:0 0 2rem;font-size:1.05rem}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;grid-template-areas:"text" "reel";gap:2rem}}
+
+/* Timeline tracks */
+.timeline{margin-top:3.5rem;position:relative}
+.lanes{position:relative;display:grid;gap:.5rem;padding:10px 0}
+.lane{position:relative}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.clip{border-radius:7px;padding:.55rem .75rem;font-weight:600;font-size:.86rem;line-height:1.25;display:flex;align-items:center;min-height:2.6rem}
+.clips.v1 .clip{background:var(--blue);color:var(--on-accent)}
+.clips.v2 .clip{background:var(--yellow);color:#fff}
+.playhead{position:absolute;top:0;bottom:0;left:0;width:2px;background:var(--red);pointer-events:none;z-index:2;animation:sweep 6s linear infinite}
+.playhead::before{content:"";position:absolute;top:-2px;left:-6px;width:14px;height:12px;background:var(--red);clip-path:polygon(0 0,100% 0,100% 55%,50% 100%,0 55%)}
+@keyframes sweep{
+  0%{left:0;opacity:0}
+  3%{opacity:1}
+  94%{opacity:1}
+  100%{left:calc(100% - 2px);opacity:0}
+}
+@media (prefers-reduced-motion:reduce){.playhead{animation:none;left:40%}}
+@media (max-width:520px){.clip{font-size:.76rem;padding:.5rem .55rem}}
+
+/* Work: folders */
+.work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem 2rem}
+.reel{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:24px;overflow:hidden;background:radial-gradient(100% 120% at 30% 10%,#8134be,#26074b);cursor:pointer;margin-bottom:3rem}
+.reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.reel .play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:84px;height:84px;border-radius:50%;background:var(--lav);display:grid;place-items:center;transition:scale .2s}
+.reel:hover .play{scale:1.07}
+.reel .play::after{content:"";margin-left:6px;border-left:20px solid var(--navy);border-top:12px solid transparent;border-bottom:12px solid transparent}
+.reel .tag{position:absolute;left:1.1rem;bottom:1.1rem;background:#fff;color:var(--ink);font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;padding:.45rem .9rem;border-radius:999px}
+.folders{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem 1.5rem;padding-top:1.5rem}
+.folder{all:unset;cursor:pointer;position:relative;display:block;aspect-ratio:5/4;transition:transform .35s cubic-bezier(.32,.72,0,1);-webkit-tap-highlight-color:transparent}
+.folder:active{transform:scale(.96)}
+.folder:focus-visible{outline:2px solid var(--blue);outline-offset:6px;border-radius:18px}
+.folder .back{position:absolute;inset:8% 0 0 0;border-radius:6px 18px 18px 18px;background:linear-gradient(170deg,#ededed,#d9d9d9)}
+.folder .back::before{content:"";position:absolute;left:0;top:-12px;width:40%;height:16px;border-radius:10px 12px 0 0;background:#ededed}
+.folder .peek{position:absolute;left:9%;right:9%;top:14%;height:52%;border-radius:10px;overflow:hidden;background:var(--sw,#8134be);
+  box-shadow:0 6px 16px rgba(38,7,75,.18);transform:rotate(-3deg);transition:transform .5s cubic-bezier(.32,.72,0,1);display:flex;align-items:flex-start;justify-content:center}
+.folder:nth-child(2) .peek .pt,.folder:nth-child(6) .peek .pt{color:#060606}
+.folder .peek .pt{font-weight:700;font-size:.78rem;color:rgba(255,255,255,.92);padding:.45rem .5rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-align:center;line-height:1.2}
+.folder .peek img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.folder .peek.p2{transform:rotate(4deg) translate(6px,4px);filter:brightness(.9)}
+.folder:hover .peek{transform:rotate(-6deg) translateY(-16px)}
+.folder:hover .peek.p2{transform:rotate(8deg) translate(8px,-8px)}
+.folder{perspective:700px}
+.folder .front{transform-origin:50% 100%;transition:transform .55s cubic-bezier(.32,.72,0,1),box-shadow .55s}
+.folder.opening .front{transform:rotateX(-38deg) translateY(4px);box-shadow:0 26px 40px rgba(38,7,75,.22)}
+.folder.opening .peek{transform:rotate(-9deg) translateY(-38%);transition-duration:.6s}
+.folder.opening .peek.p2{transform:rotate(10deg) translate(14px,-26%);transition-delay:.05s}
+@media (prefers-reduced-motion:reduce){.folder.opening .front,.folder.opening .peek,.folder.opening .peek.p2{transform:none}}
+.folder .front{position:absolute;left:0;right:0;bottom:0;height:48%;border-radius:14px 14px 18px 18px;
+  background:#ffffff;border:1px solid #e6e6e6;box-shadow:0 16px 34px rgba(38,7,75,.14);
+  padding:.8rem 1rem;display:flex;flex-direction:column;justify-content:flex-end}
+.folder .front b{font-weight:700;font-size:1rem;color:var(--ink);line-height:1.2}
+.folder .front span{font-size:.78rem;color:var(--muted-dark)}
+.hint{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-dark);text-align:center;margin:2.5rem 0 0}
+@media (max-width:860px){.folders{grid-template-columns:1fr 1fr;gap:2rem 1rem}}
+@media (max-width:420px){.folder .front{padding:.65rem .75rem}.folder .front b{font-size:.92rem}}
+
+/* Folder sheet */
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.vid{all:unset;cursor:pointer;display:block;border-radius:16px;overflow:hidden;background:var(--navy-2);border:1px solid var(--line)}
+.vid:focus-visible{outline:2px solid var(--lav);outline-offset:3px}
+.vid .th{position:relative;aspect-ratio:16/9;background:radial-gradient(120% 120% at 20% 0%,#3d1170,#2c0b52);display:grid;place-items:center}
+.vid .th .ph{font-family:var(--cond);font-weight:800;font-size:1.6rem;color:#9b7fc0;text-align:center;padding:1rem}
+.vid .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.vid .meta{padding:.8rem 1rem .95rem}
+.vid .meta b{display:block;font-weight:600}
+.vid .meta span{font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+
+
+/* Belief: faint portrait behind the quote */
+.belief{position:relative;overflow:hidden;isolation:isolate}
+.belief .wrap{position:relative;z-index:1}
+.belief-photo{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:url("assets/timxpert-portrait.jpg") center 30%/cover no-repeat;
+  opacity:.16;mix-blend-mode:luminosity;
+  -webkit-mask-image:radial-gradient(ellipse 70% 80% at 50% 45%,#000 30%,transparent 80%);mask-image:radial-gradient(ellipse 70% 80% at 50% 45%,#000 30%,transparent 80%)}
+@media (min-width:900px){.belief-photo{background-size:auto 130%}}
+/* Belief */
+.belief{text-align:center}
+.belief blockquote{margin:0 auto;max-width:34ch;font-family:var(--sans);font-weight:700;letter-spacing:-.01em;font-size:clamp(1.15rem,2vw,1.35rem);line-height:1.5}
+.belief blockquote .it{font-size:1em;transform:rotate(-2deg)}
+.belief cite{display:block;margin-top:1.4rem;font-family:var(--mono);font-style:normal;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* Packages: stacking cards */
+.pk{display:grid;grid-template-columns:.85fr 1.15fr;gap:3rem;align-items:start}
+.pk-left{position:sticky;top:110px}
+
+.stack{display:grid;gap:1.5rem;padding-bottom:2rem}
+.stack::after{content:"";height:28vh}   /* hold the finished pile on screen before moving on */
+.pack{position:sticky;top:calc(96px + var(--i) * 12px);height:230px;border-radius:22px;padding:1.25rem 1.35rem;color:var(--ink);
+  display:flex;flex-direction:column;box-shadow:0 -14px 40px rgba(38,7,75,.12);transform-origin:50% 0;will-change:transform}
+.pack .num{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;opacity:.6;margin-bottom:auto}
+.pack h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,3vw,2rem);line-height:1.05;margin:0 0 .4rem}
+.pack p{margin:0 0 1rem;font-size:.92rem;line-height:1.5;max-width:44ch}
+.pack .btn{align-self:flex-start;padding:.6rem 1rem;font-size:.88rem}
+@media (min-width:900px){.pack{height:250px}}
+.pack .num{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;opacity:.7}
+.pack h3{font-family:var(--serif);font-weight:400;font-size:2.2rem;line-height:1.05;margin:0 0 .6rem}
+@media (max-width:900px){.pk{grid-template-columns:1fr}.pk-left{position:static}}
+
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;margin-top:5rem}
+.step{border-top:1px solid #e6e6e6;padding-top:1rem}
+.step b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:2.6rem;color:var(--deep);line-height:1;display:block}
+.step h4{margin:.5rem 0 .3rem;font-size:1.05rem}
+.step p{margin:0;color:var(--muted-dark);font-size:.93rem;line-height:1.5}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+
+
+/* Toolkit */
+.tk{max-width:760px}
+
+
+
+
+
+.app{background:linear-gradient(to top right,var(--p-dark),var(--p-mid) 60%,var(--p-bright));border:1px solid var(--line);border-radius:24px;padding:1.6rem}
+
+
+.rowlist{display:grid;background:rgba(6,6,6,.28);border-radius:16px;overflow:hidden}
+.rowlist div{padding:1rem 1.2rem;border-bottom:1px solid var(--line)}
+.rowlist div:last-child{border-bottom:0}
+.rowlist b{display:block;font-weight:600;font-size:1.05rem}
+.rowlist span{color:var(--muted);font-size:.9rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.tags span{border:1px solid var(--line);border-radius:999px;padding:.4rem .9rem;font-size:.88rem;color:#e7c4fe;background:#2c0b52}
+
+/* Reviews */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.q{background:linear-gradient(to top right,var(--p-dark),var(--p-mid) 60%,var(--p-bright));border:1px solid var(--line);border-radius:22px;padding:1.6rem;display:flex;flex-direction:column;justify-content:space-between;gap:1.5rem;}
+.q blockquote{margin:0;font-size:1.02rem;line-height:1.6;color:#ececec}
+.q .stars{color:var(--yellow);letter-spacing:3px;margin-bottom:.6rem}
+.who{display:flex;gap:.8rem;align-items:center}
+.who .av{position:relative;width:44px;height:44px;border-radius:50%;background:var(--navy-3);overflow:hidden;flex:none;display:grid;place-items:center;font-weight:700;font-size:.85rem;color:var(--muted)}
+.who .av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.who b{display:block;line-height:1.25}
+.who span{color:var(--muted);font-size:.88rem}
+@media (max-width:900px){.quotes{grid-template-columns:1fr}}
+
+/* FAQ */
+.faq{max-width:820px}
+details{border-bottom:1px solid #e6e6e6}
+details:first-of-type{border-top:1px solid #e6e6e6}
+summary{cursor:pointer;list-style:none;padding:1.25rem 2.5rem 1.25rem 0;font-weight:600;font-size:1.1rem;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:.2rem;top:50%;translate:0 -50%;font-size:1.6rem;font-weight:400;color:var(--deep);transition:rotate .2s}
+details[open] summary::after{rotate:45deg}
+details > div{padding:0 0 1.25rem;color:var(--muted-dark);max-width:62ch}
+details ul{margin:.3rem 0 0;padding-left:1.2rem}
+
+/* Contact */
+.contact h2{font-size:clamp(2.6rem,7vw,5rem)}
+
+.contact-row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.25rem;margin-top:.5rem}
+.social{display:flex;gap:.6rem}
+.social a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;background:#2c0b52;border:1px solid var(--line);
+  transition:transform .35s cubic-bezier(.32,.72,0,1),background .2s,border-color .2s;-webkit-tap-highlight-color:transparent}
+.social a:hover{background:var(--blue);border-color:var(--blue);color:var(--on-accent);transform:translateY(-2px)}
+.social a:active{transform:scale(.92)}
+.social svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.social svg.svg-inline--fa{fill:currentColor;stroke:none;height:20px;width:auto}
+.social.small a{width:40px;height:40px}
+.social.small svg{width:17px;height:17px}
+.social.small svg.svg-inline--fa{height:16px;width:auto}
+section.contact{padding-bottom:1.5rem}
+footer{padding:1rem 0 calc(4rem + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.1rem;text-align:center}
+footer .social a{background:#fbfbfb;border-color:#fbfbfb;color:#26074b}
+footer .social a:hover{background:var(--blue);border-color:var(--blue);color:var(--on-accent)}
+footer nav{display:flex;gap:1.4rem}
+footer a:hover{color:#fff}
+.flogo{font-family:var(--cond);font-weight:800;font-size:1.25rem;letter-spacing:-.03em;color:#fff}
+
+/* Video popup */
+dialog{will-change:transform,opacity;transform-origin:50% 50%;border:0;padding:0;width:min(1040px,calc(100% - 2rem));max-height:calc(100% - 2rem);background:var(--navy-2);color:var(--white);border-radius:22px;overflow:auto}
+dialog::backdrop{background:transparent}
+.scrim{position:fixed;inset:0;z-index:60;background:rgba(20,4,40,.85);opacity:0;pointer-events:none;transition:opacity .5s cubic-bezier(.32,.72,0,1)}
+.scrim.on{opacity:1}
+.m-media{position:relative;aspect-ratio:16/9;background:#000}
+.m-media iframe,.m-media img{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover}
+.m-body{padding:1.4rem 1.5rem 1.6rem}
+.m-body h3{font-size:2.2rem;margin-bottom:.3rem}
+.m-body p{margin:0;color:var(--muted)}
+.x{position:sticky;float:right;top:.7rem;margin:.7rem .7rem -54px 0;z-index:3;width:42px;height:42px;border-radius:50%;border:0;background:#0a0a0a;color:#fff;font-size:1.4rem;cursor:pointer}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
 </head>
-
 <body>
+<canvas id="bg" aria-hidden="true"></canvas>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="container nav-container">
-      <a href="/" class="logo">
-        <img src="https://www.timxpert.com/assets/logo.png" alt="Timxpert" class="logo-img"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
-        <span style="display:none">Tim<span class="text-accent">xpert</span></span>
-      </a>
-      <div class="nav-links">
-        <a href="/" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="portfolio.html" class="nav-link">Portfolio</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-          class="btn btn-primary">Book a Call</a>
-      </div>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+<div class="top">
+  <div class="wrap">
+    <a class="badges" href="#home" aria-label="Timxpert home"><img class="logo-full" src="assets/logo-full.png" alt="Timxpert"></a>
+    <div class="right">
+      <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     </div>
-  </nav>
+  </div>
+</div>
 
-  <!-- Mobile Navigation Overlay -->
-  <div class="mobile-nav-overlay">
-    <div class="mobile-nav-inner">
-      <!-- Nav rows -->
-      <div class="mobile-nav-links">
-        <a href="/" class="mobile-nav-link active">Home</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="portfolio.html" class="mobile-nav-link">Portfolio</a>
-        <a href="#contact" class="mobile-nav-link">Contact</a>
+<nav class="menu" id="menu" aria-label="Main" inert>
+  <div class="inner">
+    <a class="item" href="#home" style="--d:0">Home</a>
+    <a class="item" href="#work" style="--d:1">Work</a>
+    <a class="item" href="#packages" style="--d:2">Services</a>
+    <a class="item" href="#toolkit" style="--d:3">Approach</a>
+    <a class="item" href="#contact" style="--d:4">Contact</a>
+    <div class="foot">
+      <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
+      <div class="social">
+      <a href="mailto:workwithtimxpert@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg></a>
+      <a href="https://www.instagram.com/timxpert" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://x.com/timxpert" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/timothy-goodness-367708274" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+    </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- HERO (dark, dots visible) -->
+<section class="hero" id="home" data-nav="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1><span class="lead">Every great product</span> has a story <span class="it">worth</span> telling.</h1>
+        <p class="intro">Let motion design make yours understood in seconds.</p>
+        <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
       </div>
-      <!-- CTA -->
-      <div class="mobile-nav-cta">
-        <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-          class="btn btn-primary mobile-nav-btn">Book a Call</a>
+      <button class="reel" type="button" id="reel" aria-label="Play showreel">
+            <img src="https://vumbnail.com/1190852100.jpg" alt="" onerror="this.remove()">
+            <span class="play"></span>
+    </button>
+    </div>
+
+    <div class="timeline" aria-label="Videos I make">
+      <div class="lanes">
+        <div class="lane"><div class="clips v1"><span class="clip">Explainer videos</span><span class="clip">Product demos</span><span class="clip">Launch videos</span></div></div>
+        <div class="lane"><div class="clips v2"><span class="clip">Course promos</span><span class="clip">Onboarding videos</span><span class="clip">How-to videos</span></div></div>
+        <span class="playhead" aria-hidden="true"></span>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ======================== HERO ======================== -->
-  <section class="hero hero-centered"
-    style="min-height: min(100vh, 480px); display: flex; align-items: center; text-align: center; position: relative; overflow: hidden; padding-top: 140px; padding-bottom: 20px;">
-    <div class="hero-glow-blob"
-      style="left: 50%; transform: translateX(-50%); top: -100px; width: 600px; height: 600px; position: absolute; background: radial-gradient(circle, rgba(146,84,255,0.18) 0%, transparent 70%); border-radius: 50%; pointer-events: none; z-index: 0;">
-    </div>
-    <div class="container" style="max-width: 800px; position: relative; z-index: 1;">
-      <div class="fade-in-up">
-        <h1 style="font-size: clamp(32px, 5vw, 60px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px;">
-          Every great product has a story worth telling</h1>
-        <p style="font-size: 18px; color: var(--text-secondary); margin: 0 auto 40px; line-height: 1.6;">Why not let
-          engaging motion design make it understood in seconds?</p>
-        <div class="hero-cta" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-          <button
-            onclick="openVimeoModal('1190852100','MY 2025 SHOWREEL','Showreel','A collection of motion design projects, experiments, and visual stories crafted throughout 2025')"
-            class="btn btn-primary" style="width: 210px;">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"
-              style="width: 20px; height: 20px;">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-            Play Showreel
-          </button>
-          <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-            class="btn btn-outline" style="width: 210px;">Book a Call</a>
-        </div>
+<!-- WORK (light) -->
+<section class="light" id="work" data-nav="work">
+  <div class="wrap">
+    <div class="work-head">
+      <div>
+        <h2>My <span class="it">work</span></h2>
+        <p class="sub">Open a folder and pick a video to watch.</p>
       </div>
     </div>
-  </section>
+    <div class="folders" id="folders"></div>
+    
+    <p style="text-align:center;margin:2rem 0 0"><a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a></p>
+  </div>
+</section>
 
-  <!-- ======================== PORTFOLIO MARQUEE ======================== -->
-  <section class="portfolio-marquee-section" style="padding: 20px 0 60px 0; overflow: hidden; position: relative;">
+<!-- BELIEF (dark, dots visible) -->
+<section class="belief">
+  <div class="belief-photo" aria-hidden="true"></div>
+  <div class="wrap">
+    <blockquote>“Great products get ignored every day because the video doesn’t do them <span class="it">justice</span>. I fix that.”</blockquote>
+    <cite>Timxpert</cite>
+  </div>
+</section>
 
-    <!-- Row 1: Left — SERLZO · LANGEASE AI · APPLAI -->
-    <div style="width: 100%; overflow: hidden;">
-      <div class="marquee-wrapper marquee-left">
-        <!-- Set 1 -->
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190702972','SERLZO','Motion Design · Brand Video','A sleek brand film for SERLZO — combining sharp motion design with strategic storytelling.')">
-          <img src="https://vumbnail.com/1190702972.jpg" alt="SERLZO" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190721386','LANGEASE AI','AI · SaaS Explainer','An engaging SaaS explainer for LANGEASE AI breaking down their language AI platform.')">
-          <img src="https://www.timxpert.com/assets/Langease.png" alt="LANGEASE AI" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190694647','APPLAI','AI · Product Demo','A polished product demo for APPLAI showcasing their AI-powered platform with smooth UI animations.')">
-          <img src="https://www.timxpert.com/assets/APPLAI.png" alt="APPLAI" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <!-- Set 2 (duplicate for seamless loop) -->
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190702972','SERLZO','Motion Design · Brand Video','A sleek brand film for SERLZO — combining sharp motion design with strategic storytelling.')">
-          <img src="https://vumbnail.com/1190702972.jpg" alt="SERLZO" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190721386','LANGEASE AI','AI · SaaS Explainer','An engaging SaaS explainer for LANGEASE AI breaking down their language AI platform.')">
-          <img src="https://www.timxpert.com/assets/Langease.png" alt="LANGEASE AI" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190694647','APPLAI','AI · Product Demo','A polished product demo for APPLAI showcasing their AI-powered platform with smooth UI animations.')">
-          <img src="https://www.timxpert.com/assets/APPLAI.png" alt="APPLAI" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
+<!-- PACKAGES (light) -->
+<section class="light" id="packages" data-nav="packages">
+  <div class="wrap">
+    <div class="pk">
+      <div class="pk-left">
+        <h2>Pick your <span class="it">video</span></h2>
+        <p class="sub">Most clients invest between $200 and $500, depending on deliverables and turnaround. You’ll get a transparent quote after our first call.</p>
+        <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
+      </div>
+      <div class="stack" id="stack"></div>
+    </div>
+
+    <div class="steps">
+      <div class="step"><b>01</b><h4>Book a call</h4><p>We discuss your product, audience and what the video should achieve.</p></div>
+      <div class="step"><b>02</b><h4>Project brief</h4><p>You fill a short brief with your goals, message and references.</p></div>
+      <div class="step"><b>03</b><h4>Storyboard</h4><p>I design styleframes for the direction, pacing and style for your approval.</p></div>
+      <div class="step"><b>04</b><h4>Animation</h4><p>Sit back while I animate the approved storyboard.</p></div>
+      <div class="step"><b>05</b><h4>Delivery</h4><p>You review the draft, I make final tweaks and deliver.</p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- TOOLKIT (dark, dots visible) -->
+<section id="toolkit" data-nav="toolkit">
+  <div class="wrap tk">
+    <div>
+      <h2>What I <span class="it">bring</span></h2>
+      <p class="sub">Three principles that shape every video I produce.</p>
+      <div class="app">
+        <div class="rowlist">
+          <div><b>Clarity first</b><span>I simplify even the most technical ideas into a story your audience gets in the first 10 seconds.</span></div>
+          <div><b>Emotional connection</b><span>People buy from brands they feel something about, so I build that into every frame, from script to sound mix.</span></div>
+          <div><b>Results-driven</b><span>Every creative decision is tied to your goal: more demo requests, sign-ups or enrolments.</span></div>
         </div>
       </div>
     </div>
+  </div>
+</section>
 
-    <!-- Row 2: Right — ATTROVE · PRODUCT POINTERS · DWM 1.0 -->
-    <div style="width: 100%; overflow: hidden;">
-      <div class="marquee-wrapper marquee-right">
-        <!-- Set 1 -->
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190693529','ATTROVE','SaaS · Motion Design','A high-energy motion video for ATTROVE capturing their platform power to attract and retain customers.')">
-          <img src="https://www.timxpert.com/assets/Attrove.png" alt="ATTROVE" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190717759','PRODUCT POINTERS','Course · Promo Video','A compelling promo video for Product Pointers designed to drive course enrollments.')">
-          <img src="https://www.timxpert.com/assets/PRODUCT-POINTERS.png" alt="PRODUCT POINTERS" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190704732','DWM 1.0','Product Launch · Motion','The official DWM 1.0 launch — cinematic, high-impact, built to create buzz and drive sign-ups.')">
-          <img src="https://www.timxpert.com/assets/DWM-1.0.png" alt="DWM 1.0" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <!-- Set 2 (duplicate for seamless loop) -->
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190693529','ATTROVE','SaaS · Motion Design','A high-energy motion video for ATTROVE capturing their platform power to attract and retain customers.')">
-          <img src="https://www.timxpert.com/assets/Attrove.png" alt="ATTROVE" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190717759','PRODUCT POINTERS','Course · Promo Video','A compelling promo video for Product Pointers designed to drive course enrollments.')">
-          <img src="https://www.timxpert.com/assets/PRODUCT-POINTERS.png" alt="PRODUCT POINTERS" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-        <div class="marquee-item"
-          onclick="openVimeoModal('1190704732','DWM 1.0','Product Launch · Motion','The official DWM 1.0 launch — cinematic, high-impact, built to create buzz and drive sign-ups.')">
-          <img src="https://www.timxpert.com/assets/DWM-1.0.png" alt="DWM 1.0" loading="lazy"
-            style="width:100%;height:100%;object-fit:cover;display:block;">
-          <div class="marquee-play-btn"><svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg></div>
-        </div>
-      </div>
+<!-- REVIEWS (dark) -->
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <h2>What clients <span class="it">say</span></h2>
+    <p class="sub">From SaaS founders, tech companies and course creators I’ve worked with.</p>
+    <div class="quotes">
+      <div class="q"><div><div class="stars">★★★★★</div><blockquote>“He nails the core problem we are solving. If your product needs motion that tells a clear story, he’s worth a look.”</blockquote></div>
+        <div class="who"><span class="av">TM<img src="assets/TESTIMONIAL-1.jpeg" alt="" onerror="this.remove()"></span><div><b>Tim Monzures</b><span>Founder & CEO at Attrove</span></div></div></div>
+      <div class="q"><div><div class="stars">★★★★★</div><blockquote>“I literally screamed inside of me because how can a video be this flawless? Thank you so much for the exceptional delivery. Looking forward to working with you again.”</blockquote></div>
+        <div class="who"><span class="av">JA<img src="assets/TESTIMONIAL-2.jpeg" alt="" onerror="this.remove()"></span><div><b>John Adeniyi</b><span>Brand Strategist</span></div></div></div>
+      <div class="q"><div><div class="stars">★★★★★</div><blockquote>“The video communicates professionalism, because that’s what you are. How about excellence? 100%. It’s really amazingggggg.”</blockquote></div>
+        <div class="who"><span class="av">BA<img src="assets/TESTIMONIAL-3.jpeg" alt="" onerror="this.remove()"></span><div><b>Bukunmi Afolabi</b><span>Social Media Manager</span></div></div></div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ======================== PORTFOLIO CTA ======================== -->
-  <section style="text-align: center; padding-top: 40px; padding-bottom: 0px;">
-    <a href="portfolio.html" class="btn btn-primary fade-in-up" style="font-size: 16px; padding: 12px 28px;">View Full
-      Portfolio</a>
-  </section>
+<!-- FAQ (light) -->
+<section class="light plain">
+  <div class="wrap faq">
+    <h2>Frequently asked <span class="it">questions</span></h2>
+    <details><summary>What’s required on my end?</summary><div><ul><li>Brand guidelines (logo, fonts, colors)</li><li>Figma files with the necessary UI elements</li><li>Clear feedback during reviews</li><li>Video references, if you have a style in mind</li></ul></div></details>
+    <details><summary>Do you offer revisions?</summary><div>Yes. Each project includes a set number of revision rounds, defined in the project scope.</div></details>
+    <details><summary>What kinds of videos can you create?</summary><div>Explainer videos, product demos, product launches, course promos, onboarding and how-to videos.</div></details>
+    <details><summary>Do you offer custom packages?</summary><div>Yes. For 3+ videos or ongoing collaboration, I build a package around your needs.</div></details>
+    <details><summary>How much does a video cost?</summary><div>Most clients invest between $200 and $500 depending on deliverables and turnaround. You’ll get a transparent quote after our first call.</div></details>
+  </div>
+</section>
 
-  <!-- ======================== INTRO TEXT ======================== -->
-  <section class="section intro-text-section" style="padding-top: 80px; padding-bottom: 0; position: relative;">
-    <div class="container" style="max-width: 800px; text-align: center; position: relative; z-index: 1;">
-      <div class="fade-in-up">
-        <h2 style="font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 20px;">
-          Premium videos that drives revenue.
-        </h2>
-        <p style="font-size: 18px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 40px;">
-          You built an incredible product, so stop settling for average marketing.</p>
-
-        <!-- Lottie Animation -->
-        <div class="fade-in-up" style="display: flex; justify-content: center; margin-top: 40px;">
-          <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.10/dist/dotlottie-wc.js" type="module"></script>
-          <dotlottie-wc src="https://lottie.host/6dcf5bd5-67cd-4262-9923-ca9b08897d54/38vXOa7N4T.lottie"
-            style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
-        </div>
-      </div>
-  </section>
-
-  <!-- ======================== SERVICES ======================== -->
-  <section class="section services-section" id="services" style="padding-top: 40px;">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2>Services</h2>
-        <p>High-quality video content for SaaS founders, tech companies, and course creators.</p>
-      </div>
-      <div class="services-grid">
-        <div class="service-card fade-in-up">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3>Explainer Video</h3>
-          <p>Transform your complex SaaS or tech product into a clear, engaging story that your audience understands
-            in 90 seconds or less.</p>
-        </div>
-
-        <div class="service-card fade-in-up">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-            </svg>
-          </div>
-          <h3>Product Launch Video</h3>
-          <p>Make a massive impact on day one. I craft high-energy, cinematic launch videos designed to build hype and
-            drive immediate sales.</p>
-        </div>
-        <div class="service-card fade-in-up">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3>SaaS Product Demo</h3>
-          <p>Showcase your platform's key features in a polished, professional walkthrough that turns free-trial users
-            into paying customers.</p>
-
-        </div>
-        <div class="service-card fade-in-up">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
-            </svg>
-          </div>
-          <h3>Course Promo Video</h3>
-          <p>Engaging promo videos that speak directly to your ideal student and push them from hesitation
-            to enrolment.</p>
-
-        </div>
-        <div class="service-card fade-in-up">
-          <div class="service-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <h3>How-To Video</h3>
-          <p>I create step-by-step tutorial content that reduces churn, boosts feature adoption, and keeps your users
-            coming back.</p>
-
-        </div>
-      </div>
+<!-- CONTACT (dark, dots visible) -->
+<section class="contact" id="contact" data-nav="contact">
+  <div class="wrap">
+    <h2>Let’s make some <span class="it">magic</span></h2>
+    <p class="sub">Have a product worth showing? Let’s make a video that gets it the attention it deserves.</p>
+    <div class="contact-row">
+      <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
     </div>
-  </section>
+  </div>
+</section>
+</main>
 
-  <!-- ======================== SHOWCASE STRIP ======================== -->
-  <section class="showcase-section">
-    <div class="container">
-      <div class="showcase-header fade-in-up">
-        <div class="showcase-left">
-          <h2>Video for every stage<br>of your <span class="text-accent-light">marketing funnel.</span></h2>
-        </div>
-        <div class="showcase-right">
-          <p>From top-of-funnel awareness to product demos that close deals - I produce the right video for every
-            campaign goal, tailored to your SaaS or tech brand.</p>
-        </div>
-      </div>
+<footer>
+  <div class="wrap">
+    <div class="social small">
+      <a href="mailto:workwithtimxpert@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg></a>
+      <a href="https://www.instagram.com/timxpert" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+      <a href="https://x.com/timxpert" target="_blank" rel="noopener" aria-label="X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+      <a href="https://www.linkedin.com/in/timothy-goodness-367708274" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
     </div>
+    <span>© <span id="yr">2026</span> Timxpert. All rights reserved.</span>
+  </div>
+</footer>
 
-    <!-- Scrolling Cards Strip -->
-    <div class="showcase-strip-wrapper">
-      <div class="showcase-strip">
-        <!-- SET 1 -->
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/product-demo.jpeg" alt="Product Demo Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Product Demo Video</h4>
-            <p>Show your platform in action and turn curious visitors into paying customers.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/explainer.jpeg" alt="Explainer Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Explainer Video</h4>
-            <p>Break down your idea in 90 seconds and make your product impossible to ignore.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/course-promo.jpeg" alt="Course Promo Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Course Promo Video</h4>
-            <p>Drive enrolments with compelling promo videos that speak to your ideal student.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/onboarding.jpeg" alt="Onboarding Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Onboarding Video</h4>
-            <p>Reduce churn by getting your users to their "aha moment" faster.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/product-launch.jpeg" alt="Launch Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Launch Video</h4>
-            <p>Build hype and drive signups for your next product launch or feature release.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/how-to.jpeg" alt="How-To Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>How-To Video</h4>
-            <p>Educate your audience, boost feature adoption, and cut support tickets.</p>
-          </div>
-        </div>
-        <!-- SET 2 (duplicate for seamless loop) -->
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/product-demo.jpeg" alt="Product Demo Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Product Demo Video</h4>
-            <p>Show your platform in action and turn curious visitors into paying customers.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/explainer.jpeg" alt="Explainer Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Explainer Video</h4>
-            <p>Break down your idea in 90 seconds and make your product impossible to ignore.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/course-promo.jpeg" alt="Course Promo Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Course Promo Video</h4>
-            <p>Drive enrolments with compelling promo videos that speak to your ideal student.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/onboarding.jpeg" alt="Onboarding Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Onboarding Video</h4>
-            <p>Reduce churn by getting your users to their "aha moment" faster.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/product-launch.jpeg" alt="Launch Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>Launch Video</h4>
-            <p>Build hype and drive signups for your next product launch or feature release.</p>
-          </div>
-        </div>
-        <div class="showcase-card">
-          <img class="showcase-thumb" src="https://www.timxpert.com/assets/how-to.jpeg" alt="How-To Video"
-            loading="lazy">
-          <div class="showcase-card-body">
-            <h4>How-To Video</h4>
-            <p>Educate your audience, boost feature adoption, and cut support tickets.</p>
-          </div>
-        </div>
+<div class="scrim" id="scrim" aria-hidden="true"></div>
+<dialog id="modal" aria-label="Video">
+  <button class="x" type="button" aria-label="Close">×</button>
+  <div class="m-media" id="m-media"></div>
+  <div class="m-body"><h3 id="m-title"></h3><p id="m-sub"></p><div id="m-list"></div></div>
+</dialog>
 
-      </div>
-    </div>
-  </section>
+<script>
+/* ===== Edit content here ===== */
+const SHOWREEL_VIMEO_ID = "1190852100"; // My 2025 showreel
+// Unlisted Vimeo videos only play on other sites with their private key (the "h" in the share link).
+// Add each one here as  "video id": "key"  — find it in Vimeo under Share > Copy link (vimeo.com/ID/KEY).
+const VIMEO_KEYS = {
+  "1190852100": "329607f518",   // Showreel
+};
+const A = "assets/";
+const V = id => "https://vumbnail.com/" + id + ".jpg";
+// Add vimeo:"ID" to any project to make it play.
+const PROJECTS = [
+  {t:"Serlzo", ind:"SaaS", type:"Explainers", img:""},
+  {t:"Applai", ind:"SaaS", type:"Explainers", img:A+"APPLAI.png"},
+  {t:"FroggyTalk Explainer", ind:"Telecom", type:"Explainers", img:""},
+  {t:"Langease AI", ind:"SaaS", type:"Product demos", img:A+"Langease.png"},
+  {t:"Attrove", ind:"SaaS", type:"Product demos", img:A+"Attrove.png"},
+  {t:"Konna", ind:"SaaS", type:"Product demos", img:A+"Konna.jpeg"},
+  {t:"New FroggyTalk App", ind:"Telecom", type:"App promos", img:""},
+  {t:"FroggyTalk Eritrea", ind:"Telecom", type:"App promos", img:""},
+  {t:"Krunch It", ind:"App", type:"App promos", img:A+"Krunch-it.jpeg"},
+  {t:"Product Pointers", ind:"Education", type:"Course promos", img:A+"PRODUCT-POINTERS.png"},
+  {t:"DWM 1.0", ind:"Education", type:"Course promos", img:A+"DWM-1.0.png"},
+  {t:"DWM 2.0", ind:"Education", type:"Course promos", img:A+"DWMR.png"},
+  {t:"DSG 2.0", ind:"Education", type:"Course promos", img:A+"DSG-2.0.png"},
+  {t:"Mastering Portfolio & Resume", ind:"Education", type:"Course promos", img:A+"MASTERING-PORTFOLIO-RESUME.png"},
+  {t:"Fun Aflames", ind:"Education", type:"Course promos", img:A+"Fun-a-flames.jpeg"},
+  {t:"Serlzo New Feature", ind:"SaaS", type:"How-to videos", img:""},
+  {t:"Zibacoin", ind:"Web3", type:"How-to videos", img:A+"Zibacoin.png"},
+  {t:"Poli", ind:"Stationery", type:"Brand identity", img:A+"Poli.png"}
+];
+const FOLDER_COLORS = ["#8134be","#fae453","#572088","#c160ff","#26074b","#d99bfe"];
+// Set price to e.g. "$250" to show a starting price.
+const PACKAGES = [
+  {name:"Explainer Video", text:"Turn your complex SaaS or tech product into a clear, engaging story your audience understands in 90 seconds or less."},
+  {name:"SaaS Product Demo", text:"Show your platform's key features in a polished walkthrough that turns free-trial users into paying customers."},
+  {name:"Product Launch Video", text:"High-energy launch videos that build hype and drive sign-ups on day one."},
+  {name:"Course Promo Video", text:"Promo videos that speak to your ideal student and move them from hesitation to enrolment."},
+  {name:"How-To Video", text:"Step-by-step tutorials that boost feature adoption, cut support tickets and reduce churn."}
+];
+/* ============================== */
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+const CAL = "https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq";
 
+// Folders
+const types = [...new Set(PROJECTS.map(p=>p.type))];
+document.getElementById("folders").innerHTML = types.map((t,i) => {
+  const items = PROJECTS.filter(p=>p.type===t);
+  const c = FOLDER_COLORS[i % FOLDER_COLORS.length];
+  return `<button class="folder" type="button" data-f="${esc(t)}" aria-label="Open ${esc(t)} folder">
+    <span class="back"></span>
+    ${items[1]?`<span class="peek p2" style="--sw:${c}"><span class="pt">${esc(items[1].t)}</span><img src="${items[1].img}" alt="" loading="lazy" onerror="this.remove()"></span>`:""}
+    <span class="peek" style="--sw:${c}"><span class="pt">${esc(items[0].t)}</span><img src="${items[0].img}" alt="" loading="lazy" onerror="this.remove()"></span>
+    <span class="front"><b>${esc(t)}</b><span>${items.length} video${items.length>1?"s":""}</span></span>
+  </button>`;
+}).join("");
 
-  <!-- ======================== PROCESS ======================== -->
-  <section class="section process-section">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2>The Process</h2>
-        <p>Wondering what the process looks like? Here’s how your project flows from first call to final delivery.</p>
-      </div>
-      <div class="premium-process">
-        <div class="process-step">
-          <div class="step-line"></div>
-          <div class="step-dot"></div>
-          <div class="step-content">
-            <h3>Book a Call</h3>
-            <p>We jump on a quick call to discuss your product, target audience, and exactly what you want the video to
-              achieve.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-line"></div>
-          <div class="step-dot"></div>
-          <div class="step-content">
-            <h3>Project Brief</h3>
-            <p>After the call, you’ll fill a short brief covering your goals, message, and any references. This keeps
-              everything clear from the start.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-line"></div>
-          <div class="step-dot"></div>
-          <div class="step-content">
-            <h3>Storyboard / Styleframes</h3>
-            <p>With the script locked in, I design storyboard frames to visualize the direction, pacing, and style of
-              the video for your approval.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-line"></div>
-          <div class="step-dot"></div>
-          <div class="step-content">
-            <h3>Animation</h3>
-            <p>Now, sit back and relax. This is where everything comes to life as I animate the visuals based on the
-              approved storyboard.</p>
-          </div>
-        </div>
-        <div class="process-step">
-          <div class="step-line" style="display: none;"></div>
-          <div class="step-dot"></div>
-          <div class="step-content">
-            <h3>Delivery & Feedback</h3>
-            <p>Once the animation is ready, you’ll review the draft. I make the final tweaks and deliver the finished,
-              ready-to-use video.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+// Modal: opens out of the folder you tap and shrinks back into it (iOS-style)
+const modal=document.getElementById("modal"), media=document.getElementById("m-media"), list=document.getElementById("m-list");
+const mTitle=document.getElementById("m-title"), mSub=document.getElementById("m-sub"), scrim=document.getElementById("scrim");
+const EASE="cubic-bezier(.32,.72,0,1)";       // Apple's sheet curve
+const calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+let origin=null, closing=false;
 
-  <!-- ======================== TESTIMONIALS ======================== -->
-  <section class="section testimonials-section" id="testimonials">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2>What clients say</h2>
-        <p>Real results from SaaS founders, tech companies, and course creators I've worked with.</p>
-      </div>
-      <div class="testimonials-grid">
+function fromRect(el){
+  const f=el.getBoundingClientRect(), d=modal.getBoundingClientRect();
+  const s=Math.max(.12, Math.min(1, f.width/d.width));
+  const dx=(f.left+f.width/2)-(d.left+d.width/2), dy=(f.top+f.height/2)-(d.top+d.height/2);
+  return `translate(${dx}px,${dy}px) scale(${s})`;
+}
+function morphIn(el){
+  scrim.classList.add("on");
+  if(calm||!el){ modal.animate([{opacity:0},{opacity:1}],{duration:200}); return; }
+  modal.animate([
+    {transform:fromRect(el), opacity:0, borderRadius:"34px"},
+    {opacity:1, offset:.28},
+    {transform:"none", opacity:1, borderRadius:"22px"}
+  ],{duration:620, easing:EASE});
+  [...modal.querySelectorAll(".m-body > h3, .m-body > p, .vid, .m-media")].forEach((c,i)=>
+    c.animate([{opacity:0,transform:"translateY(16px) scale(.98)"},{opacity:1,transform:"none"}],
+      {duration:480, delay:160+i*55, easing:EASE, fill:"backwards"}));
+}
+function closeModal(){
+  if(closing||!modal.open) return; closing=true;
+  scrim.classList.remove("on");
+  const done=()=>{ closing=false; modal.close(); clearAnims(); if(origin) origin.classList.remove("opening"); };
+  if(calm||!origin||!origin.isConnected){ modal.animate([{opacity:1},{opacity:0}],{duration:180}).onfinish=done; return; }
+  modal.animate([
+    {transform:"none", opacity:1, borderRadius:"22px"},
+    {opacity:1, offset:.55},
+    {transform:fromRect(origin), opacity:0, borderRadius:"34px"}
+  ],{duration:460, easing:EASE, fill:"forwards"}).onfinish=done;
+}
+function fillFolder(t){
+  const items=PROJECTS.filter(p=>p.type===t);
+  media.hidden=true; media.innerHTML="";
+  mTitle.textContent=t; mSub.textContent=items.length+" video"+(items.length>1?"s":"")+", tap one to play";
+  list.innerHTML=`<div class="sheet" style="margin-top:1.2rem">${items.map(p=>`
+    <button class="vid" type="button" data-i="${PROJECTS.indexOf(p)}">
+      <div class="th"><span class="ph">${esc(p.t)}</span><img src="${p.img}" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="meta"><b>${esc(p.t)}</b><span>${esc(p.ind)}${p.vimeo?", watch video":""}</span></div>
+    </button>`).join("")}</div>`;
+}
+function setVideo(title, sub, vimeo, img){
+  media.hidden=false;
+  media.innerHTML = vimeo
+    ? `<iframe src="https://player.vimeo.com/video/${vimeo}?${VIMEO_KEYS[vimeo]?"h="+VIMEO_KEYS[vimeo]+"&":""}autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="${esc(title)}"></iframe>`
+    : (img ? `<img src="${img}" alt="" onerror="this.remove()">` : "");
+  mTitle.textContent=title; mSub.textContent=sub;
+}
+function clearAnims(){ modal.getAnimations({subtree:true}).forEach(a=>a.cancel()); }
+function openFrom(el){
+  clearAnims(); closing=false;
+  origin=el; modal.showModal(); modal.scrollTop=0; morphIn(el);
+}
+let folderBusy=false;
+document.getElementById("folders").addEventListener("click", e => {
+  const f=e.target.closest("[data-f]"); if(!f||folderBusy||modal.open) return;
+  folderBusy=true;
+  f.classList.add("opening");                       // 1. folder opens
+  setTimeout(()=>{                                  // 2. then the sheet grows out of it
+    fillFolder(f.dataset.f); openFrom(f); folderBusy=false;
+  }, calm?0:460);
+});
+list.addEventListener("click", e => {
+  const v=e.target.closest("[data-i]"); if(!v) return; const p=PROJECTS[+v.dataset.i];
+  setVideo(p.t, p.ind+" · "+p.type+(p.vimeo?"":" (ask me for the full video on a call)"), p.vimeo, p.img);
+  modal.scrollTo({top:0, behavior: calm?"auto":"smooth"});
+  if(!calm) media.animate([{opacity:0,transform:"scale(.96)"},{opacity:1,transform:"none"}],{duration:420,easing:EASE});
+});
+const reelBtn=document.getElementById("reel");
+reelBtn.addEventListener("click", () => {
+  list.innerHTML=""; setVideo("Showreel","Explainers, product demos and launch videos",SHOWREEL_VIMEO_ID); openFrom(reelBtn);
+});
+modal.addEventListener("cancel", e => { e.preventDefault(); closeModal(); });
+modal.addEventListener("close", () => { media.innerHTML=""; list.innerHTML=""; scrim.classList.remove("on"); document.querySelectorAll(".folder.opening").forEach(f=>f.classList.remove("opening")); });
+modal.addEventListener("click", e => { if(e.target===modal || e.target.closest(".x")) closeModal(); });
 
-        <!-- Testimonial 1 -->
-        <div class="testimonial-card fade-in-up">
-          <div class="stars">★★★★★</div>
-          <p>"He nails the core problem we are solving. If your product needs motion that tells a clear story, he's
-            worth a look."</p>
-          <div class="testimonial-author">
-            <img src="https://www.timxpert.com/assets/TESTIMONIAL-1.jpeg" alt="Tim Monzures" class="author-photo"
-              loading="lazy">
-            <div>
-              <strong>Tim Monzures</strong><br>
-              <span>Founder & CEO at Attrove</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="testimonial-card fade-in-up">
-          <div class="stars">★★★★★</div>
-          <p>"I literally screamed inside of me because how can a video be this flawless? Thank you so much for the
-            exceptional delivery. The video really did an explanation to our goal and idea. Looking forward to working
-            with you again."</p>
-          <div class="testimonial-author">
-            <img src="https://www.timxpert.com/assets/TESTIMONIAL-2.jpeg" alt="John Adeniyi" class="author-photo"
-              loading="lazy">
-            <div>
-              <strong>John Adeniyi</strong><br>
-              <span>Brand Strategist</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="testimonial-card fade-in-up">
-          <div class="stars">★★★★★</div>
-          <p>"The video communicates professionalism, because that's what you are. How about excellence? 100%. It's
-            really amazingggggg."</p>
-          <div class="testimonial-author">
-            <img src="https://www.timxpert.com/assets/TESTIMONIAL-3.jpeg" alt="Bukunmi Afolabi" class="author-photo"
-              loading="lazy">
-            <div>
-              <strong>Bukunmi Afolabi</strong><br>
-              <span>Social Media Manager</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+// Packages
+const PACK_COLORS = ["#eddbf5","#fae453","#e7c4fe","#d99bfe","#f6ecfe"];
+document.getElementById("stack").innerHTML = PACKAGES.map((p,i) => `
+  <div class="pack" style="--i:${i};background:${PACK_COLORS[i % PACK_COLORS.length]}">
+    <span class="num">${String(i+1).padStart(2,"0")} / ${String(PACKAGES.length).padStart(2,"0")}</span>
+    <h3>${esc(p.name)}</h3>
+    <p>${esc(p.text)}</p>
+    <a class="btn dark" href="${CAL}" target="_blank" rel="noopener">Book a call</a>
+  </div>`).join("");
+stackEffect();
 
 
-  <!-- ======================== FAQ ======================== -->
-  <section class="section faq-section" id="faq">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know about working with me.</p>
-      </div>
-      <div class="faq-accordion fade-in-up">
+// Stacking: each covered card shrinks back as the next one slides over it
+function stackEffect(){
+  const cards=[...document.querySelectorAll("#stack .pack")];
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  let ticking=false;
+  function update(){
+    ticking=false;
+    cards.forEach((c,i)=>{
+      const next=cards[i+1];
+      if(!next){ c.style.transform=""; c.style.filter=""; return; }
+      const top=c.getBoundingClientRect().top, nTop=next.getBoundingClientRect().top;
+      const h=c.offsetHeight;
+      const covered=Math.min(1,Math.max(0,1-(nTop-top)/h));    // 0 = next card below, 1 = fully on top
+      const depth=cards.length-1-i;
+      c.style.transform="scale("+(1-covered*Math.min(0.06,0.02*depth+0.02))+")";
+      c.style.filter="brightness("+(1-covered*0.12)+")";
+    });
+  }
+  addEventListener("scroll",()=>{ if(!ticking){ ticking=true; requestAnimationFrame(update); } },{passive:true});
+  addEventListener("resize",update);
+  update();
+}
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What's required on my end?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <ul>
-              <li>Brand guidelines (logo, fonts, colors, etc.)</li>
-              <li>Figma files including necessary UI elements</li>
-              <li>Clear feedback during reviews</li>
-              <li>Video references (if you have specific styles in mind)</li>
-            </ul>
-          </div>
-        </div>
+// Hamburger menu: grows out of the button, links slide in one by one
+const burger=document.getElementById("burger"), menu=document.getElementById("menu");
+function setMenu(open){
+  const r=burger.getBoundingClientRect();
+  menu.style.setProperty("--mx",(r.left+r.width/2)+"px"); menu.style.setProperty("--my",(r.top+r.height/2)+"px");
+  document.documentElement.classList.toggle("menu-open",open);
+  burger.setAttribute("aria-expanded",open); burger.setAttribute("aria-label",open?"Close menu":"Open menu");
+  menu.inert=!open;
+  if(open) setTimeout(()=>menu.querySelector("a.item")?.focus({preventScroll:true}),350);
+}
+burger.addEventListener("click",()=>setMenu(!document.documentElement.classList.contains("menu-open")));
+menu.addEventListener("click",e=>{ if(e.target.closest("a")) setMenu(false); });
+addEventListener("keydown",e=>{ if(e.key==="Escape"&&document.documentElement.classList.contains("menu-open")){ setMenu(false); burger.focus(); } });
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Do you offer revisions?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Yes! I believe in collaboration and refining the work to match your vision. Each project includes a set
-              number of revision rounds, which we’ll define in the project scope.</p>
-          </div>
-        </div>
+// Highlight the current section in the menu
+const navLinks=[...document.querySelectorAll(".menu a.item")];
+const navSecs=[...document.querySelectorAll("[data-nav]")];
+function setNav(){
+  let cur="home"; navSecs.forEach(s=>{ if(s.getBoundingClientRect().top < innerHeight*.45) cur=s.dataset.nav; });
+  navLinks.forEach(a=>a.classList.toggle("on", a.getAttribute("href")==="#"+cur));
+}
+addEventListener("scroll", setNav, {passive:true}); setNav();
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What kinds of videos can you create?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>I work on a variety of videos, but some of the most requested are:</p>
-            <ul>
-              <li>Explainer videos</li>
-              <li>Product demos</li>
-              <li>Product launches</li>
-              <li>Course promos</li>
-              <li>How-to videos</li>
-            </ul>
-          </div>
-        </div>
+/* ===== Dot-grid background (matches the Chuloshots effect) =====
+   A tight grid of faint dots on navy. Near the finger or cursor the dots
+   swell, glow lavender-blue and ripple slightly, then settle back. */
+(function(){
+  const c=document.getElementById("bg"), ctx=c.getContext("2d");
+  const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const GAP=20, REACH=150, BASE_R=1, MAX_R=2.6, PUSH=7;
+  const BASE=[120,78,165], GLOW=[250,228,83]; // faint slate -> lavender
+  let W=0,H=0,cols=0,rows=0,dots=[],px=-1e4,py=-1e4,level=0,target=0,running=false,t=0;
 
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Do you offer custom packages?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Absolutely. For projects with 3+ videos or ongoing collaboration, I offer custom packages designed around
-              your needs. Reach out to me and I'll build something that works for you.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How much does a video cost?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Every project is different. Most clients invest between $200 and $500 depending on deliverables and
-              turnaround. You'll get a transparent quote after our first call, no surprises.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================== CONTACT SECTION ======================== -->
-  <section id="old-contact" class="section cta-banner-section" style="display: none;">
-    <div class="container">
-      <div class="cta-banner fade-in-up">
-        <div class="cta-banner-glow"></div>
-        <div class="cta-banner-content" style="text-align: center;">
-          <h2>Let's work together.</h2>
-          <p style="margin-bottom: 2rem;">I'm currently accepting new projects. Reach out via email or send me a DM on
-            any of my social channels below.</p>
-
-          <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 400px; margin: 0 auto;">
-            <a href="mailto:workwithtimxpert@gmail.com" class="contact-link">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                stroke-width="2" style="width: 20px; height: 20px;">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-              </svg>
-              workwithtimxpert@gmail.com
-            </a>
-            <a href="https://www.instagram.com/timxpert?igsh=cHU3aTluOXQ3M2Jj" target="_blank" rel="noopener"
-              class="contact-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                style="width: 20px; height: 20px;">
-                <path
-                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-              </svg>
-              Instagram
-            </a>
-            <a href="https://x.com/timxpert" target="_blank" rel="noopener" class="contact-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                style="width: 20px; height: 20px;">
-                <path
-                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-              X (Twitter)
-            </a>
-            <a href="https://www.linkedin.com/in/timothy-goodness-367708274?utm_source=share_via&utm_content=profile&utm_medium=member_android"
-              target="_blank" rel="noopener" class="contact-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                style="width: 20px; height: 20px;">
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- ======================== NEW UNIFIED FOOTER ======================== -->
-  <footer id="contact" style="background-color: #000000; padding-bottom: 50px; text-align: center; position: relative;">
-
-    <!-- Big Profile Image (Pan Effect) -->
-    <div class="fade-in-up"
-      style="width: 100%; position: relative; overflow: hidden; margin-bottom: 80px; background-color: #000000;">
-      <img src="https://www.timxpert.com/assets/footer-image.jpeg" alt="Timothy" class="footer-me-img" loading="lazy"
-        style="width: 100%; height: auto; display: block; transform-origin: center; will-change: transform;">
-    </div>
-
-    <div class="container" style="background-color: #000000; position: relative; z-index: 10;">
-
-      <!-- CTA Text -->
-      <h2 class="fade-in-up"
-        style="font-size: clamp(36px, 5vw, 64px); letter-spacing: -0.02em; margin-bottom: 16px; color: rgba(255,255,255,0.9);">
-        Let's make some magic</h2>
-      <p class="fade-in-up"
-        style="font-size: 18px; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 40px; line-height: 1.6;">
-        Have a product worth showing? Let's make a video that gets it the attention it deserves.
-      </p>
-
-      <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-        class="btn btn-primary fade-in-up"
-        style="font-size: 16px; padding: 14px 32px; margin-bottom: 100px; display: inline-flex;">Book a Call</a>
-
-      <!-- Divider removed as requested -->
-
-      <!-- Footer Links / Bottom row -->
-      <div class="footer-bottom-flex"
-        style="display: flex; justify-content: center; text-align: left; flex-wrap: wrap; gap: 60px;">
-
-        <div class="footer-links-col" style="min-width: 140px;">
-          <h4 class="footer-heading" style="font-size: 16px; margin-bottom: 20px; color: rgba(255,255,255,0.9);">
-            Navigation</h4>
-          <div class="footer-links" style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
-            <a href="/" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Home</a>
-            <a href="about.html"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">About</a>
-            <a href="portfolio.html"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Portfolio</a>
-            <a href="#contact"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Contact</a>
-          </div>
-        </div>
-        <div class="footer-links-col" style="min-width: 140px;">
-          <h4 class="footer-heading" style="font-size: 16px; margin-bottom: 20px; color: rgba(255,255,255,0.9);">
-            Services</h4>
-          <div class="footer-links" style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
-            <a href="#services"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Explainer Video</a>
-            <a href="#services"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">SaaS Demo</a>
-            <a href="#services"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Course Promo</a>
-            <a href="#services"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">How-To Video</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Copyright and Socials and Back to top -->
-      <div class="footer-bottom-bar">
-        <p style="color: rgba(255,255,255,0.7); font-size: 14px; margin: 0;">&copy; 2026 Timxpert. All rights reserved.
-        </p>
-
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.3s; margin: 0 auto;"
-          onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.color='#fff';"
-          onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.color='rgba(255,255,255,0.8)';">
-          &uarr; Back to Top
-        </button>
-
-        <div class="social-links" style="margin-top: 0; display: flex; gap: 12px; justify-content: center;">
-          <a href="https://www.instagram.com/timxpert?igsh=cHU3aTluOXQ3M2Jj" target="_blank" rel="noopener"
-            class="social-link"
-            style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: #000000; transition: all 0.3s;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              style="width: 18px; height: 18px;">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
-          </a>
-          <a href="https://x.com/timxpert" target="_blank" rel="noopener" class="social-link"
-            style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: #000000; transition: all 0.3s;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              style="width: 18px; height: 18px;">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/timothy-goodness-367708274" target="_blank" rel="noopener"
-            class="social-link"
-            style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: #000000; transition: all 0.3s;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              style="width: 18px; height: 18px;">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    var _vmPlayer = null;
-
-    // Lazily load Vimeo SDK then resolve
-    function loadVimeoSDK() {
-      return new Promise(function (resolve) {
-        if (window.Vimeo) { resolve(); return; }
-        var s = document.createElement('script');
-        s.src = 'https://player.vimeo.com/api/player.js';
-        s.onload = resolve;
-        document.head.appendChild(s);
-      });
-    }
-
-    function openVimeoModal(videoId, title, category, summary) {
-      var modal = document.getElementById('heroVideoModal');
-      var iframe = document.getElementById('heroVideoIframe');
-      var titleEl = document.getElementById('videoModalTitle');
-      var summaryEl = document.getElementById('videoModalSummary');
-      var overlay = document.getElementById('vmPlayOverlay');
-
-      if (titleEl) titleEl.textContent = title;
-      if (summaryEl) summaryEl.textContent = summary;
-
-      // Load paused — no autoplay, controls visible after play starts
-      iframe.src = 'https://player.vimeo.com/video/' + videoId
-        + '?autoplay=0&controls=1&title=0&byline=0&portrait=0';
-
-      // Show our custom play button
-      if (overlay) overlay.style.opacity = '1';
-      if (overlay) overlay.style.pointerEvents = 'auto';
-
-      _vmPlayer = null; // reset player instance
-
-      if (modal) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
-    }
-
-    function vmPlayVideo() {
-      var overlay = document.getElementById('vmPlayOverlay');
-      var iframe = document.getElementById('heroVideoIframe');
-
-      // Hide overlay immediately for snappy feel
-      if (overlay) { overlay.style.opacity = '0'; overlay.style.pointerEvents = 'none'; }
-
-      loadVimeoSDK().then(function () {
-        if (!_vmPlayer) {
-          _vmPlayer = new Vimeo.Player(iframe);
+  function resize(){
+    const dpr=Math.min(2,devicePixelRatio||1);
+    W=innerWidth; H=innerHeight; c.width=W*dpr; c.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    cols=Math.ceil(W/GAP)+1; rows=Math.ceil(H/GAP)+1; dots=new Array(cols*rows);
+    for(let j=0;j<rows;j++) for(let i=0;i<cols;i++) dots[j*cols+i]={x:i*GAP+GAP/2,y:j*GAP+GAP/2,ox:0,oy:0,g:0};
+    draw();
+  }
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    let busy=false;
+    for(const d of dots){
+      let tx=0,ty=0,glow=0;
+      if(level>0.01){
+        const dx=d.x-px, dy=d.y-py, dist=Math.hypot(dx,dy);
+        if(dist<REACH){
+          const f=1-dist/REACH, s=f*f*(3-2*f)*level;           // smooth falloff
+          const wave=Math.sin(dist*0.09 - t*0.12)*0.5+0.5;       // soft ripple
+          tx=dx/(dist||1)*PUSH*s*(0.6+0.4*wave); ty=dy/(dist||1)*PUSH*s*(0.6+0.4*wave);
+          glow=s*(0.75+0.25*wave);
         }
-        _vmPlayer.play().catch(function (err) {
-          // If play fails, show overlay again
-          if (overlay) { overlay.style.opacity = '1'; overlay.style.pointerEvents = 'auto'; }
-          console.warn('Vimeo play failed:', err);
-        });
-      });
+      }
+      d.ox+=(tx-d.ox)*0.18; d.oy+=(ty-d.oy)*0.18; d.g+=(glow-d.g)*0.18;
+      if(d.g>0.004||Math.abs(d.ox)>0.04||Math.abs(d.oy)>0.04) busy=true;
+      const g=d.g, r=BASE_R+(MAX_R-BASE_R)*g, a=0.55+0.45*g;
+      const cr=BASE[0]+(GLOW[0]-BASE[0])*g|0, cg=BASE[1]+(GLOW[1]-BASE[1])*g|0, cb=BASE[2]+(GLOW[2]-BASE[2])*g|0;
+      ctx.fillStyle=`rgba(${cr},${cg},${cb},${a.toFixed(3)})`;
+      ctx.beginPath(); ctx.arc(d.x+d.ox,d.y+d.oy,r,0,6.2832); ctx.fill();
     }
+    return busy;
+  }
+  function loop(){ t++; level+=(target-level)*0.12; const busy=draw();
+    if(busy||target>0||Math.abs(target-level)>0.005) requestAnimationFrame(loop); else running=false; }
+  function kick(){ if(!running&&!reduce){ running=true; requestAnimationFrame(loop); } }
+  let idle;
+  function at(x,y){ px=x; py=y; target=1; kick(); clearTimeout(idle); idle=setTimeout(()=>{target=0;},1400); }
+  function off(){ target=0; kick(); }
 
-    function closeVideoModal() {
-      var modal = document.getElementById('heroVideoModal');
-      var iframe = document.getElementById('heroVideoIframe');
-      var overlay = document.getElementById('vmPlayOverlay');
-
-      if (modal) modal.classList.remove('active');
-      document.body.style.overflow = '';
-
-      // Stop playback by clearing src
-      iframe.src = '';
-      _vmPlayer = null;
-
-      // Reset overlay for next open
-      if (overlay) { overlay.style.opacity = '1'; overlay.style.pointerEvents = 'auto'; }
-    }
-
-    // Upgrade thumbnails via Vimeo oEmbed for select videos
-    (function () {
-      var ids = ['1190721386', '1190693529', '1190694647', '1190704732', '1190717759'];
-      ids.forEach(function (id) {
-        fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/' + id + '&width=1280')
-          .then(function (r) { return r.json(); })
-          .then(function (data) {
-            var url = data.thumbnail_url || '';
-            // Request highest available width from Vimeo CDN
-            url = url.replace(/_\d+(\.jpg)/, '_1280$1');
-            if (!url) return;
-            document.querySelectorAll('img[src*="vumbnail.com/' + id + '"]').forEach(function (img) {
-              img.src = url;
-            });
-          })
-          .catch(function () { }); // keep vumbnail fallback on error
-      });
-    })();
-  </script>
-
-  <script src="https://www.timxpert.com/script.js" defer></script>
-
-  <!-- Portfolio Modal -->
-  <div class="portfolio-modal" id="portfolioModal">
-    <div class="modal-overlay" onclick="closeModal()"></div>
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <h2 class="modal-title" id="modalTitle">Project Name</h2>
-      <p class="modal-category" id="modalCategory">Category</p>
-      <div class="modal-divider"></div>
-      <div class="modal-section">
-        <h3>Project Summary</h3>
-        <p id="modalDesc">Project description goes here.</p>
-      </div>
-      <div class="modal-section">
-        <h3>My Involvement</h3>
-        <ul class="modal-list">
-          <li>Concept and Scripting</li>
-          <li>Storyboarding</li>
-          <li>Commercial Production</li>
-          <li>UI Animations</li>
-          <li>Dedicated Project Management</li>
-        </ul>
-      </div>
-      <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-        class="btn btn-primary modal-btn">Book a Call</a>
-    </div>
-  </div>
-
-  <!-- Video Modal -->
-  <div class="video-modal" id="heroVideoModal">
-    <div class="video-modal-overlay" onclick="closeVideoModal()"></div>
-    <div class="video-modal-wrapper">
-      <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
-
-      <div class="video-modal-player">
-        <!-- Custom circular play button overlay -->
-        <div class="vm-play-overlay" id="vmPlayOverlay" onclick="vmPlayVideo()">
-          <div class="vm-play-btn">
-            <svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </div>
-        </div>
-        <iframe id="heroVideoIframe" style="width:100%;height:100%;border:none;" src=""
-          allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-
-      <div class="video-modal-details">
-        <h2 id="videoModalTitle">Product Video Showcase</h2>
-        <hr class="video-modal-divider">
-        <h3>Project Summary</h3>
-        <p id="videoModalSummary">We produced high-quality product videos showcasing versatile uses of our new cases.
-          Upbeat and current, all done in-studio to highlight premium features and drive conversions.</p>
-
-
-        <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-          class="btn btn-primary video-modal-btn">Book a call</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Back to Top Button -->
-  <button id="backToTopBtn" aria-label="Back to top"
-    style="position: fixed; bottom: 30px; right: 30px; background: var(--accent-purple); color: white; border: none; border-radius: 50%; width: 50px; height: 50px; font-size: 24px; cursor: pointer; display: none; align-items: center; justify-content: center; z-index: 1000; box-shadow: 0 4px 12px rgba(146,84,255,0.4); transition: opacity 0.3s, transform 0.3s; opacity: 0; transform: translateY(20px);">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M18 15l-6-6-6 6" />
-    </svg>
-  </button>
-
-
+  addEventListener("resize",resize);
+  if(!reduce){
+    addEventListener("pointermove",e=>at(e.clientX,e.clientY),{passive:true});
+    addEventListener("pointerdown",e=>at(e.clientX,e.clientY),{passive:true});
+    addEventListener("touchstart",e=>{const p=e.touches[0]; if(p) at(p.clientX,p.clientY);},{passive:true});
+    addEventListener("touchmove",e=>{const p=e.touches[0]; if(p) at(p.clientX,p.clientY);},{passive:true});
+    addEventListener("touchend",()=>setTimeout(off,500),{passive:true});
+    document.documentElement.addEventListener("mouseleave",off);
+    addEventListener("blur",off);
+  }
+  resize();
+})();
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
 </body>
-
 </html>
