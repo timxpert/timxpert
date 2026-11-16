@@ -371,7 +371,6 @@ dialog::backdrop{background:transparent}
         <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
       </div>
       <button class="reel" type="button" id="reel" aria-label="Play showreel">
-            <img src="https://vumbnail.com/1190852100.jpg" alt="" onerror="this.remove()">
             <span class="play"></span>
     </button>
     </div>
@@ -519,27 +518,26 @@ const VIMEO_KEYS = {
   "1190721386": "e29d82646b",   // Langease AI
 };
 const A = "assets/";
-const V = id => "https://vumbnail.com/" + id + ".jpg";
 // Add vimeo:"ID" to any project to make it play.
 const PROJECTS = [
-  {t:"Serlzo", ind:"SaaS", type:"Explainers", img:V("1190702972"), vimeo:"1190702972"},
-  {t:"Applai", ind:"SaaS", type:"Explainers", img:A+"APPLAI.png", vimeo:"1190694647"},
-  {t:"FroggyTalk Explainer", ind:"Telecom", type:"Explainers", img:V("1190720025"), vimeo:"1190720025"},
-  {t:"Langease AI", ind:"SaaS", type:"Product demos", img:A+"Langease.png", vimeo:"1190721386"},
-  {t:"Attrove", ind:"SaaS", type:"Product demos", img:A+"Attrove.png", vimeo:"1190693529"},
-  {t:"Konna", ind:"SaaS", type:"Product demos", img:A+"Konna.jpeg", vimeo:"1190719821"},
-  {t:"New FroggyTalk App", ind:"Telecom", type:"App promos", img:V("1190710199"), vimeo:"1190710199"},
-  {t:"FroggyTalk Eritrea", ind:"Telecom", type:"App promos", img:V("1190853338"), vimeo:"1190853338"},
-  {t:"Krunch It", ind:"App", type:"App promos", img:A+"Krunch-it.jpeg", vimeo:"1190717948"},
-  {t:"Product Pointers", ind:"Education", type:"Course promos", img:A+"PRODUCT-POINTERS.png", vimeo:"1190717759"},
-  {t:"DWM 1.0", ind:"Education", type:"Course promos", img:A+"DWM-1.0.png", vimeo:"1190704732"},
-  {t:"DWM 2.0", ind:"Education", type:"Course promos", img:A+"DWMR.png", vimeo:"1190721260"},
-  {t:"DSG 2.0", ind:"Education", type:"Course promos", img:A+"DSG-2.0.png", vimeo:"1190696822"},
-  {t:"Mastering Portfolio & Resume", ind:"Education", type:"Course promos", img:A+"MASTERING-PORTFOLIO-RESUME.png", vimeo:"1190695627"},
-  {t:"Fun Aflames", ind:"Education", type:"Course promos", img:A+"Fun-a-flames.jpeg", vimeo:"1190717995"},
-  {t:"Serlzo New Feature", ind:"SaaS", type:"How-to videos", img:V("1190710396"), vimeo:"1190710396"},
-  {t:"Zibacoin", ind:"Web3", type:"How-to videos", img:A+"Zibacoin.png", vimeo:"1190697796"},
-  {t:"Poli", ind:"Stationery", type:"Brand identity", img:A+"Poli.png", vimeo:"1190703584"}
+  {t:"Serlzo", ind:"SaaS", type:"Explainers", img:"", vimeo:"1190702972"},
+  {t:"Applai", ind:"SaaS", type:"Explainers", img:"", vimeo:"1190694647"},
+  {t:"FroggyTalk Explainer", ind:"Telecom", type:"Explainers", img:"", vimeo:"1190720025"},
+  {t:"Langease AI", ind:"SaaS", type:"Product demos", img:"", vimeo:"1190721386"},
+  {t:"Attrove", ind:"SaaS", type:"Product demos", img:"", vimeo:"1190693529"},
+  {t:"Konna", ind:"SaaS", type:"Product demos", img:"", vimeo:"1190719821"},
+  {t:"New FroggyTalk App", ind:"Telecom", type:"App promos", img:"", vimeo:"1190710199"},
+  {t:"FroggyTalk Eritrea", ind:"Telecom", type:"App promos", img:"", vimeo:"1190853338"},
+  {t:"Krunch It", ind:"App", type:"App promos", img:"", vimeo:"1190717948"},
+  {t:"Product Pointers", ind:"Education", type:"Course promos", img:"", vimeo:"1190717759"},
+  {t:"DWM 1.0", ind:"Education", type:"Course promos", img:"", vimeo:"1190704732"},
+  {t:"DWM 2.0", ind:"Education", type:"Course promos", img:"", vimeo:"1190721260"},
+  {t:"DSG 2.0", ind:"Education", type:"Course promos", img:"", vimeo:"1190696822"},
+  {t:"Mastering Portfolio & Resume", ind:"Education", type:"Course promos", img:"", vimeo:"1190695627"},
+  {t:"Fun Aflames", ind:"Education", type:"Course promos", img:"", vimeo:"1190717995"},
+  {t:"Serlzo New Feature", ind:"SaaS", type:"How-to videos", img:"", vimeo:"1190710396"},
+  {t:"Zibacoin", ind:"Web3", type:"How-to videos", img:"", vimeo:"1190697796"},
+  {t:"Poli", ind:"Stationery", type:"Brand identity", img:"", vimeo:"1190703584"}
 ];
 const FOLDER_COLORS = ["#8134be","#fae453","#572088","#c160ff","#26074b","#d99bfe"];
 // Set price to e.g. "$250" to show a starting price.
@@ -561,8 +559,8 @@ document.getElementById("folders").innerHTML = types.map((t,i) => {
   const c = FOLDER_COLORS[i % FOLDER_COLORS.length];
   return `<button class="folder" type="button" data-f="${esc(t)}" aria-label="Open ${esc(t)} folder">
     <span class="back"></span>
-    ${items[1]?`<span class="peek p2" style="--sw:${c}"><span class="pt">${esc(items[1].t)}</span><img src="${items[1].img}" alt="" loading="lazy" onerror="this.remove()"></span>`:""}
-    <span class="peek" style="--sw:${c}"><span class="pt">${esc(items[0].t)}</span><img src="${items[0].img}" alt="" loading="lazy" onerror="this.remove()"></span>
+    ${items[1]?`<span class="peek p2" style="--sw:${c}"><span class="pt">${esc(items[1].t)}</span>${items[1].img?`<img src="${items[1].img}" alt="" loading="lazy" onerror="this.remove()">`:""}</span>`:""}
+    <span class="peek" style="--sw:${c}"><span class="pt">${esc(items[0].t)}</span>${items[0].img?`<img src="${items[0].img}" alt="" loading="lazy" onerror="this.remove()">`:""}</span>
     <span class="front"><b>${esc(t)}</b><span>${items.length} video${items.length>1?"s":""}</span></span>
   </button>`;
 }).join("");
@@ -609,7 +607,7 @@ function fillFolder(t){
   mTitle.textContent=t; mSub.textContent=items.length+" video"+(items.length>1?"s":"")+", tap one to play";
   list.innerHTML=`<div class="sheet" style="margin-top:1.2rem">${items.map(p=>`
     <button class="vid" type="button" data-i="${PROJECTS.indexOf(p)}">
-      <div class="th"><span class="ph">${esc(p.t)}</span><img src="${p.img}" alt="" loading="lazy" onerror="this.remove()"></div>
+      <div class="th"><span class="ph">${esc(p.t)}</span>${p.img?`<img src="${p.img}" alt="" loading="lazy" onerror="this.remove()">`:""}</div>
       <div class="meta"><b>${esc(p.t)}</b><span>${esc(p.ind)}${p.vimeo?", watch video":""}</span></div>
     </button>`).join("")}</div>`;
 }
