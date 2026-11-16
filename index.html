@@ -79,27 +79,24 @@ h2{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-bottom:1rem}
 .light .btn:not(.dark){background:#060606;color:#fff}
 .btn.white{background:#fff;color:var(--ink)}
 
-/* Top bar: logo badges + floating icon pill */
-.top{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:0;right:0;z-index:75;pointer-events:none}
+/* Top bar: solid strip so nothing shows through behind the logo and menu */
+.top{position:fixed;top:0;left:0;right:0;z-index:75;background:var(--navy);border-bottom:1px solid var(--line);
+  padding:calc(env(safe-area-inset-top,0px) + 10px) 0 10px}
 .top .wrap{display:flex;align-items:center;justify-content:space-between}
-.badges{pointer-events:auto;display:block}
-.logo-full{display:block;width:140px;height:auto;filter:brightness(0) invert(1);transition:filter .35s}  /* white over dark sections */
-.top.on-light .logo-full{filter:none}   /* original brand purple over the white sections */
-.badges span{width:24px;height:24px;border-radius:5px;display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:.85rem;line-height:1}
-.badges span:first-child{background:var(--blue);color:var(--on-accent)}
-.badges span:last-child{background:var(--yellow);color:#fff}
-.top .right{display:flex;align-items:center;gap:.6rem;pointer-events:auto}
-.burger{position:relative;z-index:72;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.1);cursor:pointer;
-  background:#3d1170;box-shadow:0 10px 30px rgba(0,0,0,.35);
+.badges{display:block}
+.logo-full{display:block;width:104px;height:auto;filter:brightness(0) invert(1)}  /* white logo on the dark bar */
+.top .right{display:flex;align-items:center;gap:.6rem}
+.burger{position:relative;z-index:72;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.12);cursor:pointer;
+  background:#3d1170;
   transition:transform .35s cubic-bezier(.32,.72,0,1),background .3s;-webkit-tap-highlight-color:transparent}
 .burger:active{transform:scale(.92)}
-.burger span{position:absolute;left:15px;right:15px;height:2px;border-radius:2px;background:#fff;transition:transform .5s cubic-bezier(.32,.72,0,1),top .5s cubic-bezier(.32,.72,0,1)}
-.burger span:nth-child(1){top:20px}
-.burger span:nth-child(2){top:29px}
+.burger span{position:absolute;left:13px;right:13px;height:2px;border-radius:2px;background:#fff;transition:transform .5s cubic-bezier(.32,.72,0,1),top .5s cubic-bezier(.32,.72,0,1)}
+.burger span:nth-child(1){top:16px}
+.burger span:nth-child(2){top:24px}
 .menu-open .burger{background:var(--blue);border-color:var(--blue)}
 .menu-open .burger span{background:var(--on-accent)}
-.menu-open .burger span:nth-child(1){top:24.5px;transform:rotate(45deg)}
-.menu-open .burger span:nth-child(2){top:24.5px;transform:rotate(-45deg)}
+.menu-open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
+.menu-open .burger span:nth-child(2){top:20px;transform:rotate(-45deg)}
 .menu{position:fixed;inset:0;z-index:70;background:var(--navy);display:flex;flex-direction:column;justify-content:center;
   padding:calc(env(safe-area-inset-top,0px) + 90px) 1.5rem calc(env(safe-area-inset-bottom,0px) + 2rem);
   clip-path:circle(0px at var(--mx,90%) var(--my,40px));visibility:hidden;transition:clip-path .7s cubic-bezier(.32,.72,0,1),visibility 0s linear .7s}
@@ -695,15 +692,6 @@ function setMenu(open){
 burger.addEventListener("click",()=>setMenu(!document.documentElement.classList.contains("menu-open")));
 menu.addEventListener("click",e=>{ if(e.target.closest("a")) setMenu(false); });
 addEventListener("keydown",e=>{ if(e.key==="Escape"&&document.documentElement.classList.contains("menu-open")){ setMenu(false); burger.focus(); } });
-
-// Logo colour follows the section underneath it
-const topBar=document.querySelector(".top");
-function logoTone(){
-  const y=topBar.getBoundingClientRect().top+30;
-  const sec=[...document.querySelectorAll("main section, footer")].find(s=>{const r=s.getBoundingClientRect();return r.top<=y&&r.bottom>y;});
-  topBar.classList.toggle("on-light", !!(sec&&sec.classList.contains("light")));
-}
-addEventListener("scroll",()=>requestAnimationFrame(logoTone),{passive:true}); logoTone();
 
 // Highlight the current section in the menu
 const navLinks=[...document.querySelectorAll(".menu a.item")];
