@@ -323,7 +323,6 @@ dialog::backdrop{background:transparent}
 .m-body{padding:1.4rem 1.5rem 1.6rem}
 .m-body h3{font-size:2.2rem;margin-bottom:.3rem}
 .m-body p{margin:0;color:var(--muted)}
-.vimeo-link{display:inline-block;margin-top:.7rem;color:var(--lav);font-weight:600;font-size:.92rem;text-decoration:underline;text-underline-offset:3px}
 .x{position:sticky;float:right;top:.7rem;margin:.7rem .7rem -54px 0;z-index:3;width:42px;height:42px;border-radius:50%;border:0;background:#0a0a0a;color:#fff;font-size:1.4rem;cursor:pointer}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
@@ -507,7 +506,7 @@ dialog::backdrop{background:transparent}
 <dialog id="modal" aria-label="Video">
   <button class="x" type="button" aria-label="Close">×</button>
   <div class="m-media" id="m-media"></div>
-  <div class="m-body"><h3 id="m-title"></h3><p id="m-sub"></p><a id="m-vimeo" class="vimeo-link" target="_blank" rel="noopener" hidden>Watch on Vimeo</a><div id="m-list"></div></div>
+  <div class="m-body"><h3 id="m-title"></h3><p id="m-sub"></p><div id="m-list"></div></div>
 </dialog>
 
 <script>
@@ -600,7 +599,7 @@ function closeModal(){
 }
 function fillFolder(t){
   const items=PROJECTS.filter(p=>p.type===t);
-  media.hidden=true; media.innerHTML=""; document.getElementById("m-vimeo").hidden=true;
+  media.hidden=true; media.innerHTML="";
   mTitle.textContent=t; mSub.textContent=items.length+" video"+(items.length>1?"s":"")+", tap one to play";
   list.innerHTML=`<div class="sheet" style="margin-top:1.2rem">${items.map(p=>`
     <button class="vid" type="button" data-i="${PROJECTS.indexOf(p)}">
@@ -614,7 +613,6 @@ function setVideo(title, sub, vimeo, img){
     ? `<iframe src="https://player.vimeo.com/video/${vimeo}?autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="${esc(title)}"></iframe>`
     : (img ? `<img src="${img}" alt="" onerror="this.remove()">` : "");
   mTitle.textContent=title; mSub.textContent=sub;
-  const vl=document.getElementById("m-vimeo"); vl.hidden=!vimeo; if(vimeo) vl.href="https://vimeo.com/"+vimeo;
 }
 function clearAnims(){ modal.getAnimations({subtree:true}).forEach(a=>a.cancel()); }
 function openFrom(el){
