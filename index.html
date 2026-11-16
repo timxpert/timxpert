@@ -83,7 +83,8 @@ h2{font-size:clamp(2.1rem,5.2vw,3.6rem);margin-bottom:1rem}
 .top{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:0;right:0;z-index:75;pointer-events:none}
 .top .wrap{display:flex;align-items:center;justify-content:space-between}
 .badges{pointer-events:auto;display:block}
-.logo-mark{width:48px;height:48px;border-radius:50%;display:block;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.logo-full{display:block;width:140px;height:auto;filter:brightness(0) invert(1);transition:filter .35s}  /* white over dark sections */
+.top.on-light .logo-full{filter:none}   /* original brand purple over the white sections */
 .badges span{width:24px;height:24px;border-radius:5px;display:grid;place-items:center;font-family:var(--cond);font-weight:800;font-size:.85rem;line-height:1}
 .badges span:first-child{background:var(--blue);color:var(--on-accent)}
 .badges span:last-child{background:var(--yellow);color:#fff}
@@ -325,6 +326,7 @@ dialog::backdrop{background:transparent}
 .m-body{padding:1.4rem 1.5rem 1.6rem}
 .m-body h3{font-size:2.2rem;margin-bottom:.3rem}
 .m-body p{margin:0;color:var(--muted)}
+.vimeo-link{display:inline-block;margin-top:.7rem;color:var(--lav);font-weight:600;font-size:.92rem;text-decoration:underline;text-underline-offset:3px}
 .x{position:sticky;float:right;top:.7rem;margin:.7rem .7rem -54px 0;z-index:3;width:42px;height:42px;border-radius:50%;border:0;background:#0a0a0a;color:#fff;font-size:1.4rem;cursor:pointer}
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
@@ -335,7 +337,7 @@ dialog::backdrop{background:transparent}
 
 <div class="top">
   <div class="wrap">
-    <a class="badges" href="#home" aria-label="Timxpert home"><img class="logo-mark" src="assets/logo-mark.png" alt="Timxpert"></a>
+    <a class="badges" href="#home" aria-label="Timxpert home"><img class="logo-full" src="assets/logo-full.png" alt="Timxpert"></a>
     <div class="right">
       <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
       <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
@@ -508,7 +510,7 @@ dialog::backdrop{background:transparent}
 <dialog id="modal" aria-label="Video">
   <button class="x" type="button" aria-label="Close">×</button>
   <div class="m-media" id="m-media"></div>
-  <div class="m-body"><h3 id="m-title"></h3><p id="m-sub"></p><div id="m-list"></div></div>
+  <div class="m-body"><h3 id="m-title"></h3><p id="m-sub"></p><a id="m-vimeo" class="vimeo-link" target="_blank" rel="noopener" hidden>Watch on Vimeo</a><div id="m-list"></div></div>
 </dialog>
 
 <script>
@@ -601,7 +603,7 @@ function closeModal(){
 }
 function fillFolder(t){
   const items=PROJECTS.filter(p=>p.type===t);
-  media.hidden=true; media.innerHTML="";
+  media.hidden=true; media.innerHTML=""; document.getElementById("m-vimeo").hidden=true;
   mTitle.textContent=t; mSub.textContent=items.length+" video"+(items.length>1?"s":"")+", tap one to play";
   list.innerHTML=`<div class="sheet" style="margin-top:1.2rem">${items.map(p=>`
     <button class="vid" type="button" data-i="${PROJECTS.indexOf(p)}">
@@ -612,9 +614,10 @@ function fillFolder(t){
 function setVideo(title, sub, vimeo, img){
   media.hidden=false;
   media.innerHTML = vimeo
-    ? `<iframe src="https://player.vimeo.com/video/${vimeo}?autoplay=1&title=0&byline=0&portrait=0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="${esc(title)}"></iframe>`
+    ? `<iframe src="https://player.vimeo.com/video/${vimeo}?autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="${esc(title)}"></iframe>`
     : (img ? `<img src="${img}" alt="" onerror="this.remove()">` : "");
   mTitle.textContent=title; mSub.textContent=sub;
+  const vl=document.getElementById("m-vimeo"); vl.hidden=!vimeo; if(vimeo) vl.href="https://vimeo.com/"+vimeo;
 }
 function clearAnims(){ modal.getAnimations({subtree:true}).forEach(a=>a.cancel()); }
 function openFrom(el){
@@ -692,6 +695,15 @@ function setMenu(open){
 burger.addEventListener("click",()=>setMenu(!document.documentElement.classList.contains("menu-open")));
 menu.addEventListener("click",e=>{ if(e.target.closest("a")) setMenu(false); });
 addEventListener("keydown",e=>{ if(e.key==="Escape"&&document.documentElement.classList.contains("menu-open")){ setMenu(false); burger.focus(); } });
+
+// Logo colour follows the section underneath it
+const topBar=document.querySelector(".top");
+function logoTone(){
+  const y=topBar.getBoundingClientRect().top+30;
+  const sec=[...document.querySelectorAll("main section, footer")].find(s=>{const r=s.getBoundingClientRect();return r.top<=y&&r.bottom>y;});
+  topBar.classList.toggle("on-light", !!(sec&&sec.classList.contains("light")));
+}
+addEventListener("scroll",()=>requestAnimationFrame(logoTone),{passive:true}); logoTone();
 
 // Highlight the current section in the menu
 const navLinks=[...document.querySelectorAll(".menu a.item")];
