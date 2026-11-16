@@ -516,29 +516,30 @@ const SHOWREEL_VIMEO_ID = "1190852100"; // My 2025 showreel
 // Add each one here as  "video id": "key"  — find it in Vimeo under Share > Copy link (vimeo.com/ID/KEY).
 const VIMEO_KEYS = {
   "1190852100": "329607f518",   // Showreel
+  "1190721386": "e29d82646b",   // Langease AI
 };
 const A = "assets/";
 const V = id => "https://vumbnail.com/" + id + ".jpg";
 // Add vimeo:"ID" to any project to make it play.
 const PROJECTS = [
-  {t:"Serlzo", ind:"SaaS", type:"Explainers", img:""},
-  {t:"Applai", ind:"SaaS", type:"Explainers", img:A+"APPLAI.png"},
-  {t:"FroggyTalk Explainer", ind:"Telecom", type:"Explainers", img:""},
-  {t:"Langease AI", ind:"SaaS", type:"Product demos", img:A+"Langease.png"},
-  {t:"Attrove", ind:"SaaS", type:"Product demos", img:A+"Attrove.png"},
-  {t:"Konna", ind:"SaaS", type:"Product demos", img:A+"Konna.jpeg"},
-  {t:"New FroggyTalk App", ind:"Telecom", type:"App promos", img:""},
-  {t:"FroggyTalk Eritrea", ind:"Telecom", type:"App promos", img:""},
-  {t:"Krunch It", ind:"App", type:"App promos", img:A+"Krunch-it.jpeg"},
-  {t:"Product Pointers", ind:"Education", type:"Course promos", img:A+"PRODUCT-POINTERS.png"},
-  {t:"DWM 1.0", ind:"Education", type:"Course promos", img:A+"DWM-1.0.png"},
-  {t:"DWM 2.0", ind:"Education", type:"Course promos", img:A+"DWMR.png"},
-  {t:"DSG 2.0", ind:"Education", type:"Course promos", img:A+"DSG-2.0.png"},
-  {t:"Mastering Portfolio & Resume", ind:"Education", type:"Course promos", img:A+"MASTERING-PORTFOLIO-RESUME.png"},
-  {t:"Fun Aflames", ind:"Education", type:"Course promos", img:A+"Fun-a-flames.jpeg"},
-  {t:"Serlzo New Feature", ind:"SaaS", type:"How-to videos", img:""},
-  {t:"Zibacoin", ind:"Web3", type:"How-to videos", img:A+"Zibacoin.png"},
-  {t:"Poli", ind:"Stationery", type:"Brand identity", img:A+"Poli.png"}
+  {t:"Serlzo", ind:"SaaS", type:"Explainers", img:V("1190702972"), vimeo:"1190702972"},
+  {t:"Applai", ind:"SaaS", type:"Explainers", img:A+"APPLAI.png", vimeo:"1190694647"},
+  {t:"FroggyTalk Explainer", ind:"Telecom", type:"Explainers", img:V("1190720025"), vimeo:"1190720025"},
+  {t:"Langease AI", ind:"SaaS", type:"Product demos", img:A+"Langease.png", vimeo:"1190721386"},
+  {t:"Attrove", ind:"SaaS", type:"Product demos", img:A+"Attrove.png", vimeo:"1190693529"},
+  {t:"Konna", ind:"SaaS", type:"Product demos", img:A+"Konna.jpeg", vimeo:"1190719821"},
+  {t:"New FroggyTalk App", ind:"Telecom", type:"App promos", img:V("1190710199"), vimeo:"1190710199"},
+  {t:"FroggyTalk Eritrea", ind:"Telecom", type:"App promos", img:V("1190853338"), vimeo:"1190853338"},
+  {t:"Krunch It", ind:"App", type:"App promos", img:A+"Krunch-it.jpeg", vimeo:"1190717948"},
+  {t:"Product Pointers", ind:"Education", type:"Course promos", img:A+"PRODUCT-POINTERS.png", vimeo:"1190717759"},
+  {t:"DWM 1.0", ind:"Education", type:"Course promos", img:A+"DWM-1.0.png", vimeo:"1190704732"},
+  {t:"DWM 2.0", ind:"Education", type:"Course promos", img:A+"DWMR.png", vimeo:"1190721260"},
+  {t:"DSG 2.0", ind:"Education", type:"Course promos", img:A+"DSG-2.0.png", vimeo:"1190696822"},
+  {t:"Mastering Portfolio & Resume", ind:"Education", type:"Course promos", img:A+"MASTERING-PORTFOLIO-RESUME.png", vimeo:"1190695627"},
+  {t:"Fun Aflames", ind:"Education", type:"Course promos", img:A+"Fun-a-flames.jpeg", vimeo:"1190717995"},
+  {t:"Serlzo New Feature", ind:"SaaS", type:"How-to videos", img:V("1190710396"), vimeo:"1190710396"},
+  {t:"Zibacoin", ind:"Web3", type:"How-to videos", img:A+"Zibacoin.png", vimeo:"1190697796"},
+  {t:"Poli", ind:"Stationery", type:"Brand identity", img:A+"Poli.png", vimeo:"1190703584"}
 ];
 const FOLDER_COLORS = ["#8134be","#fae453","#572088","#c160ff","#26074b","#d99bfe"];
 // Set price to e.g. "$250" to show a starting price.
