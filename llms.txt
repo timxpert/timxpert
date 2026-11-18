@@ -1,6 +1,6 @@
 # Timxpert
 
-> Timxpert (Timothy Goodness) is a motion designer and video producer who makes explainer, product demo and launch videos for SaaS founders and tech companies. He is the founder of Motion Dojo.
+> Timxpert (Timothy Goodness) is a motion designer and video producer who makes explainer, product demo and launch videos for SaaS founders and tech companies. He is the founder of Motion Dojo and Plotoh.
 
 Website: https://timxpert.com
 Email: workwithtimxpert@gmail.com
@@ -18,7 +18,11 @@ LinkedIn: https://www.linkedin.com/in/timothy-goodness-367708274
 - Timxpert founded Motion Dojo in 2025: a creative community that helps smartphone creatives become skillful motion designers.
 - Motion Dojo website: https://joinmotiondojo.com
 
+## Plotoh
+- Timxpert is the founder of Plotoh: https://plotoh.com
+
 ## Pages
+- [Bio](https://timxpert.com/bio): who Timxpert is, in one page
 - [Home](https://timxpert.com/)
 - [About](https://timxpert.com/about)
 - [Work](https://timxpert.com/portfolio)
