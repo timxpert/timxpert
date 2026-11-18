@@ -29,3 +29,7 @@ const PROJECTS = [
   {t:"Zibacoin", ind:"Web3", type:"How-to videos", img:A+"thumbs/Zibacoin.webp", vimeo:"1190697796"},
   {t:"Poli", ind:"Stationery", type:"Brand identity", img:A+"thumbs/Poli.webp", vimeo:"1190703584"}
 ];
+
+// The projects shown on the homepage, by title, in order.
+// Add desc:"one short line" to any project above to show a description under its title.
+const FEATURED = ["Attrove", "Applai", "Langease AI", "DSG 2.0"];

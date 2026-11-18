@@ -159,7 +159,26 @@ section{padding:7rem 0 5rem}
 @media (prefers-reduced-motion:reduce){.playhead{animation:none;left:40%}}
 @media (max-width:520px){.clip{font-size:.76rem;padding:.5rem .55rem}}
 
-/* Work: folders */
+/* Work: project cards */
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
+.proj{all:unset;cursor:pointer;display:flex;flex-direction:column;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 12px 34px rgba(38,7,75,.08);transition:translate .4s cubic-bezier(.32,.72,0,1),box-shadow .4s;-webkit-tap-highlight-color:transparent}
+.proj:hover{translate:0 -4px;box-shadow:0 20px 44px rgba(38,7,75,.13)}
+.proj:active{scale:.985}
+.proj:focus-visible{outline:2px solid var(--deep);outline-offset:4px}
+.proj .th{position:relative;aspect-ratio:16/10;background:var(--sw,#8134be);overflow:hidden}
+.proj .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:scale .7s cubic-bezier(.32,.72,0,1)}
+.proj:hover .th img{scale:1.04}
+.proj .pb{position:absolute;left:1.2rem;bottom:1.2rem;width:62px;height:62px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.18);transition:scale .3s cubic-bezier(.32,.72,0,1)}
+.proj .pb::after{content:"";margin-left:5px;border-left:17px solid var(--deep);border-top:10px solid transparent;border-bottom:10px solid transparent}
+.proj:hover .pb{scale:1.08}
+.proj .bd{padding:1.4rem 1.5rem 1.6rem}
+.proj h3{font-size:clamp(1.35rem,2.4vw,1.7rem);letter-spacing:-.03em;line-height:1.15;color:var(--ink);margin:0 0 .5rem}
+.proj p{margin:0 0 1.1rem;color:var(--muted-dark);font-size:.98rem;line-height:1.55}
+.proj .go{font-weight:700;color:var(--deep);margin-top:.4rem;display:block}
+.proj .ind{display:inline-block;font-size:.78rem;font-weight:600;color:var(--deep);background:#f3e8fd;padding:.3rem .7rem;border-radius:999px;margin-bottom:.8rem}
+@media (max-width:760px){.projects{grid-template-columns:1fr;gap:1.2rem}.proj .pb{width:54px;height:54px;left:1rem;bottom:1rem}}
+
+/* Work: folders (unused) */
 .work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:1rem 2rem}
 .reel{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:24px;overflow:hidden;background:radial-gradient(100% 120% at 30% 10%,#8134be,#26074b);cursor:pointer;margin-bottom:3rem}
 .reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -392,12 +411,11 @@ dialog::backdrop{background:transparent}
     <div class="work-head">
       <div>
         <h2>My <span class="it">work</span></h2>
-        <p class="sub">Open a folder and pick a video to watch, or <a href="/portfolio" style="text-decoration:underline;text-underline-offset:3px;color:var(--deep);font-weight:600">see everything in one place</a>.</p>
+        <p class="sub">A few recent videos. Tap one to watch.</p>
       </div>
     </div>
-    <div class="folders" id="folders"></div>
-    
-    <p style="text-align:center;margin:2rem 0 0"><a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a></p>
+    <div class="projects" id="projects"></div>
+    <p style="text-align:center;margin:3rem 0 0"><a class="btn" href="/portfolio">See all portfolio</a></p>
   </div>
 </section>
 
@@ -525,18 +543,14 @@ const PACKAGES = [
 const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
 const CAL = "https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq";
 
-// Folders
-const types = [...new Set(PROJECTS.map(p=>p.type))];
-document.getElementById("folders").innerHTML = types.map((t,i) => {
-  const items = PROJECTS.filter(p=>p.type===t);
-  const c = FOLDER_COLORS[i % FOLDER_COLORS.length];
-  return `<button class="folder" type="button" data-f="${esc(t)}" aria-label="Open ${esc(t)} folder">
-    <span class="back"></span>
-    ${items[1]?`<span class="peek p2" style="--sw:${c}"><span class="pt">${esc(items[1].t)}</span>${items[1].img?`<img src="${items[1].img}" alt="" width="640" height="360" loading="lazy" decoding="async" onerror="this.remove()">`:""}</span>`:""}
-    <span class="peek" style="--sw:${c}"><span class="pt">${esc(items[0].t)}</span>${items[0].img?`<img src="${items[0].img}" alt="" width="640" height="360" loading="lazy" decoding="async" onerror="this.remove()">`:""}</span>
-    <span class="front"><b>${esc(t)}</b><span>${items.length} video${items.length>1?"s":""}</span></span>
-  </button>`;
-}).join("");
+// Featured projects (pick them in projects.js)
+const ARTICLE = {"Explainers":"Explainer video","Product demos":"Product demo","App promos":"App promo","Course promos":"Course promo","How-to videos":"How-to video","Brand identity":"Brand identity"};
+const featured = FEATURED.map(t=>PROJECTS.find(p=>p.t===t)).filter(Boolean);
+document.getElementById("projects").innerHTML = featured.map(p => `
+  <button class="proj" type="button" data-i="${PROJECTS.indexOf(p)}">
+    <span class="th">${p.img?`<img src="${p.img}" alt="" width="640" height="400" loading="lazy" decoding="async" onerror="this.remove()">`:""}<span class="pb"></span></span>
+    <span class="bd"><span class="ind">${esc(p.ind)}</span><h3>${esc(ARTICLE[p.type]||p.type)} for ${esc(p.t)}</h3>${p.desc?`<p>${esc(p.desc)}</p>`:""}<span class="go">Watch video →</span></span>
+  </button>`).join("");
 
 // Modal: opens out of the folder you tap and shrinks back into it (iOS-style)
 const modal=document.getElementById("modal"), media=document.getElementById("m-media"), list=document.getElementById("m-list");
@@ -596,14 +610,9 @@ function openFrom(el){
   clearAnims(); closing=false;
   origin=el; modal.showModal(); modal.scrollTop=0; morphIn(el);
 }
-let folderBusy=false;
-document.getElementById("folders").addEventListener("click", e => {
-  const f=e.target.closest("[data-f]"); if(!f||folderBusy||modal.open) return;
-  folderBusy=true;
-  f.classList.add("opening");                       // 1. folder opens
-  setTimeout(()=>{                                  // 2. then the sheet grows out of it
-    fillFolder(f.dataset.f); openFrom(f); folderBusy=false;
-  }, calm?0:460);
+document.getElementById("projects").addEventListener("click", e => {
+  const c=e.target.closest("[data-i]"); if(!c||modal.open) return; const p=PROJECTS[+c.dataset.i];
+  list.innerHTML=""; setVideo(p.t, p.ind+" · "+p.type, p.vimeo, p.img); openFrom(c);
 });
 list.addEventListener("click", e => {
   const v=e.target.closest("[data-i]"); if(!v) return; const p=PROJECTS[+v.dataset.i];
