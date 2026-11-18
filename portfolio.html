@@ -1,776 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Portfolio | Timxpert - Motion Design & Video Production for SaaS, Tech & Course Creators.">
-  <meta name="author" content="Timxpert">
-  <meta name="theme-color" content="#0a0a0a">
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://timxpert.com/portfolio">
-  <meta property="og:title" content="Work | Timxpert">
-  <meta property="og:description"
-    content="Portfolio | Timxpert - Motion Design & Video Production for SaaS, Tech & Course Creators.">
-  <meta property="og:image" content="https://timxpert.com/assets/logo.png">
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://timxpert.com/portfolio">
-  <meta property="twitter:title" content="Work | Timxpert">
-  <meta property="twitter:description"
-    content="Portfolio | Timxpert - Motion Design & Video Production for SaaS, Tech & Course Creators.">
-  <meta property="twitter:image" content="https://timxpert.com/assets/logo.png">
-  <title>Work | Timxpert</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://www.timxpert.com/style.css">
-  <link rel="stylesheet" href="https://www.timxpert.com/portfolio.css">
-  <!-- Vimeo Player SDK -->
-  <script src="https://player.vimeo.com/api/player.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Work | Timxpert</title>
+<meta name="description" content="Explainer, product demo, launch and course promo videos by Timxpert (Timothy Goodness) for SaaS, telecom and education brands.">
+<meta property="og:title" content="Work | Timxpert">
+<meta property="og:description" content="Explainer, product demo, launch and course promo videos by Timxpert (Timothy Goodness) for SaaS, telecom and education brands.">
+<meta property="og:image" content="https://timxpert.com/assets/me.jpeg">
+<meta property="og:url" content="https://timxpert.com/portfolio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#26074b">
 <link rel="canonical" href="https://timxpert.com/portfolio">
+<link rel="icon" href="assets/favicon-64.png" sizes="64x64">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<style>
+.pf-hero{padding:8rem 0 4.5rem}
+.pf-hero h1{font-size:clamp(2.6rem,7vw,5rem);margin-bottom:1.2rem}
+.pf-hero .intro{color:var(--muted);max-width:50ch;font-size:1.08rem;margin:0}
+.pf-head{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:center}
+.reel{all:unset;cursor:pointer;position:relative;display:block;aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:var(--navy-3)}
+.reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:scale .6s var(--ease)}
+.reel:hover img{scale:1.03}
+.reel:focus-visible{outline:2px solid var(--lav);outline-offset:4px}
+.play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:76px;height:76px;border-radius:50%;background:var(--blue);display:grid;place-items:center;transition:scale .3s var(--ease)}
+.play::after{content:"";margin-left:5px;border-left:18px solid var(--ink);border-top:11px solid transparent;border-bottom:11px solid transparent}
+.reel:hover .play{scale:1.08}
+.reel .tag{position:absolute;left:1rem;bottom:1rem;background:#fff;color:var(--ink);font-size:.8rem;font-weight:600;padding:.4rem .85rem;border-radius:999px}
+@media (max-width:860px){.pf-head{grid-template-columns:1fr;gap:2rem}.pf-hero{padding:7rem 0 3.5rem}}
+
+:root{--ease:cubic-bezier(.32,.72,0,1)}
+.chips{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;margin:0 -1.25rem 2.5rem;padding:0 1.25rem}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:inherit;font-weight:600;font-size:.92rem;padding:.6rem 1.05rem;border-radius:999px;border:1.5px solid #ddd6e6;background:#fff;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s,scale .2s}
+.chip:active{scale:.95}
+.chip small{font-size:.78rem;color:var(--grey);margin-left:.3rem;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip[aria-pressed="true"] small{color:#bdb3c9}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem 1.4rem}
+.card{all:unset;cursor:pointer;display:block;-webkit-tap-highlight-color:transparent}
+.card .th{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--sw,#e7c4fe)}
+.card .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:scale .6s var(--ease)}
+.card .th .ph{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:#fff;padding:1rem;text-align:center}
+.card .play{width:54px;height:54px;opacity:0;scale:.8;transition:opacity .3s,scale .35s var(--ease)}
+.card .play::after{border-left-width:14px;border-top-width:9px;border-bottom-width:9px;margin-left:4px}
+.card:hover .th img{scale:1.04}
+.card:hover .play,.card:focus-visible .play{opacity:1;scale:1}
+.card:focus-visible .th{outline:2px solid var(--deep);outline-offset:3px}
+.card b{display:block;margin-top:.8rem;font-size:1.05rem;font-weight:700;line-height:1.3}
+.card span.m{font-size:.86rem;color:var(--grey)}
+.card.in{animation:in .5s var(--ease) both;animation-delay:calc(var(--k) * 40ms)}
+@keyframes in{from{opacity:0;translate:0 14px}}
+@media (max-width:900px){.grid{grid-template-columns:1fr 1fr;gap:1.8rem 1rem}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+@media (hover:none){.card .play{opacity:1;scale:1}}
+.cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem;margin-top:5rem;padding-top:2.5rem;border-top:1px solid #e6e1ec}
+.cta h3{font-size:clamp(1.6rem,3.6vw,2.3rem)}
+.paper .btn{background:var(--ink);color:#fff}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://timxpert.com/#person", "name": "Timothy Goodness", "alternateName": "Timxpert", "url": "https://timxpert.com", "image": "https://timxpert.com/assets/me.jpeg", "jobTitle": "Motion designer and video producer", "description": "Timxpert (Timothy Goodness) is a motion designer and video producer who makes explainer, product demo and launch videos for SaaS founders and tech companies. He is the founder of Motion Dojo and Plotoh.", "email": "mailto:workwithtimxpert@gmail.com", "knowsAbout": ["Motion design", "Video production", "Explainer videos", "Product demo videos", "Launch videos", "SaaS marketing videos"], "worksFor": {"@id": "https://timxpert.com/#business"}, "sameAs": ["https://www.instagram.com/timxpert", "https://x.com/timxpert", "https://www.linkedin.com/in/timothy-goodness-367708274", "https://joinmotiondojo.com", "https://plotoh.com"], "subjectOf": {"@type": "WebPage", "url": "https://timxpert.com/bio"}}, {"@type": "ProfessionalService", "@id": "https://timxpert.com/#business", "name": "Timxpert", "url": "https://timxpert.com", "logo": "https://timxpert.com/assets/logo.png", "image": "https://timxpert.com/assets/logo.png", "description": "Timxpert makes explainer, product demo and launch videos for SaaS founders, tech companies and course creators.", "founder": {"@id": "https://timxpert.com/#person"}, "areaServed": "Worldwide", "sameAs": ["https://www.instagram.com/timxpert", "https://x.com/timxpert", "https://www.linkedin.com/in/timothy-goodness-367708274"]}, {"@type": "Organization", "@id": "https://joinmotiondojo.com/#organization", "name": "Motion Dojo", "url": "https://joinmotiondojo.com", "founder": {"@id": "https://timxpert.com/#person"}, "foundingDate": "2025"}, {"@type": "Organization", "@id": "https://plotoh.com/#organization", "name": "Plotoh", "url": "https://plotoh.com", "founder": {"@id": "https://timxpert.com/#person"}}, {"@type": "WebSite", "@id": "https://timxpert.com/#website", "name": "Timxpert", "url": "https://timxpert.com", "publisher": {"@id": "https://timxpert.com/#person"}}]}</script>
 </head>
-
-<body class="dark-page">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar--dark">
-    <div class="container nav-container">
-      <a href="/" class="logo logo--light">
-        <img src="https://www.timxpert.com/assets/logo.png" alt="Timxpert" class="logo-img"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'">
-        <span style="display:none">Tim<span class="text-accent">xpert</span></span>
-      </a>
-      <div class="nav-links">
-        <a href="/" class="nav-link nav-link--light">Home</a>
-        <a href="about.html" class="nav-link nav-link--light">About</a>
-        <a href="portfolio.html" class="nav-link nav-link--light active">Work</a>
-        <a href="/#contact" class="nav-link nav-link--light">Contact</a>
-        <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-          class="btn btn-primary">Book a Call</a>
-      </div>
-      <button class="nav-toggle nav-toggle--light" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Mobile Navigation Overlay -->
-  <div class="mobile-nav-overlay">
-    <div class="mobile-nav-inner">
-      <!-- Nav rows -->
-      <div class="mobile-nav-links">
-        <a href="/" class="mobile-nav-link">Home</a>
-        <a href="about.html" class="mobile-nav-link">About</a>
-        <a href="portfolio.html" class="mobile-nav-link active">Work</a>
-        <a href="/#contact" class="mobile-nav-link">Contact</a>
-      </div>
-      <!-- CTA -->
-      <div class="mobile-nav-cta">
-        <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-          class="btn btn-primary mobile-nav-btn">Book a Call</a>
-      </div>
+<body>
+<div class="top">
+  <div class="wrap">
+    <a class="badges" href="/" aria-label="Timxpert home"><img class="logo-full" src="assets/logo-full.png" alt="Timxpert" width="104" height="28" fetchpriority="high"></a>
+    <div class="right">
+      <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     </div>
   </div>
+</div>
 
-  <!-- Hero -->
-  <section class="pf-hero">
-    <div class="container">
-      <h1 class="pf-hero__title fade-in-up">Your creative project deserves the right storytelling.</h1>
-      <p class="pf-hero__sub fade-in-up">Explore some of my favourite works below</p>
+<nav class="menu" id="menu" aria-label="Main" inert>
+  <div class="inner">
+    <a class="item" href="/" style="--d:0">Home</a>
+    <a class="item on" href="/portfolio" style="--d:1">Work</a>
+    <a class="item" href="/#packages" style="--d:2">Services</a>
+    <a class="item" href="/#toolkit" style="--d:3">Approach</a>
+    <a class="item" href="/#contact" style="--d:4">Contact</a>
+    <div class="foot">
+      <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
+      <div class="social">
+      <a href="mailto:workwithtimxpert@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg></a>
+      <a href="https://www.instagram.com/timxpert" target="_blank" rel="noopener" aria-label="Instagram"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+      <a href="https://x.com/timxpert" target="_blank" rel="noopener" aria-label="X"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"/></svg></a>
+      <a href="https://www.linkedin.com/in/timothy-goodness-367708274" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"/></svg></a>
     </div>
-  </section>
-
-  <!-- Filter Bar -->
-  <section class="pf-filter-section">
-    <div class="container">
-      <div class="pf-filter-bar">
-        <div class="pf-filter-group">
-          <label class="pf-filter-label" for="industryFilter">Industry</label>
-          <select class="pf-filter-select" id="industryFilter">
-            <option value="">All Industries</option>
-            <option value="SaaS">SaaS</option>
-            <option value="Education">Education</option>
-            <option value="Web3">Web3</option>
-            <option value="Telecommunications">Telecommunications</option>
-            <option value="Stationery">Stationery</option>
-          </select>
-        </div>
-        <div class="pf-filter-group">
-          <label class="pf-filter-label" for="typeFilter">Video Type</label>
-          <select class="pf-filter-select" id="typeFilter">
-            <option value="">All Types</option>
-            <option value="Explainer">Explainer</option>
-            <option value="App Promo">App Promo</option>
-            <option value="Course Promo">Course Promo</option>
-            <option value="Product Demo">Product Demo</option>
-            <option value="How-to Video">How-to Video</option>
-            <option value="Brand Identity">Brand Identity</option>
-          </select>
-        </div>
-        <button class="pf-clear-btn" id="clearFilters">Clear Filters</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Portfolio Grid -->
-  <section class="pf-grid-section">
-    <div class="container">
-      <div class="portfolio-grid" id="pfGrid">
-
-        <!-- 1. SERLZO -->
-        <div class="pf-card" data-industry="SaaS" data-type="Explainer">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190702972','SERLZO','SaaS · Explainer','A sleek explainer for SERLZO — sharp motion design communicating their value proposition in seconds.')">
-            <img src="https://vumbnail.com/1190702972.jpg" alt="SERLZO" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">SERLZO</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span
-                class="pf-tag pf-tag--type">Explainer</span></div>
-          </div>
-        </div>
-        <!-- 2. LANGEASE AI -->
-        <div class="pf-card" data-industry="SaaS" data-type="Product Demo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190721386','LANGEASE AI','SaaS · Product Demo','An engaging product demo for LANGEASE AI breaking down their language AI platform.')">
-            <img src="https://www.timxpert.com/assets/Langease.png" alt="LANGEASE AI" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">LANGEASE AI</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span
-                class="pf-tag pf-tag--type">Product Demo</span></div>
-          </div>
-        </div>
-        <!-- 3. APPLAI -->
-        <div class="pf-card" data-industry="SaaS" data-type="Explainer">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190694647','APPLAI','SaaS · Explainer','A polished explainer for APPLAI showcasing their AI-powered platform with smooth UI animations.')">
-            <img src="https://www.timxpert.com/assets/APPLAI.png" alt="APPLAI" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">APPLAI</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span
-                class="pf-tag pf-tag--type">Explainer</span></div>
-          </div>
-        </div>
-        <!-- 4. ATTROVE -->
-        <div class="pf-card" data-industry="SaaS" data-type="Product Demo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190693529','ATTROVE','SaaS · Product Demo','A high-energy product demo for ATTROVE capturing their platform\'s power to attract and retain customers.')">
-            <img src="https://www.timxpert.com/assets/Attrove.png" alt="ATTROVE" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">ATTROVE</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span
-                class="pf-tag pf-tag--type">Product Demo</span></div>
-          </div>
-        </div>
-        <!-- 5. PRODUCT POINTERS -->
-        <div class="pf-card" data-industry="Education" data-type="Course Promo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190717759','PRODUCT POINTERS','Education · Course Promo','A compelling course promo for Product Pointers built to drive enrollments through dynamic visuals.')">
-            <img src="https://www.timxpert.com/assets/PRODUCT-POINTERS.png" alt="PRODUCT POINTERS" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">PRODUCT POINTERS</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span
-                class="pf-tag pf-tag--type">Course Promo</span></div>
-          </div>
-        </div>
-        <!-- 6. DWM 1.0 -->
-        <div class="pf-card" data-industry="Education" data-type="Course Promo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190704732','DWM 1.0','Education · Course Promo','The official DWM 1.0 launch — cinematic and high-impact, built to create buzz and drive sign-ups.')">
-            <img src="https://www.timxpert.com/assets/DWM-1.0.png" alt="DWM 1.0" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">DWM 1.0</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span
-                class="pf-tag pf-tag--type">Course Promo</span></div>
-          </div>
-        </div>
-        <!-- 7. MASTERING PORTFOLIO & RESUME -->
-        <div class="pf-card" data-industry="Education" data-type="Course Promo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190695627','Mastering Portfolio & Resume','Education · Course Promo','A course promo built to inspire professionals to build standout portfolios and land their dream roles.')">
-            <img src="https://www.timxpert.com/assets/MASTERING-PORTFOLIO-RESUME.png" alt="Mastering Portfolio & Resume" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">MASTERING PORTFOLIO &amp; RESUME</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span
-                class="pf-tag pf-tag--type">Course Promo</span></div>
-          </div>
-        </div>
-        <!-- 8. DSG 2.0 -->
-        <div class="pf-card" data-industry="Education" data-type="Course Promo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190696822','DSG 2.0','Education · Course Promo','A high-energy promo for DSG 2.0 — designed to excite, inspire, and convert prospects into students.')">
-            <img src="https://www.timxpert.com/assets/DSG-2.0.png" alt="DSG 2.0" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">DSG 2.0</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span
-                class="pf-tag pf-tag--type">Course Promo</span></div>
-          </div>
-        </div>
-        <!-- 9. ZIBACOIN -->
-        <div class="pf-card" data-industry="Web3" data-type="How-to Video">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190697796','ZIBACOIN','Web3 · How-to Video','A clear, step-by-step how-to video guiding users through the ZIBACOIN ecosystem.')">
-            <img src="https://www.timxpert.com/assets/Zibacoin.png" alt="ZIBACOIN" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">ZIBACOIN</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Web3</span><span
-                class="pf-tag pf-tag--type">How-to Video</span></div>
-          </div>
-        </div>
-        <!-- 10. POLI -->
-        <div class="pf-card" data-industry="Stationery" data-type="Brand Identity">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190703584','POLI','Stationery · Brand Identity','A sleek brand identity film for POLI — elegant motion that brings their stationery brand to life.')">
-            <img src="https://www.timxpert.com/assets/Poli.png" alt="POLI" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">POLI</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Stationery</span><span
-                class="pf-tag pf-tag--type">Brand Identity</span></div>
-          </div>
-        </div>
-        <!-- 11. NEW FROGGYTALK APP -->
-        <div class="pf-card" data-industry="" data-type="App Promo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190710199','NEW FROGGYTALK APP','App Promo','An exciting app promo for FroggyTalk\'s new features — fun, energetic, and built to drive downloads.')">
-            <img src="https://vumbnail.com/1190710199.jpg" alt="NEW FROGGYTALK APP" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">NEW FROGGYTALK APP</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--type">App Promo</span></div>
-          </div>
-        </div>
-        <!-- 12. FROGGYTALK ERITREA -->
-        <div class="pf-card" data-industry="" data-type="App Promo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190853338','FROGGYTALK ERITREA','App Promo','An exciting app promo for FroggyTalk Eritrea — fun, energetic, and built to drive downloads.')">
-            <img src="https://vumbnail.com/1190853338.jpg" alt="FROGGYTALK ERITREA" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">FROGGYTALK ERITREA</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--type">App Promo</span></div>
-          </div>
-        </div>
-        <!-- 13. FROGGYTALK EXPLAINER -->
-        <div class="pf-card" data-industry="SaaS" data-type="Explainer Video">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190720025','FROGGYTALK EXPLAINER','SaaS · Explainer Video','A compelling explainer video breaking down FroggyTalk\'s core features and value proposition.')">
-            <img src="https://vumbnail.com/1190720025.jpg" alt="FROGGYTALK EXPLAINER" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">FROGGYTALK EXPLAINER</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span class="pf-tag pf-tag--type">Explainer Video</span></div>
-          </div>
-        </div>
-        <!-- 12. SERLZO NEW FEATURE -->
-        <div class="pf-card" data-industry="SaaS" data-type="How-to Video">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190710396','SERLZO NEW FEATURE','SaaS · How-to Video','A crisp how-to video walking users through SERLZO\'s latest feature update.')">
-            <img src="https://vumbnail.com/1190710396.jpg" alt="SERLZO NEW FEATURE" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">SERLZO NEW FEATURE</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span
-                class="pf-tag pf-tag--type">How-to Video</span></div>
-          </div>
-        </div>
-        <!-- 13. KRUNCH IT -->
-        <div class="pf-card" data-industry="" data-type="App Promo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190717948','KRUNCH IT','App Promo','A punchy app promo for Krunch It — fast-paced visuals built to drive installs and spark curiosity.')">
-            <img src="https://www.timxpert.com/assets/Krunch-it.jpeg" alt="KRUNCH IT" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">KRUNCH IT</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--type">App Promo</span></div>
-          </div>
-        </div>
-        <!-- 14. FUN AFLAMES -->
-        <div class="pf-card" data-industry="Education" data-type="Course Promo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190717995','FUN AFLAMES','Education · Course Promo','A vibrant course promo for Fun Aflames — high energy visuals that inspire and convert.')">
-            <img src="https://www.timxpert.com/assets/Fun-a-flames.jpeg" alt="FUN AFLAMES" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">FUN AFLAMES</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span
-                class="pf-tag pf-tag--type">Course Promo</span></div>
-          </div>
-        </div>
-        <!-- 15. DWM 2.0 -->
-        <div class="pf-card" data-industry="Education" data-type="Course Promo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190721260','DWM 2.0','Education · Course Promo','The DWM 2.0 follow-up — bigger, bolder, and built to re-engage and expand the student community.')">
-            <img src="https://www.timxpert.com/assets/DWMR.png" alt="DWM 2.0" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">DWM 2.0</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">Education</span><span
-                class="pf-tag pf-tag--type">Course Promo</span></div>
-          </div>
-        </div>
-
-        <!-- 16. KONNA -->
-        <div class="pf-card" data-industry="SaaS" data-type="Product Demo">
-          <div class="pf-card__thumb"
-            onclick="openVimeoModal('1190719821','KONNA','SaaS · Product Demo','A sharp product demo for KONNA — clean visuals and precise motion communicating their platform value with impact.')">
-            <img src="https://www.timxpert.com/assets/Konna.jpeg" alt="KONNA" loading="lazy">
-            <div class="pf-card__play"><svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg></div>
-          </div>
-          <div class="pf-card__body">
-            <h3 class="pf-card__title">KONNA</h3>
-            <div class="pf-card__tags"><span class="pf-tag pf-tag--industry">SaaS</span><span
-                class="pf-tag pf-tag--type">Product Demo</span></div>
-          </div>
-        </div>
-
-        <!-- No Results -->
-        <div class="pf-empty" id="pfEmpty" style="display:none;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-          <p>No videos match your filters.</p>
-          <button onclick="document.getElementById('clearFilters').click()">Clear Filters</button>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ======================== FAQ ======================== -->
-  <section class="section faq-section" id="faq">
-    <div class="container">
-      <div class="section-header fade-in-up">
-        <h2>Frequently Asked Questions</h2>
-        <p>Everything you need to know about working with me.</p>
-      </div>
-      <div class="faq-accordion fade-in-up">
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What's required on my end?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <ul>
-              <li>Brand guidelines (logo, fonts, colors, etc.)</li>
-              <li>Figma files including necessary UI elements</li>
-              <li>Clear feedback during reviews</li>
-              <li>Video references (if you have specific styles in mind)</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Do you offer revisions?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Yes! I believe in collaboration and refining the work to match your vision. Each project includes a set
-              number of revision rounds, which we’ll define in the project scope.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>What kinds of videos can you create?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>I work on a variety of videos, but some of the most requested are:</p>
-            <ul>
-              <li>Explainer videos</li>
-              <li>Product demos</li>
-              <li>Product launches</li>
-              <li>Course promos</li>
-              <li>How-to videos</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>Do you offer custom packages?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Absolutely. For projects with 3+ videos or ongoing collaboration, I offer custom packages designed around
-              your needs. Reach out to me and I'll build something that works for you.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question">
-            <span>How much does a video cost?</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon">
-              <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-          </button>
-          <div class="faq-answer">
-            <p>Every project is different. Most clients invest between $200 and $500 depending on deliverables and
-              turnaround. You'll get a transparent quote after our first call, no surprises.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ======================== NEW UNIFIED FOOTER ======================== -->
-  <footer id="contact" style="background-color: #000000; padding-bottom: 50px; text-align: center; position: relative;">
-
-    <!-- Big Profile Image (Pan Effect) -->
-    <div class="fade-in-up"
-      style="width: 100%; position: relative; overflow: hidden; margin-bottom: 80px; background-color: #000000;">
-      <img src="https://www.timxpert.com/assets/footer-image.jpeg" alt="Timothy" class="footer-me-img" loading="lazy"
-        style="width: 100%; height: auto; display: block; transform-origin: center; will-change: transform;">
-    </div>
-
-    <div class="container" style="background-color: #000000; position: relative; z-index: 10;">
-
-      <!-- CTA Text -->
-      <h2 class="fade-in-up"
-        style="font-size: clamp(36px, 5vw, 64px); letter-spacing: -0.02em; margin-bottom: 16px; color: rgba(255,255,255,0.9);">
-        Let's make some magic</h2>
-      <p class="fade-in-up"
-        style="font-size: 18px; color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 40px; line-height: 1.6;">
-        Have a product worth showing? Let's make a video that gets it the attention it deserves.
-      </p>
-
-      <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-        class="btn btn-primary fade-in-up"
-        style="font-size: 16px; padding: 14px 32px; margin-bottom: 100px; display: inline-flex;">Book a Call</a>
-
-      <!-- Footer Links / Bottom row -->
-      <div class="footer-bottom-flex"
-        style="display: flex; justify-content: center; text-align: left; flex-wrap: wrap; gap: 60px;">
-
-        <div class="footer-links-col" style="min-width: 140px;">
-          <h4 class="footer-heading" style="font-size: 16px; margin-bottom: 20px; color: rgba(255,255,255,0.9);">
-            Navigation</h4>
-          <div class="footer-links" style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
-            <a href="/" style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Home</a>
-            <a href="about.html"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">About</a>
-            <a href="portfolio.html"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Portfolio</a>
-            <a href="/#contact"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Contact</a>
-          </div>
-        </div>
-        <div class="footer-links-col" style="min-width: 140px;">
-          <h4 class="footer-heading" style="font-size: 16px; margin-bottom: 20px; color: rgba(255,255,255,0.9);">
-            Services</h4>
-          <div class="footer-links" style="display: flex; flex-direction: column; gap: 16px; font-size: 14px;">
-            <a href="/#services"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Explainer Video</a>
-            <a href="/#services"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">SaaS Demo</a>
-            <a href="/#services"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">Course Promo</a>
-            <a href="/#services"
-              style="color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s;">How-To Video</a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Copyright and Socials and Back to top -->
-      <div class="footer-bottom-bar">
-        <p style="color: rgba(255,255,255,0.7); font-size: 14px; margin: 0; text-align: center;">&copy; 2026 Timxpert.
-          All rights reserved.
-        </p>
-
-        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-          style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.8); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: all 0.3s; margin: 0 auto;"
-          onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.color='#fff';"
-          onmouseout="this.style.background='rgba(255,255,255,0.05)'; this.style.color='rgba(255,255,255,0.8)';">
-          &uarr; Back to Top
-        </button>
-
-        <div class="social-links" style="margin-top: 0; display: flex; gap: 12px; justify-content: center;">
-          <a href="https://www.instagram.com/timxpert?igsh=cHU3aTluOXQ3M2Jj" target="_blank" rel="noopener"
-            class="social-link"
-            style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: #000000; transition: all 0.3s;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              style="width: 18px; height: 18px;">
-              <path
-                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-            </svg>
-          </a>
-          <a href="https://x.com/timxpert" target="_blank" rel="noopener" class="social-link"
-            style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: #000000; transition: all 0.3s;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              style="width: 18px; height: 18px;">
-              <path
-                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/timothy-goodness-367708274" target="_blank" rel="noopener"
-            class="social-link"
-            style="width: 40px; height: 40px; border-radius: 50%; background: #ffffff; border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center; color: #000000; transition: all 0.3s;">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              style="width: 18px; height: 18px;">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://www.timxpert.com/script.js"></script>
-
-  <!-- Portfolio Modal -->
-  <div class="portfolio-modal" id="portfolioModal">
-    <div class="modal-overlay" onclick="closeModal()"></div>
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeModal()">&times;</button>
-      <h2 class="modal-title" id="modalTitle">Project Name</h2>
-      <p class="modal-category" id="modalCategory">Category</p>
-      <div class="modal-divider"></div>
-      <div class="modal-section">
-        <h3>Project Summary</h3>
-        <p id="modalDesc">Project description goes here.</p>
-      </div>
-      <div class="modal-section">
-        <h3>My Involvement</h3>
-        <ul class="modal-list">
-          <li>Concept and Scripting</li>
-          <li>Storyboarding</li>
-          <li>Commercial Production</li>
-          <li>UI Animations</li>
-          <li>Dedicated Project Management</li>
-        </ul>
-      </div>
-      <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-        class="btn btn-primary modal-btn">Book a Call</a>
     </div>
   </div>
+</nav>
 
-  <script>
-    (function () {
-      var industryEl = document.getElementById('industryFilter');
-      var typeEl = document.getElementById('typeFilter');
-      var clearBtn = document.getElementById('clearFilters');
-      var cards = document.querySelectorAll('.pf-card');
-      var emptyEl = document.getElementById('pfEmpty');
+<main>
+<section class="pf-hero">
+  <div class="wrap pf-head">
+    <div>
+      <h1>All my <span class="it">work</span></h1>
+      <p class="intro">Explainers, product demos, launch videos and course promos for SaaS, telecom and education brands. Tap any video to watch it.</p>
+    </div>
+    <button class="reel" type="button" id="reel" aria-label="Play showreel">
+      <img src="https://vumbnail.com/1190852100_large.jpg" alt="" width="640" height="360" fetchpriority="high" onerror="this.remove()">
+      <span class="play"></span><span class="tag">Showreel</span>
+    </button>
+  </div>
+</section>
 
-      function applyFilters() {
-        var ind = industryEl.value;
-        var type = typeEl.value;
-        var visible = 0;
-        cards.forEach(function (card) {
-          var matchInd = !ind || card.dataset.industry === ind;
-          var matchType = !type || card.dataset.type === type;
-          if (matchInd && matchType) {
-            card.style.opacity = '0';
-            card.style.display = '';
-            requestAnimationFrame(function () { card.style.opacity = '1'; });
-            visible++;
-          } else {
-            card.style.display = 'none';
-          }
-        });
-        emptyEl.style.display = visible === 0 ? 'flex' : 'none';
-      }
-
-      industryEl.addEventListener('change', applyFilters);
-      typeEl.addEventListener('change', applyFilters);
-      clearBtn.addEventListener('click', function () {
-        industryEl.value = '';
-        typeEl.value = '';
-        applyFilters();
-      });
-    })();
-
-    var _vmPlayer = null;
-
-    function loadVimeoSDK() {
-      return new Promise(function (resolve) {
-        if (window.Vimeo) { resolve(); return; }
-        var s = document.createElement('script');
-        s.src = 'https://player.vimeo.com/api/player.js';
-        s.onload = resolve;
-        document.head.appendChild(s);
-      });
-    }
-
-    function openVimeoModal(videoId, title, category, summary) {
-      var modal = document.getElementById('heroVideoModal');
-      var iframe = document.getElementById('heroVideoIframe');
-      var titleEl = document.getElementById('videoModalTitle');
-      var sumEl = document.getElementById('videoModalSummary');
-      var overlay = document.getElementById('vmPlayOverlay');
-      if (titleEl) titleEl.textContent = title;
-      if (sumEl) sumEl.textContent = summary;
-      iframe.src = 'https://player.vimeo.com/video/' + videoId
-        + '?autoplay=0&controls=1&title=0&byline=0&portrait=0';
-      if (overlay) { overlay.style.opacity = '1'; overlay.style.pointerEvents = 'auto'; }
-      _vmPlayer = null;
-      if (modal) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
-    }
-
-    function vmPlayVideo() {
-      var overlay = document.getElementById('vmPlayOverlay');
-      var iframe = document.getElementById('heroVideoIframe');
-      if (overlay) { overlay.style.opacity = '0'; overlay.style.pointerEvents = 'none'; }
-      loadVimeoSDK().then(function () {
-        if (!_vmPlayer) { _vmPlayer = new Vimeo.Player(iframe); }
-        _vmPlayer.play().catch(function (err) {
-          if (overlay) { overlay.style.opacity = '1'; overlay.style.pointerEvents = 'auto'; }
-          console.warn('Vimeo play failed:', err);
-        });
-      });
-    }
-
-    function closeVideoModal() {
-      var modal = document.getElementById('heroVideoModal');
-      var iframe = document.getElementById('heroVideoIframe');
-      var overlay = document.getElementById('vmPlayOverlay');
-      if (modal) modal.classList.remove('active');
-      document.body.style.overflow = '';
-      iframe.src = '';
-      _vmPlayer = null;
-      if (overlay) { overlay.style.opacity = '1'; overlay.style.pointerEvents = 'auto'; }
-    }
-
-    // Upgrade thumbnails via Vimeo oEmbed for select videos
-    (function () {
-      var ids = ['1190721386', '1190693529', '1190694647', '1190704732', '1190717759'];
-      ids.forEach(function (id) {
-        fetch('https://vimeo.com/api/oembed.json?url=https://vimeo.com/' + id + '&width=1280')
-          .then(function (r) { return r.json(); })
-          .then(function (data) {
-            var url = data.thumbnail_url || '';
-            url = url.replace(/_\d+(\.jpg)/, '_1280$1');
-            if (!url) return;
-            document.querySelectorAll('img[src*="vumbnail.com/' + id + '"]').forEach(function (img) {
-              img.src = url;
-            });
-          })
-          .catch(function () { });
-      });
-    })();
-  </script>
-
-  <!-- Video Modal -->
-  <div class="video-modal" id="heroVideoModal">
-    <div class="video-modal-overlay" onclick="closeVideoModal()"></div>
-    <div class="video-modal-wrapper">
-      <button class="video-modal-close" onclick="closeVideoModal()">&times;</button>
-
-      <div class="video-modal-player">
-        <!-- Custom circular play button overlay -->
-        <div class="vm-play-overlay" id="vmPlayOverlay" onclick="vmPlayVideo()">
-          <div class="vm-play-btn">
-            <svg viewBox="0 0 24 24" fill="white">
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </div>
-        </div>
-        <iframe id="heroVideoIframe" style="width:100%;height:100%;border:none;" src=""
-          allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-
-      <div class="video-modal-details">
-        <h2 id="videoModalTitle">Product Video Showcase</h2>
-        <hr class="video-modal-divider">
-        <h3>Project Summary</h3>
-        <p id="videoModalSummary">We produced high-quality product videos showcasing versatile uses of our new cases.
-          Upbeat and current, all done in-studio to highlight premium features and drive conversions.</p>
-
-
-        <a href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener"
-          class="btn btn-primary video-modal-btn">Book a call</a>
-      </div>
+<section class="paper">
+  <div class="wrap">
+    <div class="chips" id="chips" role="group" aria-label="Filter by video type"></div>
+    <div class="grid" id="grid"></div>
+    <div class="cta">
+      <h3>Want one like these?</h3>
+      <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
     </div>
   </div>
+</section>
+</main>
 
+<footer>
+  <div class="wrap">
+    <div class="social small">
+      <a href="mailto:workwithtimxpert@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg></a>
+      <a href="https://www.instagram.com/timxpert" target="_blank" rel="noopener" aria-label="Instagram"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+      <a href="https://x.com/timxpert" target="_blank" rel="noopener" aria-label="X"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"/></svg></a>
+      <a href="https://www.linkedin.com/in/timothy-goodness-367708274" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"/></svg></a>
+    </div>
+    <span>© <span id="yr">2026</span> Timxpert. All rights reserved.</span>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" aria-hidden="true"></div>
+<dialog id="modal" aria-label="Video">
+  <button class="x" type="button" aria-label="Close">×</button>
+  <div class="m-media" id="m-media"></div>
+  <div class="m-body"><h3 id="m-title"></h3><p id="m-sub"></p></div>
+</dialog>
+
+<script src="projects.js"></script>
+<script>
+
+const modal=document.getElementById("modal"), media=document.getElementById("m-media"), scrim=document.getElementById("scrim");
+const EASE="cubic-bezier(.32,.72,0,1)", calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+function play(title, sub, vimeo){
+  media.innerHTML=`<iframe src="https://player.vimeo.com/video/${vimeo}?${VIMEO_KEYS[vimeo]?"h="+VIMEO_KEYS[vimeo]+"&":""}autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="${esc(title)}"></iframe>`;
+  document.getElementById("m-title").textContent=title; document.getElementById("m-sub").textContent=sub;
+  modal.showModal(); scrim.classList.add("on");
+  if(!calm) modal.animate([{opacity:0,transform:"translateY(24px) scale(.97)"},{opacity:1,transform:"none"}],{duration:480,easing:EASE});
+}
+function close(){ if(!modal.open) return; scrim.classList.remove("on");
+  const a=modal.animate([{opacity:1},{opacity:0,transform:calm?"none":"translateY(16px) scale(.98)"}],{duration:calm?120:260,easing:EASE});
+  a.onfinish=()=>{ modal.close(); media.innerHTML=""; }; }
+modal.addEventListener("cancel",e=>{e.preventDefault();close();});
+modal.addEventListener("click",e=>{ if(e.target===modal||e.target.closest(".x")) close(); });
+
+const COLORS=["#8134be","#572088","#c160ff","#26074b","#d99bfe"];
+const types=["All",...new Set(PROJECTS.map(p=>p.type))];
+const chips=document.getElementById("chips"), grid=document.getElementById("grid");
+chips.innerHTML=types.map((t,i)=>`<button class="chip" type="button" aria-pressed="${i===0}" data-t="${esc(t)}">${esc(t)}<small>${t==="All"?PROJECTS.length:PROJECTS.filter(p=>p.type===t).length}</small></button>`).join("");
+function show(t){
+  const list=PROJECTS.map((p,i)=>[p,i]).filter(([p])=>t==="All"||p.type===t);
+  grid.innerHTML=list.map(([p,i],k)=>`<button class="card in" type="button" data-i="${i}" style="--k:${k};--sw:${COLORS[i%COLORS.length]}">
+    <div class="th"><span class="ph">${esc(p.t)}</span>${p.img?`<img src="${p.img}" alt="" width="640" height="360" loading="lazy" decoding="async" onerror="this.remove()">`:""}<span class="play"></span></div>
+    <b>${esc(p.t)}</b><span class="m">${esc(p.type)} · ${esc(p.ind)}</span></button>`).join("");
+}
+show("All");
+chips.addEventListener("click",e=>{ const c=e.target.closest(".chip"); if(!c) return;
+  chips.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",x===c)); show(c.dataset.t); });
+grid.addEventListener("click",e=>{ const c=e.target.closest(".card"); if(!c) return; const p=PROJECTS[+c.dataset.i];
+  play(p.t, p.type+" · "+p.ind, p.vimeo); });
+document.getElementById("reel").addEventListener("click",()=>play("Showreel","Explainers, product demos and launch videos",SHOWREEL_VIMEO_ID));
+document.getElementById("yr").textContent=new Date().getFullYear();
+// Hamburger menu: grows out of the button, links slide in one by one
+const burger=document.getElementById("burger"), menu=document.getElementById("menu");
+function setMenu(open){
+  const r=burger.getBoundingClientRect();
+  menu.style.setProperty("--mx",(r.left+r.width/2)+"px"); menu.style.setProperty("--my",(r.top+r.height/2)+"px");
+  document.documentElement.classList.toggle("menu-open",open);
+  burger.setAttribute("aria-expanded",open); burger.setAttribute("aria-label",open?"Close menu":"Open menu");
+  menu.inert=!open;
+  if(open) setTimeout(()=>menu.querySelector("a.item")?.focus({preventScroll:true}),350);
+}
+burger.addEventListener("click",()=>setMenu(!document.documentElement.classList.contains("menu-open")));
+menu.addEventListener("click",e=>{ if(e.target.closest("a")) setMenu(false); });
+addEventListener("keydown",e=>{ if(e.key==="Escape"&&document.documentElement.classList.contains("menu-open")){ setMenu(false); burger.focus(); } });
+
+</script>
 </body>
-
 </html>

@@ -2,76 +2,279 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Timxpert (Timothy Goodness) | Bio</title>
 <meta name="description" content="Timxpert (Timothy Goodness) is a motion designer and video producer who makes explainer, product demo and launch videos for SaaS founders and tech companies. He is the founder of Motion Dojo and Plotoh.">
 <meta property="og:title" content="Timxpert (Timothy Goodness) | Bio">
-<meta property="og:description" content="Motion designer and video producer. Founder of Motion Dojo and Plotoh.">
+<meta property="og:description" content="Timxpert (Timothy Goodness) is a motion designer and video producer who makes explainer, product demo and launch videos for SaaS founders and tech companies. He is the founder of Motion Dojo and Plotoh.">
 <meta property="og:image" content="https://timxpert.com/assets/me.jpeg">
 <meta property="og:url" content="https://timxpert.com/bio">
-<meta property="og:type" content="profile">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#26074b">
 <link rel="canonical" href="https://timxpert.com/bio">
 <link rel="icon" href="assets/favicon-64.png" sizes="64x64">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400..800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
 <style>
-:root{--ink:#1a0b33;--muted:#5d5470;--violet:#7d34ba;--bg:#fbfaf8;--line:#ebe8e3}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Plus Jakarta Sans",system-ui,sans-serif;line-height:1.65}
-main{width:min(100% - 2.5rem,720px);margin:0 auto;padding:56px 0 72px}
-a{color:var(--violet)}
-.who{display:flex;align-items:center;gap:18px;margin-bottom:28px}
-.who img{width:84px;height:84px;border-radius:50%;object-fit:cover}
-h1{margin:0;font-size:clamp(1.9rem,6vw,2.6rem);line-height:1.1;letter-spacing:-.03em}
-.role{margin:4px 0 0;color:var(--muted)}
-.lead{font-size:1.15rem;margin:0 0 28px}
-h2{margin:36px 0 10px;font-size:1.15rem}
-ul{margin:0;padding-left:1.2rem}
-li{margin:4px 0}
-dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0}
-dt{color:var(--muted)}
-dd{margin:0}
-footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);font-size:.9rem;color:var(--muted)}
+.x-unused{padding:8rem 0 4.5rem}
+.x-unused h1{font-size:clamp(2.6rem,7vw,5rem);margin-bottom:1.2rem}
+.x-unused .intro{color:var(--muted);max-width:50ch;font-size:1.08rem;margin:0}
+.pf-head{display:grid;grid-template-columns:1fr 1.1fr;gap:3rem;align-items:center}
+.reel{all:unset;cursor:pointer;position:relative;display:block;aspect-ratio:16/9;border-radius:24px;overflow:hidden;background:var(--navy-3)}
+.reel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:scale .6s var(--ease)}
+.reel:hover img{scale:1.03}
+.reel:focus-visible{outline:2px solid var(--lav);outline-offset:4px}
+.play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:76px;height:76px;border-radius:50%;background:var(--blue);display:grid;place-items:center;transition:scale .3s var(--ease)}
+.play::after{content:"";margin-left:5px;border-left:18px solid var(--ink);border-top:11px solid transparent;border-bottom:11px solid transparent}
+.reel:hover .play{scale:1.08}
+.reel .tag{position:absolute;left:1rem;bottom:1rem;background:#fff;color:var(--ink);font-size:.8rem;font-weight:600;padding:.4rem .85rem;border-radius:999px}
+@media (max-width:860px){.pf-head{grid-template-columns:1fr;gap:2rem}.x-unused{padding:7rem 0 3.5rem}}
+
+.play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:76px;height:76px;border-radius:50%;background:var(--blue);display:grid;place-items:center;transition:scale .3s var(--ease)}
+.play::after{content:"";margin-left:5px;border-left:18px solid var(--ink);border-top:11px solid transparent;border-bottom:11px solid transparent}
+:root{--ease:cubic-bezier(.32,.72,0,1)}
+.chips{display:flex;gap:.5rem;overflow-x:auto;scrollbar-width:none;margin:0 -1.25rem 2.5rem;padding:0 1.25rem}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;font:inherit;font-weight:600;font-size:.92rem;padding:.6rem 1.05rem;border-radius:999px;border:1.5px solid #ddd6e6;background:#fff;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s,scale .2s}
+.chip:active{scale:.95}
+.chip small{font-size:.78rem;color:var(--grey);margin-left:.3rem;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chip[aria-pressed="true"] small{color:#bdb3c9}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem 1.4rem}
+.card{all:unset;cursor:pointer;display:block;-webkit-tap-highlight-color:transparent}
+.card .th{position:relative;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:var(--sw,#e7c4fe)}
+.card .th img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:scale .6s var(--ease)}
+.card .th .ph{position:absolute;inset:0;display:grid;place-items:center;font-weight:800;font-size:1.3rem;letter-spacing:-.02em;color:#fff;padding:1rem;text-align:center}
+.card .play{width:54px;height:54px;opacity:0;scale:.8;transition:opacity .3s,scale .35s var(--ease)}
+.card .play::after{border-left-width:14px;border-top-width:9px;border-bottom-width:9px;margin-left:4px}
+.card:hover .th img{scale:1.04}
+.card:hover .play,.card:focus-visible .play{opacity:1;scale:1}
+.card:focus-visible .th{outline:2px solid var(--deep);outline-offset:3px}
+.card b{display:block;margin-top:.8rem;font-size:1.05rem;font-weight:700;line-height:1.3}
+.card span.m{font-size:.86rem;color:var(--grey)}
+.card.in{animation:in .5s var(--ease) both;animation-delay:calc(var(--k) * 40ms)}
+@keyframes in{from{opacity:0;translate:0 14px}}
+@media (max-width:900px){.grid{grid-template-columns:1fr 1fr;gap:1.8rem 1rem}}
+@media (max-width:520px){.grid{grid-template-columns:1fr}}
+@media (hover:none){.card .play{opacity:1;scale:1}}
+
+.b-hero{padding:7.5rem 0 5rem}
+.b-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+.b-hero h1{font-size:clamp(3rem,9vw,6rem);margin:0 0 .4rem}
+.b-hero .real{color:var(--lav);font-weight:600;margin:0 0 1.6rem;font-size:1.05rem}
+.b-hero .lead{color:#e9dff5;font-size:clamp(1.08rem,1.8vw,1.25rem);line-height:1.6;max-width:46ch;margin:0 0 2rem}
+.b-hero .row{display:flex;flex-wrap:wrap;gap:.7rem}
+.photo{position:relative;margin:0}
+.photo img{width:100%;aspect-ratio:4/5;max-height:70vh;object-fit:cover;object-position:center 25%;border-radius:28px;background:var(--navy-3)}
+.photo .badge{position:absolute;left:-14px;bottom:28px;background:var(--blue);color:var(--on-accent);font-weight:700;font-size:.92rem;padding:.6rem 1rem;border-radius:999px;rotate:-4deg}
+.photo .badge2{position:absolute;right:-10px;top:26px;background:#fff;color:var(--ink);font-weight:700;font-size:.92rem;padding:.6rem 1rem;border-radius:999px;rotate:5deg}
+@media (max-width:860px){.b-grid{grid-template-columns:1fr;gap:2.5rem}.photo{max-width:420px}.photo .badge{left:10px}.photo .badge2{right:10px}}
+
+h2{font-size:clamp(2rem,5vw,3.2rem)}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.lanes{position:relative;display:grid;gap:.5rem;padding:10px 0;margin-top:2rem}
+.clip{border-radius:8px;padding:.7rem .85rem;font-weight:600;font-size:.95rem;line-height:1.25;min-height:2.9rem;display:flex;align-items:center}
+.v1 .clip{background:var(--blue);color:var(--on-accent)}
+.v2 .clip{background:var(--deep);color:#fff}
+.playhead{position:absolute;top:0;bottom:0;left:0;width:2px;background:var(--red);animation:sweep 6s linear infinite}
+.playhead::before{content:"";position:absolute;top:-2px;left:-6px;width:14px;height:12px;background:var(--red);clip-path:polygon(0 0,100% 0,100% 55%,50% 100%,0 55%)}
+@keyframes sweep{0%{left:0;opacity:0}3%{opacity:1}94%{opacity:1}100%{left:calc(100% - 2px);opacity:0}}
+@media (max-width:520px){.clip{font-size:.8rem;padding:.55rem .6rem}}
+
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
+.strip .card b{font-size:.98rem}
+.more svg{width:18px;height:18px;flex:none}
+.more{white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;margin-top:2rem;font-weight:700;color:var(--deep);border-bottom:2px solid currentColor;padding-bottom:2px}
+@media (max-width:860px){.strip{grid-template-columns:1fr 1fr}}
+
+.ventures{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2.5rem}
+.v{display:flex;flex-direction:column;min-height:300px;border-radius:26px;padding:1.6rem;color:var(--ink);transition:translate .35s var(--ease),rotate .35s var(--ease)}
+.v:hover{translate:0 -4px;rotate:-.6deg}
+.v .yr{align-self:flex-start;font-weight:700;font-size:.8rem;padding:.35rem .75rem;border-radius:999px;background:var(--ink);color:#fff}
+.v h3{font-size:clamp(2rem,4.4vw,3rem);margin:auto 0 .6rem}
+.v p{margin:0 0 1.2rem;max-width:36ch;font-size:1rem;line-height:1.55}
+.v .go{font-weight:700;display:inline-flex;gap:.45rem;align-items:center}
+.v .go svg{width:18px;height:18px;transition:translate .3s var(--ease)}
+.v:hover .go svg{translate:4px 0}
+.v.dojo{background:#a77bff}
+.v.dojo .yr{background:#d4ff3a;color:var(--ink)}
+.v.plotoh{background:var(--blue)}
+@media (max-width:760px){.ventures{grid-template-columns:1fr}.v{min-height:220px}.v.plotoh{min-height:180px}}
+
+.say{max-width:30ch;margin:0 auto;text-align:center;font-weight:700;font-size:clamp(1.4rem,3.4vw,2.1rem);line-height:1.35;letter-spacing:-.02em}
+.say-who{display:flex;justify-content:center;align-items:center;gap:.8rem;margin-top:1.8rem}
+.say-who img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+.say-who b{display:block;line-height:1.25}
+.say-who span{color:var(--muted);font-size:.9rem}
+
+.reach h2{font-size:clamp(2.4rem,7vw,4.4rem)}
+.reach .row{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.2rem;margin-top:1.5rem}
+.reach .mail{color:var(--lav);font-weight:600;border-bottom:1.5px solid currentColor}
+.paper .btn{background:var(--ink);color:#fff}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Person", "@id": "https://timxpert.com/#person", "name": "Timothy Goodness", "alternateName": "Timxpert", "url": "https://timxpert.com", "image": "https://timxpert.com/assets/me.jpeg", "jobTitle": "Motion designer and video producer", "description": "Timxpert (Timothy Goodness) is a motion designer and video producer who makes explainer, product demo and launch videos for SaaS founders and tech companies. He is the founder of Motion Dojo and Plotoh.", "email": "mailto:workwithtimxpert@gmail.com", "knowsAbout": ["Motion design", "Video production", "Explainer videos", "Product demo videos", "Launch videos", "SaaS marketing videos"], "worksFor": {"@id": "https://timxpert.com/#business"}, "sameAs": ["https://www.instagram.com/timxpert", "https://x.com/timxpert", "https://www.linkedin.com/in/timothy-goodness-367708274", "https://joinmotiondojo.com", "https://plotoh.com"], "subjectOf": {"@type": "WebPage", "url": "https://timxpert.com/bio"}}, {"@type": "ProfessionalService", "@id": "https://timxpert.com/#business", "name": "Timxpert", "url": "https://timxpert.com", "logo": "https://timxpert.com/assets/logo.png", "image": "https://timxpert.com/assets/logo.png", "description": "Timxpert makes explainer, product demo and launch videos for SaaS founders, tech companies and course creators.", "founder": {"@id": "https://timxpert.com/#person"}, "areaServed": "Worldwide", "sameAs": ["https://www.instagram.com/timxpert", "https://x.com/timxpert", "https://www.linkedin.com/in/timothy-goodness-367708274"]}, {"@type": "Organization", "@id": "https://joinmotiondojo.com/#organization", "name": "Motion Dojo", "url": "https://joinmotiondojo.com", "founder": {"@id": "https://timxpert.com/#person"}, "foundingDate": "2025"}, {"@type": "Organization", "@id": "https://plotoh.com/#organization", "name": "Plotoh", "url": "https://plotoh.com", "founder": {"@id": "https://timxpert.com/#person"}}, {"@type": "WebSite", "@id": "https://timxpert.com/#website", "name": "Timxpert", "url": "https://timxpert.com", "publisher": {"@id": "https://timxpert.com/#person"}}]}</script>
 </head>
 <body>
-<main>
-  <div class="who">
-    <img src="assets/me.jpeg" alt="Timxpert (Timothy Goodness)" width="84" height="84">
-    <div>
-      <h1>Timxpert</h1>
-      <p class="role">Timothy Goodness · Motion designer and video producer</p>
+<div class="top">
+  <div class="wrap">
+    <a class="badges" href="/" aria-label="Timxpert home"><img class="logo-full" src="assets/logo-full.png" alt="Timxpert" width="104" height="28" fetchpriority="high"></a>
+    <div class="right">
+      <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     </div>
   </div>
+</div>
 
-  <p class="lead">Timxpert (Timothy Goodness) is a motion designer and video producer who makes explainer, product demo and launch videos for SaaS founders and tech companies. He is the founder of Motion Dojo and Plotoh.</p>
+<nav class="menu" id="menu" aria-label="Main" inert>
+  <div class="inner">
+    <a class="item" href="/" style="--d:0">Home</a>
+    <a class="item" href="/portfolio" style="--d:1">Work</a>
+    <a class="item" href="/#packages" style="--d:2">Services</a>
+    <a class="item" href="/#toolkit" style="--d:3">Approach</a>
+    <a class="item" href="/#contact" style="--d:4">Contact</a>
+    <div class="foot">
+      <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
+      <div class="social">
+      <a href="mailto:workwithtimxpert@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg></a>
+      <a href="https://www.instagram.com/timxpert" target="_blank" rel="noopener" aria-label="Instagram"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+      <a href="https://x.com/timxpert" target="_blank" rel="noopener" aria-label="X"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"/></svg></a>
+      <a href="https://www.linkedin.com/in/timothy-goodness-367708274" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"/></svg></a>
+    </div>
+    </div>
+  </div>
+</nav>
 
-  <h2>What he does</h2>
-  <ul>
-    <li>Explainer videos, product demos and launch videos</li>
-    <li>Course promos, onboarding videos and how-to videos</li>
-    <li>Cinematic motion design that makes complex products easy to understand in seconds</li>
-  </ul>
-  <p>Clients include SaaS founders, tech companies and course creators. See the work at <a href="https://timxpert.com/portfolio">timxpert.com/portfolio</a>.</p>
+<main>
+<section class="b-hero">
+  <div class="wrap b-grid">
+    <div>
+      <h1>Timxpert</h1>
+      <p class="real">Timothy Goodness</p>
+      <p class="lead">Timxpert (Timothy Goodness) is a motion designer and video producer who makes explainer, product demo and launch videos for SaaS founders and tech companies. He is the founder of Motion Dojo and Plotoh.</p>
+      <div class="row">
+        <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn white" href="/portfolio">See the work</a>
+      </div>
+    </div>
+    <figure class="photo">
+      <img src="assets/thumbs/timxpert-portrait.webp" alt="Timxpert (Timothy Goodness)" width="800" height="1000" fetchpriority="high">
+      <span class="badge">Motion designer</span>
+      <span class="badge2">Video producer</span>
+    </figure>
+  </div>
+</section>
 
-  <h2>Founder</h2>
-  <ul>
-    <li><a href="https://joinmotiondojo.com">Motion Dojo</a> (2025): a creative community that helps smartphone creatives become skillful motion designers, and the home of the Black Belt in Motion Design course.</li>
-    <li><a href="https://plotoh.com">Plotoh</a></li>
-  </ul>
+<section class="paper">
+  <div class="wrap">
+    <h2>What he <span class="it">makes</span></h2>
+    <p class="sub">Short videos that explain a product fast, for SaaS founders, tech companies and course creators.</p>
+    <div class="lanes" aria-label="Videos he makes">
+      <div class="clips v1"><span class="clip">Explainer videos</span><span class="clip">Product demos</span><span class="clip">Launch videos</span></div>
+      <div class="clips v2"><span class="clip">Course promos</span><span class="clip">Onboarding videos</span><span class="clip">How-to videos</span></div>
+      <span class="playhead" aria-hidden="true"></span>
+    </div>
+    <div class="strip" id="strip"></div>
+    <a class="more" href="/portfolio"><span>See all <span id="count"></span> videos</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</section>
 
-  <h2>Find Timxpert</h2>
-  <dl>
-    <dt>Website</dt><dd><a href="https://timxpert.com">timxpert.com</a></dd>
-    <dt>Email</dt><dd><a href="mailto:workwithtimxpert@gmail.com">workwithtimxpert@gmail.com</a></dd>
-    <dt>Instagram</dt><dd><a href="https://www.instagram.com/timxpert">@timxpert</a></dd>
-    <dt>X</dt><dd><a href="https://x.com/timxpert">@timxpert</a></dd>
-    <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/timothy-goodness-367708274">Timothy Goodness</a></dd>
-  </dl>
+<section>
+  <div class="wrap">
+    <h2>Also <span class="it">building</span></h2>
+    <div class="ventures">
+      <a class="v dojo" href="https://joinmotiondojo.com" target="_blank" rel="noopener">
+        <span class="yr">Since 2025</span>
+        <h3>Motion Dojo</h3>
+        <p>A creative community that helps smartphone creatives become skillful motion designers. Home of the Black Belt in Motion Design course.</p>
+        <span class="go">joinmotiondojo.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="v plotoh" href="https://plotoh.com" target="_blank" rel="noopener">
+        <span class="yr">Founder</span>
+        <h3>Plotoh</h3>
+                <span class="go">plotoh.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
 
-  <footer>© 2026 Timxpert · <a href="https://timxpert.com">Back to timxpert.com</a></footer>
+<section style="padding-top:2rem">
+  <div class="wrap">
+    <blockquote class="say" style="margin:0 auto">“He nails the core problem we are solving. If your product needs motion that tells a clear story, he’s worth a look.”</blockquote>
+    <div class="say-who"><img src="assets/thumbs/testimonial-1.webp" alt="" width="48" height="48" loading="lazy"><div><b>Tim Monzures</b><span>Founder &amp; CEO at Attrove</span></div></div>
+  </div>
+</section>
+
+<section class="reach">
+  <div class="wrap">
+    <h2>Say <span class="it">hello</span></h2>
+    <div class="row">
+      <a class="btn" href="https://cal.com/timxpert-bn7l0a/meet.google.com-sbx-njmp-gyq" target="_blank" rel="noopener">Book a call</a>
+      <a class="mail" href="mailto:workwithtimxpert@gmail.com">workwithtimxpert@gmail.com</a>
+    </div>
+  </div>
+</section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <div class="social small">
+      <a href="mailto:workwithtimxpert@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M4 7l8 6 8-6"/></svg></a>
+      <a href="https://www.instagram.com/timxpert" target="_blank" rel="noopener" aria-label="Instagram"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M224.3 141a115 115 0 1 0 -.6 230 115 115 0 1 0 .6-230zm-.6 40.4a74.6 74.6 0 1 1 .6 149.2 74.6 74.6 0 1 1 -.6-149.2zm93.4-45.1a26.8 26.8 0 1 1 53.6 0 26.8 26.8 0 1 1 -53.6 0zm129.7 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM399 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
+      <a href="https://x.com/timxpert" target="_blank" rel="noopener" aria-label="X"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M357.2 48L427.8 48 273.6 224.2 455 464 313 464 201.7 318.6 74.5 464 3.8 464 168.7 275.5-5.2 48 140.4 48 240.9 180.9 357.2 48zM332.4 421.8l39.1 0-252.4-333.8-42 0 255.3 333.8z"/></svg></a>
+      <a href="https://www.linkedin.com/in/timothy-goodness-367708274" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="brand" viewBox="0 0 448 512" aria-hidden="true"><path d="M100.3 448l-92.9 0 0-299.1 92.9 0 0 299.1zM53.8 108.1C24.1 108.1 0 83.5 0 53.8 0 39.5 5.7 25.9 15.8 15.8s23.8-15.8 38-15.8 27.9 5.7 38 15.8 15.8 23.8 15.8 38c0 29.7-24.1 54.3-53.8 54.3zM447.9 448l-92.7 0 0-145.6c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7l0 148.1-92.8 0 0-299.1 89.1 0 0 40.8 1.3 0c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3l0 164.3-.1 0z"/></svg></a>
+    </div>
+    <span>© <span id="yr">2026</span> Timxpert. All rights reserved.</span>
+  </div>
+</footer>
+
+<div class="scrim" id="scrim" aria-hidden="true"></div>
+<dialog id="modal" aria-label="Video">
+  <button class="x" type="button" aria-label="Close">×</button>
+  <div class="m-media" id="m-media"></div>
+  <div class="m-body"><h3 id="m-title"></h3><p id="m-sub"></p></div>
+</dialog>
+
+<script src="projects.js"></script>
+<script>
+
+const modal=document.getElementById("modal"), media=document.getElementById("m-media"), scrim=document.getElementById("scrim");
+const EASE="cubic-bezier(.32,.72,0,1)", calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+function play(title, sub, vimeo){
+  media.innerHTML=`<iframe src="https://player.vimeo.com/video/${vimeo}?${VIMEO_KEYS[vimeo]?"h="+VIMEO_KEYS[vimeo]+"&":""}autoplay=1&playsinline=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen title="${esc(title)}"></iframe>`;
+  document.getElementById("m-title").textContent=title; document.getElementById("m-sub").textContent=sub;
+  modal.showModal(); scrim.classList.add("on");
+  if(!calm) modal.animate([{opacity:0,transform:"translateY(24px) scale(.97)"},{opacity:1,transform:"none"}],{duration:480,easing:EASE});
+}
+function close(){ if(!modal.open) return; scrim.classList.remove("on");
+  const a=modal.animate([{opacity:1},{opacity:0,transform:calm?"none":"translateY(16px) scale(.98)"}],{duration:calm?120:260,easing:EASE});
+  a.onfinish=()=>{ modal.close(); media.innerHTML=""; }; }
+modal.addEventListener("cancel",e=>{e.preventDefault();close();});
+modal.addEventListener("click",e=>{ if(e.target===modal||e.target.closest(".x")) close(); });
+
+const picks=PROJECTS.filter(p=>p.img&&p.img.startsWith("assets/")).slice(0,4);
+document.getElementById("count").textContent=PROJECTS.length;
+document.getElementById("strip").innerHTML=picks.map(p=>`<button class="card" type="button" data-i="${PROJECTS.indexOf(p)}">
+  <div class="th"><img src="${p.img}" alt="" width="640" height="360" loading="lazy" decoding="async" onerror="this.remove()"><span class="play"></span></div>
+  <b>${esc(p.t)}</b><span class="m">${esc(p.type)}</span></button>`).join("");
+document.getElementById("strip").addEventListener("click",e=>{ const c=e.target.closest(".card"); if(!c) return; const p=PROJECTS[+c.dataset.i]; play(p.t,p.type+" · "+p.ind,p.vimeo); });
+document.getElementById("yr").textContent=new Date().getFullYear();
+// Hamburger menu: grows out of the button, links slide in one by one
+const burger=document.getElementById("burger"), menu=document.getElementById("menu");
+function setMenu(open){
+  const r=burger.getBoundingClientRect();
+  menu.style.setProperty("--mx",(r.left+r.width/2)+"px"); menu.style.setProperty("--my",(r.top+r.height/2)+"px");
+  document.documentElement.classList.toggle("menu-open",open);
+  burger.setAttribute("aria-expanded",open); burger.setAttribute("aria-label",open?"Close menu":"Open menu");
+  menu.inert=!open;
+  if(open) setTimeout(()=>menu.querySelector("a.item")?.focus({preventScroll:true}),350);
+}
+burger.addEventListener("click",()=>setMenu(!document.documentElement.classList.contains("menu-open")));
+menu.addEventListener("click",e=>{ if(e.target.closest("a")) setMenu(false); });
+addEventListener("keydown",e=>{ if(e.key==="Escape"&&document.documentElement.classList.contains("menu-open")){ setMenu(false); burger.focus(); } });
+
+</script>
 </body>
 </html>
